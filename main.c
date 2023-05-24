@@ -163,9 +163,11 @@ void main(void)
     INTCONbits.INT0IF = 0;
     INTCON3bits.INT1IF = 0;
     
-    
+    INTCONbits.RBIE = 0;    // Weird roundabout way to prevent RB interrupt from triggering at the start
     INTCONbits.GIE = 1;     // Enable global interrupts
-    
+    PORTB = PORTB;
+    INTCONbits.RBIF = 0;
+    INTCONbits.RBIE = 0;
     
     
     InitLCD();
