@@ -6,26 +6,39 @@
 #include <stdint.h>        /* For uint8_t definition */
 #include <stdbool.h>       /* For true/false definition */
 #include <stdio.h>
-#define _XTAL_FREQ   10000000L
+
+#define _XTAL_FREQ  10000000L
+#define TEAM_A_P1   objs[0]
+#define TEAM_A_P2   objs[1]
+#define TEAM_B_P1   objs[2]
+#define TEAM_B_P2   objs[3]
+#define TARGET      objs[4]
+#define FRISBEE     objs[5]
+#define OBJ_COUNT   6
 
 
 bool acceptInterrupts;
-int a, b, c;
+int a = 0, b = 0, c = 0, selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0;
 
-GameStates game_state;
-GameElement* objs[6];
+GameStates game_state = GS_INACTIVE;
+GameElement objs[6];
 GameElement* display[4][16];
+byte segValues[11] = {0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111, 0b01000000};
 
 
 void SetupDebouncingTimer();
+void PrintPORTBandIntCounts();
+void UpdateAndPrintDisplay();
 void InitInterrupts();
-void left();
-void right();
-void up();
-void down();
+void InitGameObjects();
+
+void left(GameElement*);
+void right(GameElement*);
+void up(GameElement*);
+void down(GameElement*);
 
 void __interrupt(high_priority) highIsr(){
-    byte portbVals = PORTB;     // Read portb cause apparently we have to do that to clear the flag
+    byte portbVals = PORTB;     // Read portb asap because bouncing can fuck the input up 
     
     if (INTCONbits.TMR0IF) {    // Start accepting interrupts again once TMR0 triggers
         acceptInterrupts = true;
@@ -36,32 +49,41 @@ void __interrupt(high_priority) highIsr(){
     if (INTCONbits.INT0IF/* && PORTBbits.RB0*/){         // INT0
         if (acceptInterrupts) {
             a++;
+            
+            //TEAM_A_P1.x++;
+            
             SetupDebouncingTimer();
         }
     }
     
-    if (INTCON3bits.INT1IF/* && PORTBbits.RB1*/) {  // INT1
+    else if (INTCON3bits.INT1IF/* && PORTBbits.RB1*/) {  // INT1
         if (acceptInterrupts) {
             b++;
+            
+            objs[selectedPlayer].state = OS_DEFAULT;
+            selectedPlayer++;
+            selectedPlayer = selectedPlayer % 4;
+            objs[selectedPlayer].state = OS_SELECTED;
+            
             SetupDebouncingTimer();    
         }
     } 
     
-    if (INTCONbits.RBIF) {     // RB<7:4> change
+    else if (INTCONbits.RBIF) {     // RB<7:4> change
         if (acceptInterrupts) {
             portbVals = portbVals >> 4;
             switch (portbVals) {
                 case 0b1110:    // A RB4
-                    up();
+                    up(&objs[selectedPlayer]);
                     break;
                 case 0b1101:    // B RB5
-                    right();
+                    right(&objs[selectedPlayer]);
                     break;
                 case 0b1011:    // C RB6
-                    down();
+                    down(&objs[selectedPlayer]);
                     break;
                 case 0b0111:    // D RB7
-                    left();
+                    left(&objs[selectedPlayer]);
                     break;
                 default:
                     portbVals = 0;
@@ -78,6 +100,33 @@ void __interrupt(high_priority) highIsr(){
     
 }
 
+void __interrupt(low_priority) lowIsr(){
+    PIR1bits.TMR2IF = 0;
+    byte temp_d = PORTD;
+    byte temp_a = PORTA;
+    
+    switch (currentSegment) {
+        case 0:
+            LATA = 0b1000;
+            LATD = segValues[scoreA];
+            break;
+        case 1:
+            LATA = 0b10000;
+            LATD = segValues[10];
+            break;
+        case 2:
+            LATA = 0b100000;
+            LATD = segValues[scoreB];
+            break;
+        default:
+            break;
+    }
+    currentSegment = (currentSegment + 1) % 3;
+    
+    LATA = temp_a;
+    LATD = temp_d;
+    
+}
 
 //   A    B    C    D
 //  RB4  RB5  RB6  RB7
@@ -85,49 +134,176 @@ void __interrupt(high_priority) highIsr(){
 
 void main(void)
 {
-    
-    game_state = GS_INACTIVE;
-    
     InitInterrupts();
-            
     InitLCD();
-    lcd_x = 1;
-    lcd_y = 1;
+    InitGameObjects();
+    
     AddCustomCharacters();  // Load the player characters to the LCD display
     
     
-    while(1)
-    {
-        char arr[5];
+    
+    while(1) {
+        //PrintPORTBandIntCounts();
         
-        lcd_x = 1;  // Print the current state of PORTB
-        lcd_y = 1;
-        LCDGoto(lcd_x, lcd_y);
-        for (int i = 7; i >= 0; i--) {
-            LCDDat(((PORTB >> i) & 1) ? '1' : '0');
-        }
+        UpdateAndPrintDisplay();
         
-        lcd_y = 2;  // Print the number of times INT0 was triggered (properly after debouncing)
-        lcd_x = 1;
-        LCDGoto(lcd_x, lcd_y);
-        sprintf(arr, "%d", a);
-        LCDStr(arr);
-        
-        lcd_y = 3;  // INT1
-        lcd_x = 1;
-        LCDGoto(lcd_x, lcd_y);
-        sprintf(arr, "%d", b);
-        LCDStr(arr);
-        
-        lcd_y = 4;  // RB
-        lcd_x = 1;
-        LCDGoto(lcd_x, lcd_y);
-        sprintf(arr, "%d", c);
-        LCDStr(arr);
     }
 }
 
+void UpdateAndPrintDisplay() {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+            display[i][j] = NULL;
+        }
+    }
+    for (int i = 0; i < OBJ_COUNT; i++) {
+        display[objs[i].y-1][objs[i].x-1] = &objs[i];
+    }
+    
+    
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+            
+            lcd_y = (byte)i+1;
+            lcd_x = (byte)j+1;
+            LCDGoto(lcd_x, lcd_y);
+            
+            if (display[i][j] == NULL || display[i][j]->active == false) {
+                LCDDat(' ');
+                continue;
+            }
+            
+            
+            
+            switch(display[i][j]->type) {
+                case OT_FRISBEE:
+                    LCDDat(FRISBEE_OFFSET);
+                    break;
+                    
+                case OT_TARGET:
+                    LCDDat(TARGET_OFFSET);
+                    break;
+                    
+                case OT_PLAYERA:
+                    switch (display[i][j]->state) {
+                        case OS_DEFAULT:
+                            LCDDat(PLA_OFFSET);
+                            break;
+                        case OS_SELECTED:
+                            LCDDat(PLA_SEL_OFFSET);
+                            break;
+                        case OS_SEL_W_FRISBEE:
+                            LCDDat(PLA_FRI_OFFSET);
+                            break;
+                        default:
+                            // shouldn't get here
+                            break;
+                    }
+                    break;
+                    
+                case OT_PLAYERB:
+                    switch (display[i][j]->state) {
+                        case OS_DEFAULT:
+                            LCDDat(PLB_OFFSET);
+                            break;
+                        case OS_SELECTED:
+                            LCDDat(PLB_SEL_OFFSET);
+                            break;
+                        case OS_SEL_W_FRISBEE:
+                            LCDDat(PLB_FRI_OFFSET);
+                            break;
+                        default:
+                            // shouldn't get here
+                            break;
+                    }
+                    break;
+                    
+                default:
+                    // shouldn't get here
+                    break;
+                    
+            }
+        }
+    }
+}
 
+void InitGameObjects() {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+            display[i][j] = NULL;
+        }
+    }
+    
+    selectedPlayer = 0;
+    
+    TEAM_A_P1.x = 3;
+    TEAM_A_P1.y = 2;
+    TEAM_A_P1.type = OT_PLAYERA;
+    TEAM_A_P1.state = OS_SELECTED;
+    TEAM_A_P1.active = true;
+    
+    TEAM_A_P2.x = 3;
+    TEAM_A_P2.y = 3;
+    TEAM_A_P2.type = OT_PLAYERA;
+    TEAM_A_P2.state = OS_DEFAULT;
+    TEAM_A_P2.active = true;
+    
+    TEAM_B_P1.x = 14;
+    TEAM_B_P1.y = 2;
+    TEAM_B_P1.type = OT_PLAYERB;
+    TEAM_B_P1.state = OS_DEFAULT;
+    TEAM_B_P1.active = true;
+    
+    TEAM_B_P2.x = 14;
+    TEAM_B_P2.y = 3;
+    TEAM_B_P2.type = OT_PLAYERB;
+    TEAM_B_P2.state = OS_DEFAULT;
+    TEAM_B_P2.active = true;
+    
+    FRISBEE.x = 9;
+    FRISBEE.y = 2;
+    FRISBEE.type = OT_FRISBEE;
+    FRISBEE.state = OS_FELL;
+    FRISBEE.active = true;
+    
+    TARGET.x = 1;
+    TARGET.y = 1;
+    TARGET.type = OT_TARGET;
+    TARGET.active = false;
+    
+    for (int i = 0; i < OBJ_COUNT; i++) {
+        display[objs[i].y][objs[i].x] = &objs[i];
+    }
+}
+
+void PrintPORTBandIntCounts() {
+    char arr[5];
+        
+    lcd_x = 1;  // Print the current state of PORTB
+    lcd_y = 1;
+    LCDGoto(lcd_x, lcd_y);
+    for (int i = 7; i >= 0; i--) {
+        LCDDat(((PORTB >> i) & 1) ? '1' : '0');
+    }
+
+    lcd_y = 2;  // Print the number of times INT0 was triggered (properly after debouncing)
+    lcd_x = 1;
+    LCDGoto(lcd_x, lcd_y);
+    sprintf(arr, "%d", a);
+    LCDStr(arr);
+
+    lcd_y = 3;  // INT1
+    lcd_x = 1;
+    LCDGoto(lcd_x, lcd_y);
+    sprintf(arr, "%d", b);
+    LCDStr(arr);
+
+    lcd_y = 4;  // RB
+    lcd_x = 1;
+    LCDGoto(lcd_x, lcd_y);
+    sprintf(arr, "%d", c);
+    LCDStr(arr);
+}
 
 void InitInterrupts() {
     a = b = c = 0;          // a, b, and c are the number of times INT0, INT1, and RB are triggered (for debugging)
@@ -144,7 +320,7 @@ void InitInterrupts() {
     T0CON = 0b00010011;     // TMR0 setup for button debouncing (will start as inactive)
     acceptInterrupts = false;
     TMR0L = 0;
-    TMR0H = 0xFB;
+    TMR0H = 0x80;
     T0CONbits.TMR0ON = 1;
     
     INTCONbits.PEIE = 1;    // Enable peripheral interrupts
@@ -161,15 +337,26 @@ void InitInterrupts() {
     INTCONbits.INT0IF = 0;
     INTCON3bits.INT1IF = 0;
     
-    //INTCONbits.INT0E = 0;
     INTCONbits.RBIE = 0;    // Weird roundabout way to prevent RB interrupt from triggering at the start
     INTCONbits.GIE = 1;     // Enable global interrupts
     PORTB = PORTB;
     INTCONbits.RBIF = 0;
-    //INTCONbits.INT0IF = 0;
     INTCONbits.RBIE = 1;
-    //INTCONbits.INT0E = 1;
+    
+    
+    INTCON2bits.RBIP = 1;   // Set priorities for interrupts
+    INTCON2bits.TMR0IP = 1;
+    INTCON3bits.INT1IP = 1;
+    IPR1bits.TMR1IP = 1;
+    
+    PIE1bits.TMR2IE = 1;    // Setup tmr2 for the 7 segment display
+    PIR1bits.TMR2IF = 0;
+    IPR1bits.TMR2IP = 0;
+    RCONbits.IPEN = 1;
+    T2CON = 0b00001111;
 }
+
+
 
 
 void SetupDebouncingTimer() {
@@ -179,19 +366,43 @@ void SetupDebouncingTimer() {
     T0CONbits.TMR0ON = 1;
 }
 
-void left() {
-    a++;
+void left(GameElement* pl) {
+    if (pl->x == 1) return;
+    if (display[pl->y-1][pl->x-2]->type == OT_PLAYERA) return;
+    if (display[pl->y-1][pl->x-2]->type == OT_PLAYERB) return;
+    if (display[pl->y-1][pl->x-2]->type == OT_FRISBEE) {
+        // do frisbee logic
+    }
+    pl->x--;
     return;
 }
-void right() {
-    a++;
+void right(GameElement* pl) {
+    if (pl->x == 16) return;
+    if (display[pl->y-1][pl->x]->type == OT_PLAYERA) return;
+    if (display[pl->y-1][pl->x]->type == OT_PLAYERB) return;
+    if (display[pl->y-1][pl->x]->type == OT_FRISBEE) {
+        // do frisbee logic
+    }
+    pl->x++;
     return;
 }
-void up() {
-    b++;
+void up(GameElement* pl) {
+    if (pl->y == 1) return;
+    if (display[pl->y-2][pl->x-1]->type == OT_PLAYERA) return;
+    if (display[pl->y-2][pl->x-1]->type == OT_PLAYERB) return;
+    if (display[pl->y-2][pl->x-1]->type == OT_FRISBEE) {
+        // do frisbee logic
+    }
+    pl->y--;
     return;
 }
-void down() {
-    b++;
+void down(GameElement* pl) {
+    if (pl->y == 4) return;
+    if (display[pl->y][pl->x-1]->type == OT_PLAYERA) return;
+    if (display[pl->y][pl->x-1]->type == OT_PLAYERB) return;
+    if (display[pl->y][pl->x-1]->type == OT_FRISBEE) {
+        // do frisbee logic
+    }
+    pl->y++;
     return;
 }

@@ -4403,7 +4403,6 @@ typedef enum GameStates {
 typedef enum ObjectStates {
     OS_DEFAULT,
     OS_SELECTED,
-    OS_W_FRISBEE,
     OS_SEL_W_FRISBEE,
 
     OS_FLYING,
@@ -4564,7 +4563,7 @@ unsigned short compute_frisbee_target_and_route(unsigned short current_fisbee_x_
 
         break;
     }
-# 201 "./the3.h"
+# 200 "./the3.h"
     unsigned short x = current_fisbee_x_position;
     if (target_x < current_fisbee_x_position) {
         for (unsigned short i = 0; i < x_step_size; i++) {
@@ -4627,7 +4626,7 @@ unsigned short random_generator(unsigned short modulo) {
 
 
 typedef unsigned char byte;
-# 53 "./lcd.h"
+# 55 "./lcd.h"
 byte lcd_x = 1, lcd_y = 1;
 
 void InitLCD(void);
@@ -4971,23 +4970,26 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 9 "main.c" 2
-
-
-
+# 20 "main.c"
 _Bool acceptInterrupts;
-int a, b, c;
+int a = 0, b = 0, c = 0, selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0;
 
-GameStates game_state;
-GameElement* objs[6];
+GameStates game_state = GS_INACTIVE;
+GameElement objs[6];
 GameElement* display[4][16];
+byte segValues[11] = {0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111, 0b01000000};
 
 
 void SetupDebouncingTimer();
+void PrintPORTBandIntCounts();
+void UpdateAndPrintDisplay();
 void InitInterrupts();
-void left();
-void right();
-void up();
-void down();
+void InitGameObjects();
+
+void left(GameElement*);
+void right(GameElement*);
+void up(GameElement*);
+void down(GameElement*);
 
 void __attribute__((picinterrupt(("high_priority")))) highIsr(){
     byte portbVals = PORTB;
@@ -5001,32 +5003,41 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
     if (INTCONbits.INT0IF ){
         if (acceptInterrupts) {
             a++;
+
+
+
             SetupDebouncingTimer();
         }
     }
 
-    if (INTCON3bits.INT1IF ) {
+    else if (INTCON3bits.INT1IF ) {
         if (acceptInterrupts) {
             b++;
+
+            objs[selectedPlayer].state = OS_DEFAULT;
+            selectedPlayer++;
+            selectedPlayer = selectedPlayer % 4;
+            objs[selectedPlayer].state = OS_SELECTED;
+
             SetupDebouncingTimer();
         }
     }
 
-    if (INTCONbits.RBIF) {
+    else if (INTCONbits.RBIF) {
         if (acceptInterrupts) {
             portbVals = portbVals >> 4;
             switch (portbVals) {
                 case 0b1110:
-                    up();
+                    up(&objs[selectedPlayer]);
                     break;
                 case 0b1101:
-                    right();
+                    right(&objs[selectedPlayer]);
                     break;
                 case 0b1011:
-                    down();
+                    down(&objs[selectedPlayer]);
                     break;
                 case 0b0111:
-                    left();
+                    left(&objs[selectedPlayer]);
                     break;
                 default:
                     portbVals = 0;
@@ -5043,6 +5054,33 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 
 }
 
+void __attribute__((picinterrupt(("low_priority")))) lowIsr(){
+    PIR1bits.TMR2IF = 0;
+    byte temp_d = PORTD;
+    byte temp_a = PORTA;
+
+    switch (currentSegment) {
+        case 0:
+            LATA = 0b1000;
+            LATD = segValues[scoreA];
+            break;
+        case 1:
+            LATA = 0b10000;
+            LATD = segValues[10];
+            break;
+        case 2:
+            LATA = 0b100000;
+            LATD = segValues[scoreB];
+            break;
+        default:
+            break;
+    }
+    currentSegment = (currentSegment + 1) % 3;
+
+    LATA = temp_a;
+    LATD = temp_d;
+
+}
 
 
 
@@ -5050,49 +5088,176 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 
 void main(void)
 {
-
-    game_state = GS_INACTIVE;
-
     InitInterrupts();
-
     InitLCD();
-    lcd_x = 1;
-    lcd_y = 1;
+    InitGameObjects();
+
     AddCustomCharacters();
 
 
-    while(1)
-    {
-        char arr[5];
 
-        lcd_x = 1;
-        lcd_y = 1;
-        LCDGoto(lcd_x, lcd_y);
-        for (int i = 7; i >= 0; i--) {
-            LCDDat(((PORTB >> i) & 1) ? '1' : '0');
-        }
+    while(1) {
 
-        lcd_y = 2;
-        lcd_x = 1;
-        LCDGoto(lcd_x, lcd_y);
-        sprintf(arr, "%d", a);
-        LCDStr(arr);
 
-        lcd_y = 3;
-        lcd_x = 1;
-        LCDGoto(lcd_x, lcd_y);
-        sprintf(arr, "%d", b);
-        LCDStr(arr);
+        UpdateAndPrintDisplay();
 
-        lcd_y = 4;
-        lcd_x = 1;
-        LCDGoto(lcd_x, lcd_y);
-        sprintf(arr, "%d", c);
-        LCDStr(arr);
     }
 }
 
+void UpdateAndPrintDisplay() {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+            display[i][j] = ((void*)0);
+        }
+    }
+    for (int i = 0; i < 6; i++) {
+        display[objs[i].y-1][objs[i].x-1] = &objs[i];
+    }
 
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+
+            lcd_y = (byte)i+1;
+            lcd_x = (byte)j+1;
+            LCDGoto(lcd_x, lcd_y);
+
+            if (display[i][j] == ((void*)0) || display[i][j]->active == 0) {
+                LCDDat(' ');
+                continue;
+            }
+
+
+
+            switch(display[i][j]->type) {
+                case OT_FRISBEE:
+                    LCDDat(6);
+                    break;
+
+                case OT_TARGET:
+                    LCDDat(7);
+                    break;
+
+                case OT_PLAYERA:
+                    switch (display[i][j]->state) {
+                        case OS_DEFAULT:
+                            LCDDat(0);
+                            break;
+                        case OS_SELECTED:
+                            LCDDat(2);
+                            break;
+                        case OS_SEL_W_FRISBEE:
+                            LCDDat(4);
+                            break;
+                        default:
+
+                            break;
+                    }
+                    break;
+
+                case OT_PLAYERB:
+                    switch (display[i][j]->state) {
+                        case OS_DEFAULT:
+                            LCDDat(1);
+                            break;
+                        case OS_SELECTED:
+                            LCDDat(3);
+                            break;
+                        case OS_SEL_W_FRISBEE:
+                            LCDDat(5);
+                            break;
+                        default:
+
+                            break;
+                    }
+                    break;
+
+                default:
+
+                    break;
+
+            }
+        }
+    }
+}
+
+void InitGameObjects() {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+            display[i][j] = ((void*)0);
+        }
+    }
+
+    selectedPlayer = 0;
+
+    objs[0].x = 3;
+    objs[0].y = 2;
+    objs[0].type = OT_PLAYERA;
+    objs[0].state = OS_SELECTED;
+    objs[0].active = 1;
+
+    objs[1].x = 3;
+    objs[1].y = 3;
+    objs[1].type = OT_PLAYERA;
+    objs[1].state = OS_DEFAULT;
+    objs[1].active = 1;
+
+    objs[2].x = 14;
+    objs[2].y = 2;
+    objs[2].type = OT_PLAYERB;
+    objs[2].state = OS_DEFAULT;
+    objs[2].active = 1;
+
+    objs[3].x = 14;
+    objs[3].y = 3;
+    objs[3].type = OT_PLAYERB;
+    objs[3].state = OS_DEFAULT;
+    objs[3].active = 1;
+
+    objs[5].x = 9;
+    objs[5].y = 2;
+    objs[5].type = OT_FRISBEE;
+    objs[5].state = OS_FELL;
+    objs[5].active = 1;
+
+    objs[4].x = 1;
+    objs[4].y = 1;
+    objs[4].type = OT_TARGET;
+    objs[4].active = 0;
+
+    for (int i = 0; i < 6; i++) {
+        display[objs[i].y][objs[i].x] = &objs[i];
+    }
+}
+
+void PrintPORTBandIntCounts() {
+    char arr[5];
+
+    lcd_x = 1;
+    lcd_y = 1;
+    LCDGoto(lcd_x, lcd_y);
+    for (int i = 7; i >= 0; i--) {
+        LCDDat(((PORTB >> i) & 1) ? '1' : '0');
+    }
+
+    lcd_y = 2;
+    lcd_x = 1;
+    LCDGoto(lcd_x, lcd_y);
+    sprintf(arr, "%d", a);
+    LCDStr(arr);
+
+    lcd_y = 3;
+    lcd_x = 1;
+    LCDGoto(lcd_x, lcd_y);
+    sprintf(arr, "%d", b);
+    LCDStr(arr);
+
+    lcd_y = 4;
+    lcd_x = 1;
+    LCDGoto(lcd_x, lcd_y);
+    sprintf(arr, "%d", c);
+    LCDStr(arr);
+}
 
 void InitInterrupts() {
     a = b = c = 0;
@@ -5109,7 +5274,7 @@ void InitInterrupts() {
     T0CON = 0b00010011;
     acceptInterrupts = 0;
     TMR0L = 0;
-    TMR0H = 0xFB;
+    TMR0H = 0x80;
     T0CONbits.TMR0ON = 1;
 
     INTCONbits.PEIE = 1;
@@ -5126,15 +5291,26 @@ void InitInterrupts() {
     INTCONbits.INT0IF = 0;
     INTCON3bits.INT1IF = 0;
 
-
     INTCONbits.RBIE = 0;
     INTCONbits.GIE = 1;
     PORTB = PORTB;
     INTCONbits.RBIF = 0;
-
     INTCONbits.RBIE = 1;
 
+
+    INTCON2bits.RBIP = 1;
+    INTCON2bits.TMR0IP = 1;
+    INTCON3bits.INT1IP = 1;
+    IPR1bits.TMR1IP = 1;
+
+    PIE1bits.TMR2IE = 1;
+    PIR1bits.TMR2IF = 0;
+    IPR1bits.TMR2IP = 0;
+    RCONbits.IPEN = 1;
+    T2CON = 0b00001111;
 }
+
+
 
 
 void SetupDebouncingTimer() {
@@ -5144,19 +5320,43 @@ void SetupDebouncingTimer() {
     T0CONbits.TMR0ON = 1;
 }
 
-void left() {
-    a++;
+void left(GameElement* pl) {
+    if (pl->x == 1) return;
+    if (display[pl->y-1][pl->x-2]->type == OT_PLAYERA) return;
+    if (display[pl->y-1][pl->x-2]->type == OT_PLAYERB) return;
+    if (display[pl->y-1][pl->x-2]->type == OT_FRISBEE) {
+
+    }
+    pl->x--;
     return;
 }
-void right() {
-    a++;
+void right(GameElement* pl) {
+    if (pl->x == 16) return;
+    if (display[pl->y-1][pl->x]->type == OT_PLAYERA) return;
+    if (display[pl->y-1][pl->x]->type == OT_PLAYERB) return;
+    if (display[pl->y-1][pl->x]->type == OT_FRISBEE) {
+
+    }
+    pl->x++;
     return;
 }
-void up() {
-    b++;
+void up(GameElement* pl) {
+    if (pl->y == 1) return;
+    if (display[pl->y-2][pl->x-1]->type == OT_PLAYERA) return;
+    if (display[pl->y-2][pl->x-1]->type == OT_PLAYERB) return;
+    if (display[pl->y-2][pl->x-1]->type == OT_FRISBEE) {
+
+    }
+    pl->y--;
     return;
 }
-void down() {
-    b++;
+void down(GameElement* pl) {
+    if (pl->y == 4) return;
+    if (display[pl->y][pl->x-1]->type == OT_PLAYERA) return;
+    if (display[pl->y][pl->x-1]->type == OT_PLAYERB) return;
+    if (display[pl->y][pl->x-1]->type == OT_FRISBEE) {
+
+    }
+    pl->y++;
     return;
 }

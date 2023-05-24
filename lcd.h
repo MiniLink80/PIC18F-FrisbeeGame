@@ -40,14 +40,16 @@ typedef unsigned char byte;     // define byte here for readability and sanity.
 #define LCD_CONTENT_MOVE_LEFT 0x18
 
 
-#define PLA 0
-#define PLB 1
-#define PLA_SEL 2
-#define PLB_SEL 3
-#define PLA_FRI 4
-#define PLB_FRI 5
-#define FRISBEE 6
-#define TARGET 7
+#define PLA_OFFSET 0
+#define PLB_OFFSET 1
+#define PLA_SEL_OFFSET 2
+#define PLB_SEL_OFFSET 3
+#define PLA_FRI_OFFSET 4
+#define PLB_FRI_OFFSET 5
+#define FRISBEE_OFFSET 6
+#define TARGET_OFFSET 7
+
+
 
   
 byte lcd_x = 1, lcd_y = 1;  // indices start from 1
@@ -157,14 +159,14 @@ void LCDAddSpecialCharacter(byte character_index, byte * data) {
 
 // This adds all of the custom characters stored in the3.h to the LCD display's memory
 void AddCustomCharacters() {
-    LCDAddSpecialCharacter(PLA, teamA_player);
-    LCDAddSpecialCharacter(PLB, teamB_player);
-    LCDAddSpecialCharacter(PLA_SEL, selected_teamA_player);
-    LCDAddSpecialCharacter(PLB_SEL, selected_teamB_player);
-    LCDAddSpecialCharacter(PLA_FRI, selected_teamA_player_with_frisbee);
-    LCDAddSpecialCharacter(PLB_FRI, selected_teamB_player_with_frisbee);
-    LCDAddSpecialCharacter(FRISBEE, frisbeeChar);
-    LCDAddSpecialCharacter(TARGET, frisbee_target);
+    LCDAddSpecialCharacter(PLA_OFFSET, teamA_player);
+    LCDAddSpecialCharacter(PLB_OFFSET, teamB_player);
+    LCDAddSpecialCharacter(PLA_SEL_OFFSET, selected_teamA_player);
+    LCDAddSpecialCharacter(PLB_SEL_OFFSET, selected_teamB_player);
+    LCDAddSpecialCharacter(PLA_FRI_OFFSET, selected_teamA_player_with_frisbee);
+    LCDAddSpecialCharacter(PLB_FRI_OFFSET, selected_teamB_player_with_frisbee);
+    LCDAddSpecialCharacter(FRISBEE_OFFSET, frisbeeChar);
+    LCDAddSpecialCharacter(TARGET_OFFSET, frisbee_target);
 }
 
 

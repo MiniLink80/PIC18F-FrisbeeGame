@@ -28,7 +28,6 @@ typedef enum GameStates {
 typedef enum ObjectStates {
     OS_DEFAULT,
     OS_SELECTED,
-    OS_W_FRISBEE,
     OS_SEL_W_FRISBEE,  // For players
             
     OS_FLYING,
