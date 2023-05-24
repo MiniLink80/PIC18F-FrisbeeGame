@@ -1,0 +1,13 @@
+#
+# Generated - do not edit!
+#
+# NOCDDL
+#
+CND_BASEDIR=`pwd`
+# 18F4620 configuration
+CND_ARTIFACT_DIR_18F4620=dist/18F4620/production
+CND_ARTIFACT_NAME_18F4620=THE3.X.production.hex
+CND_ARTIFACT_PATH_18F4620=dist/18F4620/production/THE3.X.production.hex
+CND_PACKAGE_DIR_18F4620=${CND_DISTDIR}/18F4620/package
+CND_PACKAGE_NAME_18F4620=the3.x.tar
+CND_PACKAGE_PATH_18F4620=${CND_DISTDIR}/18F4620/package/the3.x.tar
