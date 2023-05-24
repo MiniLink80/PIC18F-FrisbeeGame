@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"118 ./the3.h
-[; ;./the3.h: 118: unsigned short random_generator(unsigned short modulo);
+"149 ./the3.h
+[; ;./the3.h: 149: unsigned short random_generator(unsigned short modulo);
 [v _random_generator `(us ~T0 @X0 0 ef1`us ]
 "3535 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 3535:     struct {
@@ -107,29 +107,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2046
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2046: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"5940
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5940: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
-[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"5947
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5947: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
-[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-"5862
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5862:     struct {
-[s S250 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S250 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
-"5870
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5870:     struct {
-[s S251 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S251 . T0PS0 T0PS1 T0PS2 . T016BIT ]
-"5861
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5861: typedef union {
-[u S249 `S250 1 `S251 1 ]
-[n S249 . . . ]
-"5878
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5878: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
-[v _T0CONbits `VS249 ~T0 @X0 0 e@4053 ]
+"15 main.c
+[; ;main.c: 15: GameStates game_state;
+[c E2433 0 1 .. ]
+[n E2433 GameStates GS_ACTIVE GS_INACTIVE  ]
+"16
+[; ;main.c: 16: GameElement* objs[6];
+[c E2445 0 1 2 3 .. ]
+[n E2445 ObjectTypes OT_PLAYERA OT_PLAYERB OT_FRISBEE OT_TARGET  ]
+[c E2437 0 1 2 3 4 5 .. ]
+[n E2437 ObjectStates OS_DEFAULT OS_SELECTED OS_W_FRISBEE OS_SEL_W_FRISBEE OS_FLYING OS_FELL  ]
+"45 ./the3.h
+[; ;./the3.h: 45: typedef struct GameElement {
+[s S270 `uc 1 `uc 1 `a 1 `E2445 1 `E2437 1 ]
+[n S270 GameElement x y active type state ]
 [t ~ __interrupt . k ]
 [t T39 __interrupt high_priority ]
+"189 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 189: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "6380
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 6380:     struct {
 [s S263 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -149,10 +145,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6406
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 6406: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS262 ~T0 @X0 0 e@4082 ]
-"189
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 189: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
-"6218
+"5862
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5862:     struct {
+[s S250 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S250 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"5870
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5870:     struct {
+[s S251 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S251 . T0PS0 T0PS1 T0PS2 . T016BIT ]
+"5861
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5861: typedef union {
+[u S249 `S250 1 `S251 1 ]
+[n S249 . . . ]
+"5878
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5878: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
+[v _T0CONbits `VS249 ~T0 @X0 0 e@4053 ]
+"20 main.c
+[; ;main.c: 20: void SetupDebouncingTimer();
+[v _SetupDebouncingTimer `(v ~T0 @X0 0 e? ]
+"6218 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 6218:     struct {
 [s S256 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S256 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
@@ -167,21 +178,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6239
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 6239: extern volatile INTCON3bits_t INTCON3bits __attribute__((address(0xFF0)));
 [v _INTCON3bits `VS255 ~T0 @X0 0 e@4080 ]
-"124 main.c
-[; ;main.c: 124: GameStates game_state;
-[c E2866 0 1 .. ]
-[n E2866 GameStates GS_ACTIVE GS_INACTIVE  ]
-"125
-[; ;main.c: 125: GameElement objs[6];
-[c E2878 0 1 2 3 .. ]
-[n E2878 ObjectTypes OT_PLAYERA OT_PLAYERB OT_FRISBEE OT_TARGET  ]
-[c E2870 0 1 2 3 4 5 .. ]
-[n E2870 ObjectStates OS_DEFAULT OS_SELECTED OS_W_FRISBEE OS_SEL_W_FRISBEE OS_FLYING OS_FELL  ]
-"116
-[; ;main.c: 116: typedef struct GameElement {
-[s S351 `uc 1 `uc 1 `a 1 `E2878 1 `E2870 1 ]
-[n S351 GameElement x y active type state ]
+"24 main.c
+[; ;main.c: 24: void up();
+[v _up `(v ~T0 @X0 0 e? ]
+"23
+[; ;main.c: 23: void right();
+[v _right `(v ~T0 @X0 0 e? ]
+"25
+[; ;main.c: 25: void down();
+[v _down `(v ~T0 @X0 0 e? ]
+"22
+[; ;main.c: 22: void left();
+[v _left `(v ~T0 @X0 0 e? ]
 [p mainexit ]
+"21
+[; ;main.c: 21: void InitInterrupts();
+[v _InitInterrupts `(v ~T0 @X0 0 e? ]
+"113 /opt/microchip/xc8/v2.30/pic/include/c99/stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "4444 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 4444: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
@@ -216,8 +230,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5856
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5856: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
 [v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
-"113 /opt/microchip/xc8/v2.30/pic/include/c99/stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"5940
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5940: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"5947
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5947: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
 "54 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -629,8 +647,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"22 ./the3.h
-[; ;./the3.h: 22: byte teamA_player[] = {
+"53 ./the3.h
+[; ;./the3.h: 53: byte teamA_player[] = {
 [v _teamA_player `uc ~T0 @X0 -> 8 `i e ]
 [i _teamA_player
 :U ..
@@ -644,8 +662,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 10 `i `uc
 ..
 ]
-"33
-[; ;./the3.h: 33: byte teamB_player[] = {
+"64
+[; ;./the3.h: 64: byte teamB_player[] = {
 [v _teamB_player `uc ~T0 @X0 -> 8 `i e ]
 [i _teamB_player
 :U ..
@@ -659,8 +677,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 10 `i `uc
 ..
 ]
-"44
-[; ;./the3.h: 44: byte selected_teamA_player[] = {
+"75
+[; ;./the3.h: 75: byte selected_teamA_player[] = {
 [v _selected_teamA_player `uc ~T0 @X0 -> 8 `i e ]
 [i _selected_teamA_player
 :U ..
@@ -674,8 +692,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 31 `i `uc
 ..
 ]
-"55
-[; ;./the3.h: 55: byte selected_teamB_player[] = {
+"86
+[; ;./the3.h: 86: byte selected_teamB_player[] = {
 [v _selected_teamB_player `uc ~T0 @X0 -> 8 `i e ]
 [i _selected_teamB_player
 :U ..
@@ -689,8 +707,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 31 `i `uc
 ..
 ]
-"67
-[; ;./the3.h: 67: byte selected_teamA_player_with_frisbee[] = {
+"98
+[; ;./the3.h: 98: byte selected_teamA_player_with_frisbee[] = {
 [v _selected_teamA_player_with_frisbee `uc ~T0 @X0 -> 8 `i e ]
 [i _selected_teamA_player_with_frisbee
 :U ..
@@ -704,8 +722,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 31 `i `uc
 ..
 ]
-"78
-[; ;./the3.h: 78: byte selected_teamB_player_with_frisbee[] = {
+"109
+[; ;./the3.h: 109: byte selected_teamB_player_with_frisbee[] = {
 [v _selected_teamB_player_with_frisbee `uc ~T0 @X0 -> 8 `i e ]
 [i _selected_teamB_player_with_frisbee
 :U ..
@@ -719,8 +737,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 31 `i `uc
 ..
 ]
-"89
-[; ;./the3.h: 89: byte frisbeeChar[] = {
+"120
+[; ;./the3.h: 120: byte frisbeeChar[] = {
 [v _frisbeeChar `uc ~T0 @X0 -> 8 `i e ]
 [i _frisbeeChar
 :U ..
@@ -734,8 +752,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"100
-[; ;./the3.h: 100: byte frisbee_target[] = {
+"131
+[; ;./the3.h: 131: byte frisbee_target[] = {
 [v _frisbee_target `uc ~T0 @X0 -> 8 `i e ]
 [i _frisbee_target
 :U ..
@@ -749,320 +767,320 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-[v F2442 `us ~T0 @X0 -> 2 `i t ]
-"114
-[; ;./the3.h: 114: unsigned short frisbee_steps[15][2];
-[v _frisbee_steps `F2442 ~T0 @X0 -> 15 `i e ]
-"120
-[; ;./the3.h: 120: unsigned short compute_frisbee_target_and_route(unsigned short current_fisbee_x_position, unsigned short current_fisbee_y_position) {
+[v F2467 `us ~T0 @X0 -> 2 `i t ]
+"145
+[; ;./the3.h: 145: unsigned short frisbee_steps[15][2];
+[v _frisbee_steps `F2467 ~T0 @X0 -> 15 `i e ]
+"151
+[; ;./the3.h: 151: unsigned short compute_frisbee_target_and_route(unsigned short current_fisbee_x_position, unsigned short current_fisbee_y_position) {
 [v _compute_frisbee_target_and_route `(us ~T0 @X0 1 ef2`us`us ]
 {
 [e :U _compute_frisbee_target_and_route ]
 [v _current_fisbee_x_position `us ~T0 @X0 1 r1 ]
 [v _current_fisbee_y_position `us ~T0 @X0 1 r2 ]
 [f ]
-"124
-[; ;./the3.h: 124:     unsigned short x_step_size, y_step_size;
+"155
+[; ;./the3.h: 155:     unsigned short x_step_size, y_step_size;
 [v _x_step_size `us ~T0 @X0 1 a ]
 [v _y_step_size `us ~T0 @X0 1 a ]
-"125
-[; ;./the3.h: 125:     unsigned short number_of_steps;
+"156
+[; ;./the3.h: 156:     unsigned short number_of_steps;
 [v _number_of_steps `us ~T0 @X0 1 a ]
-"126
-[; ;./the3.h: 126:     unsigned short target_x, target_y;
+"157
+[; ;./the3.h: 157:     unsigned short target_x, target_y;
 [v _target_x `us ~T0 @X0 1 a ]
 [v _target_y `us ~T0 @X0 1 a ]
-"132
-[; ;./the3.h: 132:     while(1) {
-[e :U 272 ]
-{
-"134
-[; ;./the3.h: 134:         target_x = random_generator(16) + 1;
-[e = _target_x -> + -> ( _random_generator (1 -> -> 16 `i `us `ui -> -> 1 `i `ui `us ]
-"135
-[; ;./the3.h: 135:         target_y = random_generator(4) + 1;
-[e = _target_y -> + -> ( _random_generator (1 -> -> 4 `i `us `ui -> -> 1 `i `ui `us ]
-"138
-[; ;./the3.h: 138:         if (target_x < current_fisbee_x_position)
-[e $ ! < -> _target_x `ui -> _current_fisbee_x_position `ui 274  ]
-"139
-[; ;./the3.h: 139:             x_step_size = current_fisbee_x_position - target_x;
-[e = _x_step_size -> - -> _current_fisbee_x_position `ui -> _target_x `ui `us ]
-[e $U 275  ]
-"140
-[; ;./the3.h: 140:         else
-[e :U 274 ]
-"141
-[; ;./the3.h: 141:             x_step_size = target_x - current_fisbee_x_position;
-[e = _x_step_size -> - -> _target_x `ui -> _current_fisbee_x_position `ui `us ]
-[e :U 275 ]
-"144
-[; ;./the3.h: 144:         if (target_y < current_fisbee_y_position)
-[e $ ! < -> _target_y `ui -> _current_fisbee_y_position `ui 276  ]
-"145
-[; ;./the3.h: 145:             y_step_size = current_fisbee_y_position - target_y;
-[e = _y_step_size -> - -> _current_fisbee_y_position `ui -> _target_y `ui `us ]
-[e $U 277  ]
-"146
-[; ;./the3.h: 146:         else
-[e :U 276 ]
-"147
-[; ;./the3.h: 147:             y_step_size = target_y - current_fisbee_y_position;
-[e = _y_step_size -> - -> _target_y `ui -> _current_fisbee_y_position `ui `us ]
-[e :U 277 ]
-"150
-[; ;./the3.h: 150:         if (x_step_size <= 2 && y_step_size <= 2)
-[e $ ! && <= -> _x_step_size `ui -> -> 2 `i `ui <= -> _y_step_size `ui -> -> 2 `i `ui 278  ]
-"151
-[; ;./the3.h: 151:             continue;
-[e $U 271  ]
-[e :U 278 ]
-"154
-[; ;./the3.h: 154:         if (x_step_size > y_step_size)
-[e $ ! > -> _x_step_size `ui -> _y_step_size `ui 279  ]
-"155
-[; ;./the3.h: 155:             number_of_steps = x_step_size;
-[e = _number_of_steps _x_step_size ]
-[e $U 280  ]
-"156
-[; ;./the3.h: 156:         else
-[e :U 279 ]
-"157
-[; ;./the3.h: 157:             number_of_steps = y_step_size;
-[e = _number_of_steps _y_step_size ]
-[e :U 280 ]
-"159
-[; ;./the3.h: 159:         break;
-[e $U 273  ]
-"160
-[; ;./the3.h: 160:     }
-}
-[e :U 271 ]
-[e $U 272  ]
+"163
+[; ;./the3.h: 163:     while(1) {
 [e :U 273 ]
+{
+"165
+[; ;./the3.h: 165:         target_x = random_generator(16) + 1;
+[e = _target_x -> + -> ( _random_generator (1 -> -> 16 `i `us `ui -> -> 1 `i `ui `us ]
+"166
+[; ;./the3.h: 166:         target_y = random_generator(4) + 1;
+[e = _target_y -> + -> ( _random_generator (1 -> -> 4 `i `us `ui -> -> 1 `i `ui `us ]
+"169
+[; ;./the3.h: 169:         if (target_x < current_fisbee_x_position)
+[e $ ! < -> _target_x `ui -> _current_fisbee_x_position `ui 275  ]
 "170
-[; ;./the3.h: 170:     unsigned short x = current_fisbee_x_position;
+[; ;./the3.h: 170:             x_step_size = current_fisbee_x_position - target_x;
+[e = _x_step_size -> - -> _current_fisbee_x_position `ui -> _target_x `ui `us ]
+[e $U 276  ]
+"171
+[; ;./the3.h: 171:         else
+[e :U 275 ]
+"172
+[; ;./the3.h: 172:             x_step_size = target_x - current_fisbee_x_position;
+[e = _x_step_size -> - -> _target_x `ui -> _current_fisbee_x_position `ui `us ]
+[e :U 276 ]
+"175
+[; ;./the3.h: 175:         if (target_y < current_fisbee_y_position)
+[e $ ! < -> _target_y `ui -> _current_fisbee_y_position `ui 277  ]
+"176
+[; ;./the3.h: 176:             y_step_size = current_fisbee_y_position - target_y;
+[e = _y_step_size -> - -> _current_fisbee_y_position `ui -> _target_y `ui `us ]
+[e $U 278  ]
+"177
+[; ;./the3.h: 177:         else
+[e :U 277 ]
+"178
+[; ;./the3.h: 178:             y_step_size = target_y - current_fisbee_y_position;
+[e = _y_step_size -> - -> _target_y `ui -> _current_fisbee_y_position `ui `us ]
+[e :U 278 ]
+"181
+[; ;./the3.h: 181:         if (x_step_size <= 2 && y_step_size <= 2)
+[e $ ! && <= -> _x_step_size `ui -> -> 2 `i `ui <= -> _y_step_size `ui -> -> 2 `i `ui 279  ]
+"182
+[; ;./the3.h: 182:             continue;
+[e $U 272  ]
+[e :U 279 ]
+"185
+[; ;./the3.h: 185:         if (x_step_size > y_step_size)
+[e $ ! > -> _x_step_size `ui -> _y_step_size `ui 280  ]
+"186
+[; ;./the3.h: 186:             number_of_steps = x_step_size;
+[e = _number_of_steps _x_step_size ]
+[e $U 281  ]
+"187
+[; ;./the3.h: 187:         else
+[e :U 280 ]
+"188
+[; ;./the3.h: 188:             number_of_steps = y_step_size;
+[e = _number_of_steps _y_step_size ]
+[e :U 281 ]
+"190
+[; ;./the3.h: 190:         break;
+[e $U 274  ]
+"191
+[; ;./the3.h: 191:     }
+}
+[e :U 272 ]
+[e $U 273  ]
+[e :U 274 ]
+"201
+[; ;./the3.h: 201:     unsigned short x = current_fisbee_x_position;
 [v _x `us ~T0 @X0 1 a ]
 [e = _x _current_fisbee_x_position ]
-"171
-[; ;./the3.h: 171:     if (target_x < current_fisbee_x_position) {
-[e $ ! < -> _target_x `ui -> _current_fisbee_x_position `ui 281  ]
+"202
+[; ;./the3.h: 202:     if (target_x < current_fisbee_x_position) {
+[e $ ! < -> _target_x `ui -> _current_fisbee_x_position `ui 282  ]
 {
-"172
-[; ;./the3.h: 172:         for (unsigned short i = 0; i < x_step_size; i++) {
+"203
+[; ;./the3.h: 203:         for (unsigned short i = 0; i < x_step_size; i++) {
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $U 285  ]
+[e $U 286  ]
+[e :U 283 ]
+{
+"204
+[; ;./the3.h: 204:             x = x - 1;
+[e = _x -> - -> _x `ui -> -> 1 `i `ui `us ]
+"205
+[; ;./the3.h: 205:             frisbee_steps[i][0] = x;
+[e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _x ]
+"206
+[; ;./the3.h: 206:         }
+}
+[e ++ _i -> -> 1 `i `us ]
+[e :U 286 ]
+[e $ < -> _i `ui -> _x_step_size `ui 283  ]
+[e :U 284 ]
+}
+"207
+[; ;./the3.h: 207:     }
+}
+[e $U 287  ]
+"208
+[; ;./the3.h: 208:     else {
 [e :U 282 ]
 {
-"173
-[; ;./the3.h: 173:             x = x - 1;
-[e = _x -> - -> _x `ui -> -> 1 `i `ui `us ]
-"174
-[; ;./the3.h: 174:             frisbee_steps[i][0] = x;
-[e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _x ]
-"175
-[; ;./the3.h: 175:         }
-}
-[e ++ _i -> -> 1 `i `us ]
-[e :U 285 ]
-[e $ < -> _i `ui -> _x_step_size `ui 282  ]
-[e :U 283 ]
-}
-"176
-[; ;./the3.h: 176:     }
-}
-[e $U 286  ]
-"177
-[; ;./the3.h: 177:     else {
-[e :U 281 ]
-{
-"178
-[; ;./the3.h: 178:         for (unsigned short i = 0; i < x_step_size; i++) {
+"209
+[; ;./the3.h: 209:         for (unsigned short i = 0; i < x_step_size; i++) {
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $U 290  ]
-[e :U 287 ]
+[e $U 291  ]
+[e :U 288 ]
 {
-"179
-[; ;./the3.h: 179:             x = x + 1;
+"210
+[; ;./the3.h: 210:             x = x + 1;
 [e = _x -> + -> _x `ui -> -> 1 `i `ui `us ]
-"180
-[; ;./the3.h: 180:             frisbee_steps[i][0] = x;
+"211
+[; ;./the3.h: 211:             frisbee_steps[i][0] = x;
 [e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _x ]
-"181
-[; ;./the3.h: 181:         }
+"212
+[; ;./the3.h: 212:         }
 }
 [e ++ _i -> -> 1 `i `us ]
-[e :U 290 ]
-[e $ < -> _i `ui -> _x_step_size `ui 287  ]
-[e :U 288 ]
+[e :U 291 ]
+[e $ < -> _i `ui -> _x_step_size `ui 288  ]
+[e :U 289 ]
 }
-"182
-[; ;./the3.h: 182:     }
+"213
+[; ;./the3.h: 213:     }
 }
-[e :U 286 ]
-"183
-[; ;./the3.h: 183:     for (unsigned short i = x_step_size; i < number_of_steps; i++)
+[e :U 287 ]
+"214
+[; ;./the3.h: 214:     for (unsigned short i = x_step_size; i < number_of_steps; i++)
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i _x_step_size ]
-[e $U 294  ]
-[e :U 291 ]
-"184
-[; ;./the3.h: 184:         frisbee_steps[i][0] = x;
+[e $U 295  ]
+[e :U 292 ]
+"215
+[; ;./the3.h: 215:         frisbee_steps[i][0] = x;
 [e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _x ]
 [e ++ _i -> -> 1 `i `us ]
-[e :U 294 ]
-[e $ < -> _i `ui -> _number_of_steps `ui 291  ]
-[e :U 292 ]
+[e :U 295 ]
+[e $ < -> _i `ui -> _number_of_steps `ui 292  ]
+[e :U 293 ]
 }
-"187
-[; ;./the3.h: 187:     unsigned short y = current_fisbee_y_position;
+"218
+[; ;./the3.h: 218:     unsigned short y = current_fisbee_y_position;
 [v _y `us ~T0 @X0 1 a ]
 [e = _y _current_fisbee_y_position ]
-"188
-[; ;./the3.h: 188:     if (target_y < current_fisbee_y_position) {
-[e $ ! < -> _target_y `ui -> _current_fisbee_y_position `ui 295  ]
+"219
+[; ;./the3.h: 219:     if (target_y < current_fisbee_y_position) {
+[e $ ! < -> _target_y `ui -> _current_fisbee_y_position `ui 296  ]
 {
-"189
-[; ;./the3.h: 189:         for (unsigned short i = 0; i < y_step_size; i++) {
+"220
+[; ;./the3.h: 220:         for (unsigned short i = 0; i < y_step_size; i++) {
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $U 299  ]
+[e $U 300  ]
+[e :U 297 ]
+{
+"221
+[; ;./the3.h: 221:             y = y - 1;
+[e = _y -> - -> _y `ui -> -> 1 `i `ui `us ]
+"222
+[; ;./the3.h: 222:             frisbee_steps[i][1] = y;
+[e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _y ]
+"223
+[; ;./the3.h: 223:         }
+}
+[e ++ _i -> -> 1 `i `us ]
+[e :U 300 ]
+[e $ < -> _i `ui -> _y_step_size `ui 297  ]
+[e :U 298 ]
+}
+"224
+[; ;./the3.h: 224:     }
+}
+[e $U 301  ]
+"225
+[; ;./the3.h: 225:     else {
 [e :U 296 ]
 {
-"190
-[; ;./the3.h: 190:             y = y - 1;
-[e = _y -> - -> _y `ui -> -> 1 `i `ui `us ]
-"191
-[; ;./the3.h: 191:             frisbee_steps[i][1] = y;
-[e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _y ]
-"192
-[; ;./the3.h: 192:         }
-}
-[e ++ _i -> -> 1 `i `us ]
-[e :U 299 ]
-[e $ < -> _i `ui -> _y_step_size `ui 296  ]
-[e :U 297 ]
-}
-"193
-[; ;./the3.h: 193:     }
-}
-[e $U 300  ]
-"194
-[; ;./the3.h: 194:     else {
-[e :U 295 ]
-{
-"195
-[; ;./the3.h: 195:         for (unsigned short i = 0; i < y_step_size; i++) {
+"226
+[; ;./the3.h: 226:         for (unsigned short i = 0; i < y_step_size; i++) {
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $U 304  ]
-[e :U 301 ]
+[e $U 305  ]
+[e :U 302 ]
 {
-"196
-[; ;./the3.h: 196:             y = y + 1;
+"227
+[; ;./the3.h: 227:             y = y + 1;
 [e = _y -> + -> _y `ui -> -> 1 `i `ui `us ]
-"197
-[; ;./the3.h: 197:             frisbee_steps[i][1] = y;
+"228
+[; ;./the3.h: 228:             frisbee_steps[i][1] = y;
 [e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _y ]
-"198
-[; ;./the3.h: 198:         }
+"229
+[; ;./the3.h: 229:         }
 }
 [e ++ _i -> -> 1 `i `us ]
-[e :U 304 ]
-[e $ < -> _i `ui -> _y_step_size `ui 301  ]
-[e :U 302 ]
+[e :U 305 ]
+[e $ < -> _i `ui -> _y_step_size `ui 302  ]
+[e :U 303 ]
 }
-"199
-[; ;./the3.h: 199:     }
+"230
+[; ;./the3.h: 230:     }
 }
-[e :U 300 ]
-"200
-[; ;./the3.h: 200:     for (unsigned short i = y_step_size; i < number_of_steps; i++)
+[e :U 301 ]
+"231
+[; ;./the3.h: 231:     for (unsigned short i = y_step_size; i < number_of_steps; i++)
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i _y_step_size ]
-[e $U 308  ]
-[e :U 305 ]
-"201
-[; ;./the3.h: 201:         frisbee_steps[i][1] = y;
+[e $U 309  ]
+[e :U 306 ]
+"232
+[; ;./the3.h: 232:         frisbee_steps[i][1] = y;
 [e = *U + &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> _i `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux _y ]
 [e ++ _i -> -> 1 `i `us ]
-[e :U 308 ]
-[e $ < -> _i `ui -> _number_of_steps `ui 305  ]
-[e :U 306 ]
+[e :U 309 ]
+[e $ < -> _i `ui -> _number_of_steps `ui 306  ]
+[e :U 307 ]
 }
-"203
-[; ;./the3.h: 203:     return number_of_steps;
+"234
+[; ;./the3.h: 234:     return number_of_steps;
 [e ) _number_of_steps ]
-[e $UE 270  ]
-"204
-[; ;./the3.h: 204: }
-[e :UE 270 ]
+[e $UE 271  ]
+"235
+[; ;./the3.h: 235: }
+[e :UE 271 ]
 }
-"206
-[; ;./the3.h: 206: unsigned short random_generator(unsigned short modulo) {
+"237
+[; ;./the3.h: 237: unsigned short random_generator(unsigned short modulo) {
 [v _random_generator `(us ~T0 @X0 1 ef1`us ]
 {
 [e :U _random_generator ]
 [v _modulo `us ~T0 @X0 1 r1 ]
 [f ]
-"210
-[; ;./the3.h: 210:     byte temp;
+"241
+[; ;./the3.h: 241:     byte temp;
 [v _temp `uc ~T0 @X0 1 a ]
-"211
-[; ;./the3.h: 211:     byte res;
+"242
+[; ;./the3.h: 242:     byte res;
 [v _res `uc ~T0 @X0 1 a ]
-"213
-[; ;./the3.h: 213:     T3CONbits.TMR3ON = 0;
+"244
+[; ;./the3.h: 244:     T3CONbits.TMR3ON = 0;
 [e = . . _T3CONbits 1 0 -> -> 0 `i `uc ]
-"215
-[; ;./the3.h: 215:     res = TMR3L % modulo;
+"246
+[; ;./the3.h: 246:     res = TMR3L % modulo;
 [e = _res -> % -> _TMR3L `ui -> _modulo `ui `uc ]
-"216
-[; ;./the3.h: 216:     TMR3H = TMR3L;
+"247
+[; ;./the3.h: 247:     TMR3H = TMR3L;
 [e = _TMR3H _TMR3L ]
-"218
-[; ;./the3.h: 218:     for (unsigned short i = 0; i < (modulo & 0b111); i++) {
+"249
+[; ;./the3.h: 249:     for (unsigned short i = 0; i < (modulo & 0b111); i++) {
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $U 313  ]
-[e :U 310 ]
+[e $U 314  ]
+[e :U 311 ]
 {
-"219
-[; ;./the3.h: 219:         temp = TMR3L & 0b10000000;
+"250
+[; ;./the3.h: 250:         temp = TMR3L & 0b10000000;
 [e = _temp -> & -> _TMR3L `i -> 128 `i `uc ]
-"220
-[; ;./the3.h: 220:         TMR3L <<= 1;
+"251
+[; ;./the3.h: 251:         TMR3L <<= 1;
 [e =<< _TMR3L -> -> 1 `i `Vuc ]
-"221
-[; ;./the3.h: 221:         TMR3L = TMR3L | (temp >> 7);
+"252
+[; ;./the3.h: 252:         TMR3L = TMR3L | (temp >> 7);
 [e = _TMR3L -> | -> _TMR3L `i >> -> _temp `i -> 7 `i `uc ]
-"222
-[; ;./the3.h: 222:     }
+"253
+[; ;./the3.h: 253:     }
 }
 [e ++ _i -> -> 1 `i `us ]
-[e :U 313 ]
-[e $ < -> _i `ui & -> _modulo `ui -> -> 7 `i `ui 310  ]
-[e :U 311 ]
+[e :U 314 ]
+[e $ < -> _i `ui & -> _modulo `ui -> -> 7 `i `ui 311  ]
+[e :U 312 ]
 }
-"225
-[; ;./the3.h: 225:     T3CONbits.TMR3ON = 1;
+"256
+[; ;./the3.h: 256:     T3CONbits.TMR3ON = 1;
 [e = . . _T3CONbits 1 0 -> -> 1 `i `uc ]
-"226
-[; ;./the3.h: 226:     return res;
+"257
+[; ;./the3.h: 257:     return res;
 [e ) -> _res `us ]
-[e $UE 309  ]
-"227
-[; ;./the3.h: 227: }
-[e :UE 309 ]
+[e $UE 310  ]
+"258
+[; ;./the3.h: 258: }
+[e :UE 310 ]
 }
 "53 ./lcd.h
 [; ;./lcd.h: 53: byte lcd_x = 1, lcd_y = 1;
@@ -1104,7 +1122,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
 "70
 [; ;./lcd.h: 70: }
-[e :UE 314 ]
+[e :UE 315 ]
 }
 "72
 [; ;./lcd.h: 72: void LCDDat(unsigned char dat) {
@@ -1139,7 +1157,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
 "81
 [; ;./lcd.h: 81: }
-[e :UE 315 ]
+[e :UE 316 ]
 }
 "86
 [; ;./lcd.h: 86: void LCDGoto(byte p_2, byte p_1) {
@@ -1151,7 +1169,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "87
 [; ;./lcd.h: 87:   if(p_1==1) {
-[e $ ! == -> _p_1 `i -> 1 `i 317  ]
+[e $ ! == -> _p_1 `i -> 1 `i 318  ]
 {
 "88
 [; ;./lcd.h: 88:     LCDCmd(0x80 +((p_2-1)%16));
@@ -1159,11 +1177,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "89
 [; ;./lcd.h: 89:   }
 }
-[e $U 318  ]
+[e $U 319  ]
 "90
 [; ;./lcd.h: 90:   else if (p_1==2){
-[e :U 317 ]
-[e $ ! == -> _p_1 `i -> 2 `i 319  ]
+[e :U 318 ]
+[e $ ! == -> _p_1 `i -> 2 `i 320  ]
 {
 "91
 [; ;./lcd.h: 91:     LCDCmd(0xC0 +((p_2-1)%16));
@@ -1171,11 +1189,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92
 [; ;./lcd.h: 92:   }
 }
-[e $U 320  ]
+[e $U 321  ]
 "93
 [; ;./lcd.h: 93:   else if (p_1==3){
-[e :U 319 ]
-[e $ ! == -> _p_1 `i -> 3 `i 321  ]
+[e :U 320 ]
+[e $ ! == -> _p_1 `i -> 3 `i 322  ]
 {
 "94
 [; ;./lcd.h: 94:     LCDCmd(0x90 +((p_2-1)%16));
@@ -1183,10 +1201,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "95
 [; ;./lcd.h: 95:   }
 }
-[e $U 322  ]
+[e $U 323  ]
 "96
 [; ;./lcd.h: 96:   else {
-[e :U 321 ]
+[e :U 322 ]
 {
 "97
 [; ;./lcd.h: 97:     LCDCmd(0xD0 +((p_2-1)%16));
@@ -1194,9 +1212,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98
 [; ;./lcd.h: 98:   }
 }
-[e :U 322 ]
-[e :U 320 ]
-[e :U 318 ]
+[e :U 323 ]
+[e :U 321 ]
+[e :U 319 ]
 "99
 [; ;./lcd.h: 99:   lcd_x = p_2;
 [e = _lcd_x _p_2 ]
@@ -1205,7 +1223,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _lcd_y _p_1 ]
 "101
 [; ;./lcd.h: 101: }
-[e :UE 316 ]
+[e :UE 317 ]
 }
 "105
 [; ;./lcd.h: 105: void LCDStr(const char* str) {
@@ -1219,8 +1237,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 327  ]
-[e :U 324 ]
+[e $U 328  ]
+[e :U 325 ]
 {
 "107
 [; ;./lcd.h: 107:     LCDDat(str[i]);
@@ -1230,7 +1248,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _lcd_x -> -> 1 `i `uc ]
 "109
 [; ;./lcd.h: 109:     if(lcd_x == 17) {
-[e $ ! == -> _lcd_x `i -> 17 `i 328  ]
+[e $ ! == -> _lcd_x `i -> 17 `i 329  ]
 {
 "110
 [; ;./lcd.h: 110:       lcd_x = 1;
@@ -1240,7 +1258,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _lcd_y -> -> 1 `i `uc ]
 "112
 [; ;./lcd.h: 112:       if (lcd_y == 5) {
-[e $ ! == -> _lcd_y `i -> 5 `i 329  ]
+[e $ ! == -> _lcd_y `i -> 5 `i 330  ]
 {
 "113
 [; ;./lcd.h: 113:          lcd_y = 1;
@@ -1248,25 +1266,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "114
 [; ;./lcd.h: 114:       }
 }
-[e :U 329 ]
+[e :U 330 ]
 "115
 [; ;./lcd.h: 115:       LCDGoto(lcd_x, lcd_y);
 [e ( _LCDGoto (2 , _lcd_x _lcd_y ]
 "116
 [; ;./lcd.h: 116:     }
 }
-[e :U 328 ]
+[e :U 329 ]
 "117
 [; ;./lcd.h: 117:   }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 327 ]
-[e $ != -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i -> 0 `i 324  ]
-[e :U 325 ]
+[e :U 328 ]
+[e $ != -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i -> 0 `i 325  ]
+[e :U 326 ]
 }
 "118
 [; ;./lcd.h: 118: }
-[e :UE 323 ]
+[e :UE 324 ]
 }
 "122
 [; ;./lcd.h: 122: void InitLCD(void) {
@@ -1309,7 +1327,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCDCmd (1 -> -> 128 `i `uc ]
 "135
 [; ;./lcd.h: 135: }
-[e :UE 330 ]
+[e :UE 331 ]
 }
 "143
 [; ;./lcd.h: 143: void LCDAddSpecialCharacter(byte character_index, byte * data) {
@@ -1327,9 +1345,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 332  ]
-[e $U 333  ]
-[e :U 332 ]
+[e $ < -> _i `i -> 8 `i 333  ]
+[e $U 334  ]
+[e :U 333 ]
 {
 "151
 [; ;./lcd.h: 151:         LCDDat(data[i]);
@@ -1338,15 +1356,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd.h: 152:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 332  ]
-[e :U 333 ]
+[e $ < -> _i `i -> 8 `i 333  ]
+[e :U 334 ]
 }
 "154
 [; ;./lcd.h: 154:     LCDGoto(lcd_x, lcd_y);
 [e ( _LCDGoto (2 , _lcd_x _lcd_y ]
 "156
 [; ;./lcd.h: 156: }
-[e :UE 331 ]
+[e :UE 332 ]
 }
 "159
 [; ;./lcd.h: 159: void AddCustomCharacters() {
@@ -1380,257 +1398,360 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _LCDAddSpecialCharacter (2 , -> -> 7 `i `uc &U _frisbee_target ]
 "168
 [; ;./lcd.h: 168: }
-[e :UE 335 ]
+[e :UE 336 ]
 }
-"11 main.c
-[; ;main.c: 11: _Bool acceptInterrupts;
+"12 main.c
+[; ;main.c: 12: _Bool acceptInterrupts;
 [v _acceptInterrupts `a ~T0 @X0 1 e ]
-"12
-[; ;main.c: 12: int a, b, c;
+"13
+[; ;main.c: 13: int a, b, c;
 [v _a `i ~T0 @X0 1 e ]
 [v _b `i ~T0 @X0 1 e ]
 [v _c `i ~T0 @X0 1 e ]
-"14
-[; ;main.c: 14: void SetupDebouncingTimer() {
-[v _SetupDebouncingTimer `(v ~T0 @X0 1 ef ]
-{
-[e :U _SetupDebouncingTimer ]
-[f ]
 "15
-[; ;main.c: 15:     acceptInterrupts = 0;
-[e = _acceptInterrupts -> -> 0 `i `a ]
+[; ;main.c: 15: GameStates game_state;
+[v _game_state `E2433 ~T0 @X0 1 e ]
 "16
-[; ;main.c: 16:     TMR0L = 0;
-[e = _TMR0L -> -> 0 `i `uc ]
+[; ;main.c: 16: GameElement* objs[6];
+[v _objs `*S270 ~T0 @X0 -> 6 `i e ]
+[v F2887 `*S270 ~T0 @X0 -> 16 `i t ]
 "17
-[; ;main.c: 17:     TMR0H = 0;
-[e = _TMR0H -> -> 0 `i `uc ]
-"18
-[; ;main.c: 18:     T0CONbits.TMR0ON = 1;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"19
-[; ;main.c: 19: }
-[e :UE 338 ]
-}
-"21
-[; ;main.c: 21: void left() {
-[v _left `(v ~T0 @X0 1 ef ]
-{
-[e :U _left ]
-[f ]
-"22
-[; ;main.c: 22:     a++;
-[e ++ _a -> 1 `i ]
-"23
-[; ;main.c: 23:     return;
-[e $UE 339  ]
-"24
-[; ;main.c: 24: }
-[e :UE 339 ]
-}
-"25
-[; ;main.c: 25: void right() {
-[v _right `(v ~T0 @X0 1 ef ]
-{
-[e :U _right ]
-[f ]
-"26
-[; ;main.c: 26:     a++;
-[e ++ _a -> 1 `i ]
-"27
-[; ;main.c: 27:     return;
-[e $UE 340  ]
-"28
-[; ;main.c: 28: }
-[e :UE 340 ]
-}
-"29
-[; ;main.c: 29: void up() {
-[v _up `(v ~T0 @X0 1 ef ]
-{
-[e :U _up ]
-[f ]
-"30
-[; ;main.c: 30:     c++;
-[e ++ _c -> 1 `i ]
-"31
-[; ;main.c: 31:     return;
-[e $UE 341  ]
-"32
-[; ;main.c: 32: }
-[e :UE 341 ]
-}
-"33
-[; ;main.c: 33: void down() {
-[v _down `(v ~T0 @X0 1 ef ]
-{
-[e :U _down ]
-[f ]
-"34
-[; ;main.c: 34:     c++;
-[e ++ _c -> 1 `i ]
-"35
-[; ;main.c: 35:     return;
-[e $UE 342  ]
-"36
-[; ;main.c: 36: }
-[e :UE 342 ]
-}
+[; ;main.c: 17: GameElement* display[4][16];
+[v _display `F2887 ~T0 @X0 -> 4 `i e ]
 [v $root$_highIsr `(v ~T0 @X0 0 e ]
-"38
-[; ;main.c: 38: void __attribute__((picinterrupt(("high_priority")))) highIsr(){
+"27
+[; ;main.c: 27: void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 [v _highIsr `(v ~T39 @X0 1 ef ]
 {
 [e :U _highIsr ]
 [f ]
-"39
-[; ;main.c: 39:     if (INTCONbits.TMR0IF) {
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 344  ]
+"28
+[; ;main.c: 28:     byte portbVals = PORTB;
+[v _portbVals `uc ~T0 @X0 1 a ]
+[e = _portbVals _PORTB ]
+"30
+[; ;main.c: 30:     if (INTCONbits.TMR0IF) {
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 340  ]
 {
-"40
-[; ;main.c: 40:         acceptInterrupts = 1;
+"31
+[; ;main.c: 31:         acceptInterrupts = 1;
 [e = _acceptInterrupts -> -> 1 `i `a ]
-"41
-[; ;main.c: 41:         T0CONbits.TMR0ON = 0;
+"32
+[; ;main.c: 32:         T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"42
-[; ;main.c: 42:         INTCONbits.TMR0IF = 0;
+"33
+[; ;main.c: 33:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"34
+[; ;main.c: 34:     }
+}
+[e :U 340 ]
+"36
+[; ;main.c: 36:     if (INTCONbits.INT0IF ){
+[e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 341  ]
+{
+"37
+[; ;main.c: 37:         if (acceptInterrupts) {
+[e $ ! != -> _acceptInterrupts `i -> 0 `i 342  ]
+{
+"38
+[; ;main.c: 38:             a++;
+[e ++ _a -> 1 `i ]
+"39
+[; ;main.c: 39:             SetupDebouncingTimer();
+[e ( _SetupDebouncingTimer ..  ]
+"40
+[; ;main.c: 40:         }
+}
+[e :U 342 ]
+"41
+[; ;main.c: 41:     }
+}
+[e :U 341 ]
 "43
-[; ;main.c: 43:     }
+[; ;main.c: 43:     if (INTCON3bits.INT1IF ) {
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> 0 `i 343  ]
+{
+"44
+[; ;main.c: 44:         if (acceptInterrupts) {
+[e $ ! != -> _acceptInterrupts `i -> 0 `i 344  ]
+{
+"45
+[; ;main.c: 45:             b++;
+[e ++ _b -> 1 `i ]
+"46
+[; ;main.c: 46:             SetupDebouncingTimer();
+[e ( _SetupDebouncingTimer ..  ]
+"47
+[; ;main.c: 47:         }
 }
 [e :U 344 ]
-"45
-[; ;main.c: 45:     int aminakoyum = PORTB;
-[v _aminakoyum `i ~T0 @X0 1 a ]
-[e = _aminakoyum -> _PORTB `i ]
-"47
-[; ;main.c: 47:     if (INTCONbits.INT0IF ){
-[e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 345  ]
-{
 "48
-[; ;main.c: 48:         if (acceptInterrupts) {
+[; ;main.c: 48:     }
+}
+[e :U 343 ]
+"50
+[; ;main.c: 50:     if (INTCONbits.RBIF) {
+[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 345  ]
+{
+"51
+[; ;main.c: 51:         if (acceptInterrupts) {
 [e $ ! != -> _acceptInterrupts `i -> 0 `i 346  ]
 {
-"49
-[; ;main.c: 49:             a++;
-[e ++ _a -> 1 `i ]
-"50
-[; ;main.c: 50:             SetupDebouncingTimer();
+"52
+[; ;main.c: 52:             portbVals = portbVals >> 4;
+[e = _portbVals -> >> -> _portbVals `i -> 4 `i `uc ]
+"53
+[; ;main.c: 53:             switch (portbVals) {
+[e $U 348  ]
+{
+"54
+[; ;main.c: 54:                 case 0b1110:
+[e :U 349 ]
+"55
+[; ;main.c: 55:                     up();
+[e ( _up ..  ]
+"56
+[; ;main.c: 56:                     break;
+[e $U 347  ]
+"57
+[; ;main.c: 57:                 case 0b1101:
+[e :U 350 ]
+"58
+[; ;main.c: 58:                     right();
+[e ( _right ..  ]
+"59
+[; ;main.c: 59:                     break;
+[e $U 347  ]
+"60
+[; ;main.c: 60:                 case 0b1011:
+[e :U 351 ]
+"61
+[; ;main.c: 61:                     down();
+[e ( _down ..  ]
+"62
+[; ;main.c: 62:                     break;
+[e $U 347  ]
+"63
+[; ;main.c: 63:                 case 0b0111:
+[e :U 352 ]
+"64
+[; ;main.c: 64:                     left();
+[e ( _left ..  ]
+"65
+[; ;main.c: 65:                     break;
+[e $U 347  ]
+"66
+[; ;main.c: 66:                 default:
+[e :U 353 ]
+"67
+[; ;main.c: 67:                     portbVals = 0;
+[e = _portbVals -> -> 0 `i `uc ]
+"68
+[; ;main.c: 68:                     break;
+[e $U 347  ]
+"69
+[; ;main.c: 69:             }
+}
+[e $U 347  ]
+[e :U 348 ]
+[e [\ -> _portbVals `i , $ -> 14 `i 349
+ , $ -> 13 `i 350
+ , $ -> 11 `i 351
+ , $ -> 7 `i 352
+ 353 ]
+[e :U 347 ]
+"71
+[; ;main.c: 71:             c++;
+[e ++ _c -> 1 `i ]
+"72
+[; ;main.c: 72:             SetupDebouncingTimer();
 [e ( _SetupDebouncingTimer ..  ]
-"51
-[; ;main.c: 51:         }
+"73
+[; ;main.c: 73:         }
 }
 [e :U 346 ]
-"52
-[; ;main.c: 52:     }
+"74
+[; ;main.c: 74:     }
 }
 [e :U 345 ]
-"54
-[; ;main.c: 54:     if (INTCON3bits.INT1IF ) {
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> 0 `i 347  ]
-{
-"55
-[; ;main.c: 55:         if (acceptInterrupts) {
-[e $ ! != -> _acceptInterrupts `i -> 0 `i 348  ]
-{
-"56
-[; ;main.c: 56:             b++;
-[e ++ _b -> 1 `i ]
-"57
-[; ;main.c: 57:             SetupDebouncingTimer();
-[e ( _SetupDebouncingTimer ..  ]
-"58
-[; ;main.c: 58:         }
-}
-[e :U 348 ]
-"59
-[; ;main.c: 59:     }
-}
-[e :U 347 ]
-"61
-[; ;main.c: 61:     if (INTCONbits.RBIF) {
-[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 349  ]
-{
-"62
-[; ;main.c: 62:         if (acceptInterrupts) {
-[e $ ! != -> _acceptInterrupts `i -> 0 `i 350  ]
-{
-"84
-[; ;main.c: 84:             c++;
-[e ++ _c -> 1 `i ]
-"85
-[; ;main.c: 85:             SetupDebouncingTimer();
-[e ( _SetupDebouncingTimer ..  ]
-"86
-[; ;main.c: 86:         }
-}
-[e :U 350 ]
-"87
-[; ;main.c: 87:     }
-}
-[e :U 349 ]
-"88
-[; ;main.c: 88:     INTCON3bits.INT1IF = 0;
+"75
+[; ;main.c: 75:     INTCON3bits.INT1IF = 0;
 [e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"89
-[; ;main.c: 89:     INTCONbits.INT0IF = 0;
+"76
+[; ;main.c: 76:     INTCONbits.INT0IF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"90
-[; ;main.c: 90:     INTCONbits.RBIF = 0;
+"77
+[; ;main.c: 77:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"92
-[; ;main.c: 92: }
-[e :UE 343 ]
+"79
+[; ;main.c: 79: }
+[e :UE 339 ]
 }
-"124
-[; ;main.c: 124: GameStates game_state;
-[v _game_state `E2866 ~T0 @X0 1 e ]
-"125
-[; ;main.c: 125: GameElement objs[6];
-[v _objs `S351 ~T0 @X0 -> 6 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"132
-[; ;main.c: 132: void main(void)
+"86
+[; ;main.c: 86: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"133
-[; ;main.c: 133: {
+"87
+[; ;main.c: 87: {
 {
 [e :U _main ]
 [f ]
-"134
-[; ;main.c: 134:     a = b = c = 0;
+"89
+[; ;main.c: 89:     game_state = GS_INACTIVE;
+[e = _game_state . `E2433 1 ]
+"91
+[; ;main.c: 91:     InitInterrupts();
+[e ( _InitInterrupts ..  ]
+"93
+[; ;main.c: 93:     InitLCD();
+[e ( _InitLCD ..  ]
+"94
+[; ;main.c: 94:     lcd_x = 1;
+[e = _lcd_x -> -> 1 `i `uc ]
+"95
+[; ;main.c: 95:     lcd_y = 1;
+[e = _lcd_y -> -> 1 `i `uc ]
+"96
+[; ;main.c: 96:     AddCustomCharacters();
+[e ( _AddCustomCharacters ..  ]
+"99
+[; ;main.c: 99:     while(1)
+[e :U 356 ]
+"100
+[; ;main.c: 100:     {
+{
+"101
+[; ;main.c: 101:         char arr[5];
+[v _arr `uc ~T0 @X0 -> 5 `i a ]
+"103
+[; ;main.c: 103:         lcd_x = 1;
+[e = _lcd_x -> -> 1 `i `uc ]
+"104
+[; ;main.c: 104:         lcd_y = 1;
+[e = _lcd_y -> -> 1 `i `uc ]
+"105
+[; ;main.c: 105:         LCDGoto(lcd_x, lcd_y);
+[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
+"106
+[; ;main.c: 106:         for (int i = 7; i >= 0; i--) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 7 `i ]
+[e $ >= _i -> 0 `i 358  ]
+[e $U 359  ]
+[e :U 358 ]
+{
+"107
+[; ;main.c: 107:             LCDDat(((PORTB >> i) & 1) ? '1' : '0');
+[e ( _LCDDat (1 -> ? != & >> -> _PORTB `i _i -> 1 `i -> 0 `i : -> 49 `ui -> 48 `ui `uc ]
+"108
+[; ;main.c: 108:         }
+}
+[e -- _i -> 1 `i ]
+[e $ >= _i -> 0 `i 358  ]
+[e :U 359 ]
+}
+"110
+[; ;main.c: 110:         lcd_y = 2;
+[e = _lcd_y -> -> 2 `i `uc ]
+"111
+[; ;main.c: 111:         lcd_x = 1;
+[e = _lcd_x -> -> 1 `i `uc ]
+"112
+[; ;main.c: 112:         LCDGoto(lcd_x, lcd_y);
+[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
+"113
+[; ;main.c: 113:         sprintf(arr, "%d", a);
+[e ( _sprintf (1 , (. , &U _arr :s 1C _a ]
+"114
+[; ;main.c: 114:         LCDStr(arr);
+[e ( _LCDStr (1 -> &U _arr `*Cuc ]
+"116
+[; ;main.c: 116:         lcd_y = 3;
+[e = _lcd_y -> -> 3 `i `uc ]
+"117
+[; ;main.c: 117:         lcd_x = 1;
+[e = _lcd_x -> -> 1 `i `uc ]
+"118
+[; ;main.c: 118:         LCDGoto(lcd_x, lcd_y);
+[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
+"119
+[; ;main.c: 119:         sprintf(arr, "%d", b);
+[e ( _sprintf (1 , (. , &U _arr :s 2C _b ]
+"120
+[; ;main.c: 120:         LCDStr(arr);
+[e ( _LCDStr (1 -> &U _arr `*Cuc ]
+"122
+[; ;main.c: 122:         lcd_y = 4;
+[e = _lcd_y -> -> 4 `i `uc ]
+"123
+[; ;main.c: 123:         lcd_x = 1;
+[e = _lcd_x -> -> 1 `i `uc ]
+"124
+[; ;main.c: 124:         LCDGoto(lcd_x, lcd_y);
+[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
+"125
+[; ;main.c: 125:         sprintf(arr, "%d", c);
+[e ( _sprintf (1 , (. , &U _arr :s 3C _c ]
+"126
+[; ;main.c: 126:         LCDStr(arr);
+[e ( _LCDStr (1 -> &U _arr `*Cuc ]
+"127
+[; ;main.c: 127:     }
+}
+[e :U 355 ]
+[e $U 356  ]
+[e :U 357 ]
+"128
+[; ;main.c: 128: }
+[e :UE 354 ]
+}
+"132
+[; ;main.c: 132: void InitInterrupts() {
+[v _InitInterrupts `(v ~T0 @X0 1 ef ]
+{
+[e :U _InitInterrupts ]
+[f ]
+"133
+[; ;main.c: 133:     a = b = c = 0;
 [e = _a = _b = _c -> 0 `i ]
-"136
-[; ;main.c: 136:     ADCON1 = 0b0111;
+"135
+[; ;main.c: 135:     ADCON1 = 0b0111;
 [e = _ADCON1 -> -> 7 `i `uc ]
-"137
-[; ;main.c: 137:     INTCON2bits.RBPU = 0;
+"136
+[; ;main.c: 136:     INTCON2bits.RBPU = 0;
 [e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-"138
-[; ;main.c: 138:     PORTB = 0;
+"137
+[; ;main.c: 137:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"140
-[; ;main.c: 140:     T3CON = 0b10000001;
+"139
+[; ;main.c: 139:     T3CON = 0b10000001;
 [e = _T3CON -> -> 129 `i `uc ]
-"141
-[; ;main.c: 141:     TRISB = 0xff;
+"140
+[; ;main.c: 140:     TRISB = 0xff;
 [e = _TRISB -> -> 255 `i `uc ]
-"142
-[; ;main.c: 142:     TRISA = 0x0;
+"141
+[; ;main.c: 141:     TRISA = 0x0;
 [e = _TRISA -> -> 0 `i `uc ]
-"143
-[; ;main.c: 143:     TRISD = 0x0;
+"142
+[; ;main.c: 142:     TRISD = 0x0;
 [e = _TRISD -> -> 0 `i `uc ]
+"144
+[; ;main.c: 144:     T0CON = 0b00010011;
+[e = _T0CON -> -> 19 `i `uc ]
 "145
-[; ;main.c: 145:     game_state = GS_INACTIVE;
-[e = _game_state . `E2866 1 ]
+[; ;main.c: 145:     acceptInterrupts = 0;
+[e = _acceptInterrupts -> -> 0 `i `a ]
+"146
+[; ;main.c: 146:     TMR0L = 0;
+[e = _TMR0L -> -> 0 `i `uc ]
 "147
-[; ;main.c: 147:     T0CON = 0b00010001;
-[e = _T0CON -> -> 17 `i `uc ]
+[; ;main.c: 147:     TMR0H = 0xFB;
+[e = _TMR0H -> -> 251 `i `uc ]
 "148
-[; ;main.c: 148:     acceptInterrupts = 1;
-[e = _acceptInterrupts -> -> 1 `i `a ]
+[; ;main.c: 148:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "150
 [; ;main.c: 150:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
@@ -1647,11 +1768,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 154:     INTCON3bits.INT1E = 1;
 [e = . . _INTCON3bits 1 3 -> -> 1 `i `uc ]
 "156
-[; ;main.c: 156:     INTCON2bits.INTEDG0 = 1;
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;main.c: 156:     INTCON2bits.INTEDG0 = 0;
+[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
 "157
-[; ;main.c: 157:     INTCON2bits.INTEDG1 = 1;
-[e = . . _INTCON2bits 1 5 -> -> 1 `i `uc ]
+[; ;main.c: 157:     INTCON2bits.INTEDG1 = 0;
+[e = . . _INTCON2bits 1 5 -> -> 0 `i `uc ]
 "160
 [; ;main.c: 160:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
@@ -1662,111 +1783,109 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 162:     INTCON3bits.INT1IF = 0;
 [e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
 "165
-[; ;main.c: 165:     INTCONbits.GIE = 1;
+[; ;main.c: 165:     INTCONbits.RBIE = 0;
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+"166
+[; ;main.c: 166:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"169
-[; ;main.c: 169:     InitLCD();
-[e ( _InitLCD ..  ]
+"167
+[; ;main.c: 167:     PORTB = PORTB;
+[e = _PORTB _PORTB ]
+"168
+[; ;main.c: 168:     INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "170
-[; ;main.c: 170:     lcd_x = 1;
-[e = _lcd_x -> -> 1 `i `uc ]
-"171
-[; ;main.c: 171:     lcd_y = 1;
-[e = _lcd_y -> -> 1 `i `uc ]
+[; ;main.c: 170:     INTCONbits.RBIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "172
-[; ;main.c: 172:     AddCustomCharacters();
-[e ( _AddCustomCharacters ..  ]
-"175
-[; ;main.c: 175:     while(1)
-[e :U 354 ]
-"176
-[; ;main.c: 176:     {
-{
-"177
-[; ;main.c: 177:         char arr[5];
-[v _arr `uc ~T0 @X0 -> 5 `i a ]
-"179
-[; ;main.c: 179:         lcd_x = 1;
-[e = _lcd_x -> -> 1 `i `uc ]
-"180
-[; ;main.c: 180:         lcd_y = 1;
-[e = _lcd_y -> -> 1 `i `uc ]
-"181
-[; ;main.c: 181:         LCDGoto(lcd_x, lcd_y);
-[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"182
-[; ;main.c: 182:         for (int i = 7; i >= 0; i--) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 7 `i ]
-[e $ >= _i -> 0 `i 356  ]
-[e $U 357  ]
-[e :U 356 ]
-{
-"183
-[; ;main.c: 183:             LCDDat(((PORTB >> i) & 1) ? '1' : '0');
-[e ( _LCDDat (1 -> ? != & >> -> _PORTB `i _i -> 1 `i -> 0 `i : -> 49 `ui -> 48 `ui `uc ]
-"184
-[; ;main.c: 184:         }
+[; ;main.c: 172: }
+[e :UE 361 ]
 }
-[e -- _i -> 1 `i ]
-[e $ >= _i -> 0 `i 356  ]
-[e :U 357 ]
+"175
+[; ;main.c: 175: void SetupDebouncingTimer() {
+[v _SetupDebouncingTimer `(v ~T0 @X0 1 ef ]
+{
+[e :U _SetupDebouncingTimer ]
+[f ]
+"176
+[; ;main.c: 176:     acceptInterrupts = 0;
+[e = _acceptInterrupts -> -> 0 `i `a ]
+"177
+[; ;main.c: 177:     TMR0L = 0;
+[e = _TMR0L -> -> 0 `i `uc ]
+"178
+[; ;main.c: 178:     TMR0H = 0;
+[e = _TMR0H -> -> 0 `i `uc ]
+"179
+[; ;main.c: 179:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"180
+[; ;main.c: 180: }
+[e :UE 362 ]
+}
+"182
+[; ;main.c: 182: void left() {
+[v _left `(v ~T0 @X0 1 ef ]
+{
+[e :U _left ]
+[f ]
+"183
+[; ;main.c: 183:     a++;
+[e ++ _a -> 1 `i ]
+"184
+[; ;main.c: 184:     return;
+[e $UE 363  ]
+"185
+[; ;main.c: 185: }
+[e :UE 363 ]
 }
 "186
-[; ;main.c: 186:         lcd_y = 2;
-[e = _lcd_y -> -> 2 `i `uc ]
+[; ;main.c: 186: void right() {
+[v _right `(v ~T0 @X0 1 ef ]
+{
+[e :U _right ]
+[f ]
 "187
-[; ;main.c: 187:         lcd_x = 1;
-[e = _lcd_x -> -> 1 `i `uc ]
+[; ;main.c: 187:     a++;
+[e ++ _a -> 1 `i ]
 "188
-[; ;main.c: 188:         LCDGoto(lcd_x, lcd_y);
-[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
+[; ;main.c: 188:     return;
+[e $UE 364  ]
 "189
-[; ;main.c: 189:         sprintf(arr, "%d", a);
-[e ( _sprintf (1 , (. , &U _arr :s 1C _a ]
-"190
-[; ;main.c: 190:         LCDStr(arr);
-[e ( _LCDStr (1 -> &U _arr `*Cuc ]
-"192
-[; ;main.c: 192:         lcd_y = 3;
-[e = _lcd_y -> -> 3 `i `uc ]
-"193
-[; ;main.c: 193:         lcd_x = 1;
-[e = _lcd_x -> -> 1 `i `uc ]
-"194
-[; ;main.c: 194:         LCDGoto(lcd_x, lcd_y);
-[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"195
-[; ;main.c: 195:         sprintf(arr, "%d", b);
-[e ( _sprintf (1 , (. , &U _arr :s 2C _b ]
-"196
-[; ;main.c: 196:         LCDStr(arr);
-[e ( _LCDStr (1 -> &U _arr `*Cuc ]
-"198
-[; ;main.c: 198:         lcd_y = 4;
-[e = _lcd_y -> -> 4 `i `uc ]
-"199
-[; ;main.c: 199:         lcd_x = 1;
-[e = _lcd_x -> -> 1 `i `uc ]
-"200
-[; ;main.c: 200:         LCDGoto(lcd_x, lcd_y);
-[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"201
-[; ;main.c: 201:         sprintf(arr, "%d", c);
-[e ( _sprintf (1 , (. , &U _arr :s 3C _c ]
-"202
-[; ;main.c: 202:         LCDStr(arr);
-[e ( _LCDStr (1 -> &U _arr `*Cuc ]
-"203
-[; ;main.c: 203:     }
+[; ;main.c: 189: }
+[e :UE 364 ]
 }
-[e :U 353 ]
-[e $U 354  ]
-[e :U 355 ]
-"206
-[; ;main.c: 206: }
-[e :UE 352 ]
+"190
+[; ;main.c: 190: void up() {
+[v _up `(v ~T0 @X0 1 ef ]
+{
+[e :U _up ]
+[f ]
+"191
+[; ;main.c: 191:     b++;
+[e ++ _b -> 1 `i ]
+"192
+[; ;main.c: 192:     return;
+[e $UE 365  ]
+"193
+[; ;main.c: 193: }
+[e :UE 365 ]
+}
+"194
+[; ;main.c: 194: void down() {
+[v _down `(v ~T0 @X0 1 ef ]
+{
+[e :U _down ]
+[f ]
+"195
+[; ;main.c: 195:     b++;
+[e ++ _b -> 1 `i ]
+"196
+[; ;main.c: 196:     return;
+[e $UE 366  ]
+"197
+[; ;main.c: 197: }
+[e :UE 366 ]
 }
 [p f _sprintf 8388736 ]
 [a 1C 37 100 0 ]

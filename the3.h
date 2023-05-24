@@ -13,12 +13,43 @@ extern "C" {
 #endif
 #include <xc.h>
 #include "lcd.h"
+#include <stdbool.h>
 #define _XTAL_FREQ   10000000L
 
 // YOU CAN CHANGE THE FUNCTION RETURN TYPES, ARGUMENTS, FUNCTION NAMES, VARIABLE NAMES, ANYTHING YOU WANT
 
 typedef unsigned char byte;     // define byte here for readability and sanity.    
-    
+
+typedef enum GameStates {
+    GS_ACTIVE,
+    GS_INACTIVE
+} GameStates;
+
+typedef enum ObjectStates {
+    OS_DEFAULT,
+    OS_SELECTED,
+    OS_W_FRISBEE,
+    OS_SEL_W_FRISBEE,  // For players
+            
+    OS_FLYING,
+    OS_FELL            // For frisbee
+} ObjectStates;
+
+typedef enum ObjectTypes {
+    OT_PLAYERA,
+    OT_PLAYERB,
+    OT_FRISBEE,
+    OT_TARGET
+} ObjectTypes;
+
+typedef struct GameElement { // Players, the frisbee, and the target will use this struct
+    byte x, y;
+    bool active;
+    ObjectTypes type;
+    ObjectStates state;
+} GameElement;
+
+
 byte teamA_player[] = {
                   0b10001,
                   0b10101,

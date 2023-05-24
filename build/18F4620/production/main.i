@@ -4387,11 +4387,43 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 15 "./the3.h"
 # 1 "./lcd.h" 1
 # 16 "./the3.h" 2
+# 1 "/opt/microchip/xc8/v2.30/pic/include/c99/stdbool.h" 1 3
+# 17 "./the3.h" 2
 
 
 
 
 typedef unsigned char byte;
+
+typedef enum GameStates {
+    GS_ACTIVE,
+    GS_INACTIVE
+} GameStates;
+
+typedef enum ObjectStates {
+    OS_DEFAULT,
+    OS_SELECTED,
+    OS_W_FRISBEE,
+    OS_SEL_W_FRISBEE,
+
+    OS_FLYING,
+    OS_FELL
+} ObjectStates;
+
+typedef enum ObjectTypes {
+    OT_PLAYERA,
+    OT_PLAYERB,
+    OT_FRISBEE,
+    OT_TARGET
+} ObjectTypes;
+
+typedef struct GameElement {
+    byte x, y;
+    _Bool active;
+    ObjectTypes type;
+    ObjectStates state;
+} GameElement;
+
 
 byte teamA_player[] = {
                   0b10001,
@@ -4532,7 +4564,7 @@ unsigned short compute_frisbee_target_and_route(unsigned short current_fisbee_x_
 
         break;
     }
-# 170 "./the3.h"
+# 201 "./the3.h"
     unsigned short x = current_fisbee_x_position;
     if (target_x < current_fisbee_x_position) {
         for (unsigned short i = 0; i < x_step_size; i++) {
@@ -4799,8 +4831,7 @@ typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "/opt/microchip/xc8/v2.30/pic/include/c99/stdint.h" 2 3
 # 7 "main.c" 2
-# 1 "/opt/microchip/xc8/v2.30/pic/include/c99/stdbool.h" 1 3
-# 8 "main.c" 2
+
 # 1 "/opt/microchip/xc8/v2.30/pic/include/c99/stdio.h" 1 3
 # 24 "/opt/microchip/xc8/v2.30/pic/include/c99/stdio.h" 3
 # 1 "/opt/microchip/xc8/v2.30/pic/include/c99/bits/alltypes.h" 1 3
@@ -4942,41 +4973,30 @@ char *tempnam(const char *, const char *);
 # 9 "main.c" 2
 
 
+
 _Bool acceptInterrupts;
 int a, b, c;
 
-void SetupDebouncingTimer() {
-    acceptInterrupts = 0;
-    TMR0L = 0;
-    TMR0H = 0;
-    T0CONbits.TMR0ON = 1;
-}
+GameStates game_state;
+GameElement* objs[6];
+GameElement* display[4][16];
 
-void left() {
-    a++;
-    return;
-}
-void right() {
-    a++;
-    return;
-}
-void up() {
-    c++;
-    return;
-}
-void down() {
-    c++;
-    return;
-}
+
+void SetupDebouncingTimer();
+void InitInterrupts();
+void left();
+void right();
+void up();
+void down();
 
 void __attribute__((picinterrupt(("high_priority")))) highIsr(){
+    byte portbVals = PORTB;
+
     if (INTCONbits.TMR0IF) {
         acceptInterrupts = 1;
         T0CONbits.TMR0ON = 0;
         INTCONbits.TMR0IF = 0;
     }
-
-    int aminakoyum = PORTB;
 
     if (INTCONbits.INT0IF ){
         if (acceptInterrupts) {
@@ -4994,7 +5014,25 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 
     if (INTCONbits.RBIF) {
         if (acceptInterrupts) {
-# 84 "main.c"
+            portbVals = portbVals >> 4;
+            switch (portbVals) {
+                case 0b1110:
+                    up();
+                    break;
+                case 0b1101:
+                    right();
+                    break;
+                case 0b1011:
+                    down();
+                    break;
+                case 0b0111:
+                    left();
+                    break;
+                default:
+                    portbVals = 0;
+                    break;
+            }
+
             c++;
             SetupDebouncingTimer();
         }
@@ -5005,39 +5043,6 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 
 }
 
-typedef enum GameStates {
-    GS_ACTIVE,
-    GS_INACTIVE
-} GameStates;
-
-typedef enum ObjectStates {
-    OS_DEFAULT,
-    OS_SELECTED,
-    OS_W_FRISBEE,
-    OS_SEL_W_FRISBEE,
-
-    OS_FLYING,
-    OS_FELL
-} ObjectStates;
-
-typedef enum ObjectTypes {
-    OT_PLAYERA,
-    OT_PLAYERB,
-    OT_FRISBEE,
-    OT_TARGET
-} ObjectTypes;
-
-typedef struct GameElement {
-    byte x, y;
-    _Bool active;
-    ObjectTypes type;
-    ObjectStates state;
-} GameElement;
-
-typedef unsigned short ushort;
-GameStates game_state;
-GameElement objs[6];
-
 
 
 
@@ -5045,40 +5050,10 @@ GameElement objs[6];
 
 void main(void)
 {
-    a = b = c = 0;
-
-    ADCON1 = 0b0111;
-    INTCON2bits.RBPU = 0;
-    PORTB = 0;
-
-    T3CON = 0b10000001;
-    TRISB = 0xff;
-    TRISA = 0x0;
-    TRISD = 0x0;
 
     game_state = GS_INACTIVE;
 
-    T0CON = 0b00010001;
-    acceptInterrupts = 1;
-
-    INTCONbits.PEIE = 1;
-    INTCONbits.INT0E = 1;
-    INTCONbits.RBIE = 1;
-    INTCONbits.T0IE = 1;
-    INTCON3bits.INT1E = 1;
-
-    INTCON2bits.INTEDG0 = 1;
-    INTCON2bits.INTEDG1 = 1;
-
-
-    INTCONbits.RBIF = 0;
-    INTCONbits.INT0IF = 0;
-    INTCON3bits.INT1IF = 0;
-
-
-    INTCONbits.GIE = 1;
-
-
+    InitInterrupts();
 
     InitLCD();
     lcd_x = 1;
@@ -5115,6 +5090,73 @@ void main(void)
         sprintf(arr, "%d", c);
         LCDStr(arr);
     }
+}
 
 
+
+void InitInterrupts() {
+    a = b = c = 0;
+
+    ADCON1 = 0b0111;
+    INTCON2bits.RBPU = 0;
+    PORTB = 0;
+
+    T3CON = 0b10000001;
+    TRISB = 0xff;
+    TRISA = 0x0;
+    TRISD = 0x0;
+
+    T0CON = 0b00010011;
+    acceptInterrupts = 0;
+    TMR0L = 0;
+    TMR0H = 0xFB;
+    T0CONbits.TMR0ON = 1;
+
+    INTCONbits.PEIE = 1;
+    INTCONbits.INT0E = 1;
+    INTCONbits.RBIE = 1;
+    INTCONbits.T0IE = 1;
+    INTCON3bits.INT1E = 1;
+
+    INTCON2bits.INTEDG0 = 0;
+    INTCON2bits.INTEDG1 = 0;
+
+
+    INTCONbits.RBIF = 0;
+    INTCONbits.INT0IF = 0;
+    INTCON3bits.INT1IF = 0;
+
+
+    INTCONbits.RBIE = 0;
+    INTCONbits.GIE = 1;
+    PORTB = PORTB;
+    INTCONbits.RBIF = 0;
+
+    INTCONbits.RBIE = 1;
+
+}
+
+
+void SetupDebouncingTimer() {
+    acceptInterrupts = 0;
+    TMR0L = 0;
+    TMR0H = 0;
+    T0CONbits.TMR0ON = 1;
+}
+
+void left() {
+    a++;
+    return;
+}
+void right() {
+    a++;
+    return;
+}
+void up() {
+    b++;
+    return;
+}
+void down() {
+    b++;
+    return;
 }

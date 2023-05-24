@@ -3,19 +3,19 @@
 [d edition pro ]
 [d chip 18F4620 ]
 [d frameptr 4065 ]
-"124 /home/eren/MPLABXProjects/THE3.X/main.c
-[e E2866 GameStates `uc
+"15 /home/eren/MPLABXProjects/THE3.X/main.c
+[e E2433 GameStates `uc
 GS_ACTIVE 0
 GS_INACTIVE 1
 ]
-"125
-[e E2878 ObjectTypes `uc
+"16
+[e E2445 ObjectTypes `uc
 OT_PLAYERA 0
 OT_PLAYERB 1
 OT_FRISBEE 2
 OT_TARGET 3
 ]
-[e E2870 ObjectStates `uc
+[e E2437 ObjectStates `uc
 OS_DEFAULT 0
 OS_SELECTED 1
 OS_W_FRISBEE 2
@@ -37,7 +37,7 @@ OS_FELL 5
 [v _LCDAddSpecialCharacter LCDAddSpecialCharacter `(v  1 e 1 0 ]
 "159
 [v _AddCustomCharacters AddCustomCharacters `(v  1 e 1 0 ]
-"206 /home/eren/MPLABXProjects/THE3.X/the3.h
+"237 /home/eren/MPLABXProjects/THE3.X/the3.h
 [v _random_generator random_generator `(us  1 e 2 0 ]
 "1 /opt/microchip/xc8/v2.30/pic/sources/c99/common/abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -89,32 +89,42 @@ OS_FELL 5
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 /opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"14 /home/eren/MPLABXProjects/THE3.X/main.c
-[v _SetupDebouncingTimer SetupDebouncingTimer `(v  1 e 1 0 ]
-"38
+"27 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _highIsr highIsr `IIH(v  1 e 1 0 ]
-"132
+"86
 [v _main main `(v  1 e 1 0 ]
+"132
+[v _InitInterrupts InitInterrupts `(v  1 e 1 0 ]
+"175
+[v _SetupDebouncingTimer SetupDebouncingTimer `(v  1 e 1 0 ]
+"182
+[v _left left `(v  1 e 1 0 ]
+"186
+[v _right right `(v  1 e 1 0 ]
+"190
+[v _up up `(v  1 e 1 0 ]
+"194
+[v _down down `(v  1 e 1 0 ]
 "53 /home/eren/MPLABXProjects/THE3.X/lcd.h
 [v _lcd_x lcd_x `uc  1 e 1 0 ]
 [v _lcd_y lcd_y `uc  1 e 1 0 ]
-"22 /home/eren/MPLABXProjects/THE3.X/the3.h
+"53 /home/eren/MPLABXProjects/THE3.X/the3.h
 [v _teamA_player teamA_player `[8]uc  1 e 8 0 ]
-"33
+"64
 [v _teamB_player teamB_player `[8]uc  1 e 8 0 ]
-"44
+"75
 [v _selected_teamA_player selected_teamA_player `[8]uc  1 e 8 0 ]
-"55
+"86
 [v _selected_teamB_player selected_teamB_player `[8]uc  1 e 8 0 ]
-"67
+"98
 [v _selected_teamA_player_with_frisbee selected_teamA_player_with_frisbee `[8]uc  1 e 8 0 ]
-"78
+"109
 [v _selected_teamB_player_with_frisbee selected_teamB_player_with_frisbee `[8]uc  1 e 8 0 ]
-"89
+"120
 [v _frisbeeChar frisbeeChar `[8]uc  1 e 8 0 ]
-"100
+"131
 [v _frisbee_target frisbee_target `[8]uc  1 e 8 0 ]
-"114
+"145
 [v _frisbee_steps frisbee_steps `[15][2]us  1 e 60 0 ]
 "189 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
@@ -220,7 +230,7 @@ OS_FELL 5
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "5856
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S224 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S293 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -228,19 +238,19 @@ OS_FELL 5
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "5878
-[s S231 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S300 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S237 . 1 `S224 1 . 1 0 `S231 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES237  1 e 1 @4053 ]
+[u S306 . 1 `S293 1 . 1 0 `S300 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES306  1 e 1 @4053 ]
 "5940
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "5947
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S304 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S327 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 INT2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1IE 1 0 :1:3 
@@ -250,7 +260,7 @@ OS_FELL 5
 `uc 1 INT2IP 1 0 :1:7 
 ]
 "6239
-[s S313 . 1 `uc 1 INT1F 1 0 :1:0 
+[s S336 . 1 `uc 1 INT1F 1 0 :1:0 
 `uc 1 INT2F 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1E 1 0 :1:3 
@@ -259,13 +269,13 @@ OS_FELL 5
 `uc 1 INT1P 1 0 :1:6 
 `uc 1 INT2P 1 0 :1:7 
 ]
-[u S322 . 1 `S304 1 . 1 0 `S313 1 . 1 0 ]
-[v _INTCON3bits INTCON3bits `VES322  1 e 1 @4080 ]
-[s S366 . 1 `uc 1 . 1 0 :7:0 
+[u S345 . 1 `S327 1 . 1 0 `S336 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES345  1 e 1 @4080 ]
+[s S394 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "6329
-[s S369 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S397 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -274,12 +284,12 @@ OS_FELL 5
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S378 . 1 `uc 1 . 1 0 :7:0 
+[s S406 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S381 . 1 `S366 1 . 1 0 `S369 1 . 1 0 `S378 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES381  1 e 1 @4081 ]
-[s S254 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S409 . 1 `S394 1 . 1 0 `S397 1 . 1 0 `S406 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES409  1 e 1 @4081 ]
+[s S244 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -289,7 +299,7 @@ OS_FELL 5
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6406
-[s S263 . 1 `uc 1 . 1 0 :1:0 
+[s S253 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -298,12 +308,12 @@ OS_FELL 5
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S272 . 1 `uc 1 . 1 0 :6:0 
+[s S262 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S276 . 1 `S254 1 . 1 0 `S263 1 . 1 0 `S272 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES276  1 e 1 @4082 ]
+[u S266 . 1 `S244 1 . 1 0 `S253 1 . 1 0 `S262 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES266  1 e 1 @4082 ]
 "55 /opt/microchip/xc8/v2.30/pic/sources/c99/common/doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
@@ -312,117 +322,117 @@ OS_FELL 5
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"11 /home/eren/MPLABXProjects/THE3.X/main.c
+"12 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _acceptInterrupts acceptInterrupts `a  1 e 1 0 ]
-"12
+"13
 [v _a a `i  1 e 2 0 ]
 [v _b b `i  1 e 2 0 ]
 [v _c c `i  1 e 2 0 ]
-"124
-[v _game_state game_state `E2866  1 e 1 0 ]
-"132
+"15
+[v _game_state game_state `E2433  1 e 1 0 ]
+"86
 [v _main main `(v  1 e 1 0 ]
 {
-"182
+"106
 [v main@i i `i  1 a 2 7 ]
-"177
+"101
 [v main@arr arr `[5]uc  1 a 5 0 ]
-"206
+"128
 } 0
 "9 /opt/microchip/xc8/v2.30/pic/sources/c99/common/nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S996 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[s S1022 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S996  1 a 6 99 ]
+[v sprintf@f f `S1022  1 a 6 100 ]
 "12
-[v sprintf@ap ap `[1]*.39v  1 a 2 97 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 98 ]
 "9
-[v sprintf@s s `*.39uc  1 p 2 89 ]
-[v sprintf@fmt fmt `*.32Cuc  1 p 2 91 ]
+[v sprintf@s s `*.39uc  1 p 2 90 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 92 ]
 "23
 } 0
 "1390 /opt/microchip/xc8/v2.30/pic/sources/c99/common/doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1393
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 87 ]
-[s S1022 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 88 ]
+[s S1048 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S1022  1 p 2 81 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 83 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 85 ]
+[v vfprintf@fp fp `*.39S1048  1 p 2 82 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 84 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 86 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
 "696
-[v vfpfcnvrt@ll ll `o  1 a 8 73 ]
-[s S1022 _IO_FILE 0 ]
+[v vfpfcnvrt@ll ll `o  1 a 8 74 ]
+[s S1048 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S1022  1 p 2 65 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 67 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 69 ]
+[v vfpfcnvrt@fp fp `*.39S1048  1 p 2 66 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 68 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 70 ]
 "1387
 } 0
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
 "290
-[v dtoa@n n `o  1 a 8 55 ]
+[v dtoa@n n `o  1 a 8 56 ]
 "289
-[v dtoa@i i `i  1 a 2 63 ]
-[v dtoa@s s `i  1 a 2 53 ]
-[v dtoa@w w `i  1 a 2 51 ]
-[v dtoa@p p `i  1 a 2 49 ]
-[s S1022 _IO_FILE 0 ]
+[v dtoa@i i `i  1 a 2 64 ]
+[v dtoa@s s `i  1 a 2 54 ]
+[v dtoa@w w `i  1 a 2 52 ]
+[v dtoa@p p `i  1 a 2 50 ]
+[s S1048 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S1022  1 p 2 29 ]
-[v dtoa@d d `o  1 p 8 31 ]
+[v dtoa@fp fp `*.39S1048  1 p 2 30 ]
+[v dtoa@d d `o  1 p 8 32 ]
 "328
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
 "74
-[v pad@w w `i  1 a 2 27 ]
-[v pad@i i `i  1 a 2 25 ]
-[s S1022 _IO_FILE 0 ]
+[v pad@w w `i  1 a 2 28 ]
+[v pad@i i `i  1 a 2 26 ]
+[s S1048 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S1022  1 p 2 18 ]
-[v pad@buf buf `*.39uc  1 p 2 20 ]
-[v pad@p p `i  1 p 2 22 ]
+[v pad@fp fp `*.39S1048  1 p 2 19 ]
+[v pad@buf buf `*.39uc  1 p 2 21 ]
+[v pad@p p `i  1 p 2 23 ]
 "95
 } 0
 "5 /opt/microchip/xc8/v2.30/pic/sources/c99/common/strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "7
-[v strlen@a a `*.39Cuc  1 a 2 4 ]
+[v strlen@a a `*.39Cuc  1 a 2 5 ]
 "5
-[v strlen@s s `*.39Cuc  1 p 2 2 ]
+[v strlen@s s `*.39Cuc  1 p 2 3 ]
 "12
 } 0
 "8 /opt/microchip/xc8/v2.30/pic/sources/c99/common/nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
 {
 "11
-[v fputs@i i `i  1 a 2 16 ]
+[v fputs@i i `i  1 a 2 17 ]
 "10
-[v fputs@c c `uc  1 a 1 15 ]
+[v fputs@c c `uc  1 a 1 16 ]
 "8
-[v fputs@s s `*.39Cuc  1 p 2 11 ]
-[s S996 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S996  1 p 2 13 ]
+[v fputs@s s `*.39Cuc  1 p 2 12 ]
+[s S1022 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1022  1 p 2 14 ]
 "19
 } 0
 "8 /opt/microchip/xc8/v2.30/pic/sources/c99/common/nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 2 ]
-[s S996 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S996  1 p 2 4 ]
+[v fputc@c c `i  1 p 2 3 ]
+[s S1022 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1022  1 p 2 5 ]
 "24
 } 0
 "7 /opt/microchip/xc8/v2.30/pic/sources/c99/common/putch.c
@@ -433,40 +443,40 @@ OS_FELL 5
 "1 /opt/microchip/xc8/v2.30/pic/sources/c99/common/abs.c
 [v _abs abs `(i  1 e 2 0 ]
 {
-[v abs@a a `i  1 p 2 20 ]
+[v abs@a a `i  1 p 2 21 ]
 "4
 } 0
 "9 /opt/microchip/xc8/v2.30/pic/sources/c99/common/aomod.c
 [v ___aomod __aomod `(o  1 e 8 0 ]
 {
 "12
-[v ___aomod@sign sign `uc  1 a 1 19 ]
-[v ___aomod@counter counter `uc  1 a 1 18 ]
+[v ___aomod@sign sign `uc  1 a 1 20 ]
+[v ___aomod@counter counter `uc  1 a 1 19 ]
 "9
-[v ___aomod@dividend dividend `o  1 p 8 2 ]
-[v ___aomod@divisor divisor `o  1 p 8 10 ]
+[v ___aomod@dividend dividend `o  1 p 8 3 ]
+[v ___aomod@divisor divisor `o  1 p 8 11 ]
 "36
 } 0
 "9 /opt/microchip/xc8/v2.30/pic/sources/c99/common/aodiv.c
 [v ___aodiv __aodiv `(o  1 e 8 0 ]
 {
 "12
-[v ___aodiv@quotient quotient `o  1 a 8 20 ]
+[v ___aodiv@quotient quotient `o  1 a 8 21 ]
 "13
-[v ___aodiv@sign sign `uc  1 a 1 19 ]
-[v ___aodiv@counter counter `uc  1 a 1 18 ]
+[v ___aodiv@sign sign `uc  1 a 1 20 ]
+[v ___aodiv@counter counter `uc  1 a 1 19 ]
 "9
-[v ___aodiv@dividend dividend `o  1 p 8 2 ]
-[v ___aodiv@divisor divisor `o  1 p 8 10 ]
+[v ___aodiv@dividend dividend `o  1 p 8 3 ]
+[v ___aodiv@divisor divisor `o  1 p 8 11 ]
 "43
 } 0
 "105 /home/eren/MPLABXProjects/THE3.X/lcd.h
 [v _LCDStr LCDStr `(v  1 e 1 0 ]
 {
 "106
-[v LCDStr@i i `uc  1 a 1 8 ]
+[v LCDStr@i i `uc  1 a 1 9 ]
 "105
-[v LCDStr@str str `*.39Cuc  1 p 2 6 ]
+[v LCDStr@str str `*.39Cuc  1 p 2 7 ]
 "118
 } 0
 "122
@@ -474,7 +484,12 @@ OS_FELL 5
 {
 "135
 } 0
-"159
+"132 /home/eren/MPLABXProjects/THE3.X/main.c
+[v _InitInterrupts InitInterrupts `(v  1 e 1 0 ]
+{
+"172
+} 0
+"159 /home/eren/MPLABXProjects/THE3.X/lcd.h
 [v _AddCustomCharacters AddCustomCharacters `(v  1 e 1 0 ]
 {
 "168
@@ -484,12 +499,12 @@ OS_FELL 5
 {
 [v LCDAddSpecialCharacter@character_index character_index `uc  1 a 1 wreg ]
 "150
-[v LCDAddSpecialCharacter@i i `uc  1 a 1 9 ]
+[v LCDAddSpecialCharacter@i i `uc  1 a 1 10 ]
 "143
 [v LCDAddSpecialCharacter@character_index character_index `uc  1 a 1 wreg ]
-[v LCDAddSpecialCharacter@data data `*.39uc  1 p 2 6 ]
+[v LCDAddSpecialCharacter@data data `*.39uc  1 p 2 7 ]
 "149
-[v LCDAddSpecialCharacter@character_index character_index `uc  1 a 1 8 ]
+[v LCDAddSpecialCharacter@character_index character_index `uc  1 a 1 9 ]
 "156
 } 0
 "86
@@ -497,8 +512,8 @@ OS_FELL 5
 {
 [v LCDGoto@p_2 p_2 `uc  1 a 1 wreg ]
 [v LCDGoto@p_2 p_2 `uc  1 a 1 wreg ]
-[v LCDGoto@p_1 p_1 `uc  1 p 1 4 ]
-[v LCDGoto@p_2 p_2 `uc  1 a 1 5 ]
+[v LCDGoto@p_1 p_1 `uc  1 p 1 5 ]
+[v LCDGoto@p_2 p_2 `uc  1 a 1 6 ]
 "101
 } 0
 "62
@@ -506,7 +521,7 @@ OS_FELL 5
 {
 [v LCDCmd@cmd cmd `uc  1 a 1 wreg ]
 [v LCDCmd@cmd cmd `uc  1 a 1 wreg ]
-[v LCDCmd@cmd cmd `uc  1 a 1 3 ]
+[v LCDCmd@cmd cmd `uc  1 a 1 4 ]
 "70
 } 0
 "72
@@ -514,16 +529,38 @@ OS_FELL 5
 {
 [v LCDDat@dat dat `uc  1 a 1 wreg ]
 [v LCDDat@dat dat `uc  1 a 1 wreg ]
-[v LCDDat@dat dat `uc  1 a 1 3 ]
+[v LCDDat@dat dat `uc  1 a 1 4 ]
 "81
 } 0
-"38 /home/eren/MPLABXProjects/THE3.X/main.c
+"27 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _highIsr highIsr `IIH(v  1 e 1 0 ]
 {
-"92
+"28
+[v highIsr@portbVals portbVals `uc  1 a 1 2 ]
+"79
 } 0
-"14
+"190
+[v _up up `(v  1 e 1 0 ]
+{
+"193
+} 0
+"186
+[v _right right `(v  1 e 1 0 ]
+{
+"189
+} 0
+"182
+[v _left left `(v  1 e 1 0 ]
+{
+"185
+} 0
+"194
+[v _down down `(v  1 e 1 0 ]
+{
+"197
+} 0
+"175
 [v _SetupDebouncingTimer SetupDebouncingTimer `(v  1 e 1 0 ]
 {
-"19
+"180
 } 0
