@@ -4418,6 +4418,7 @@ typedef enum ObjectTypes {
 
 typedef struct GameElement {
     byte x, y;
+    byte oldX, oldY;
     _Bool active;
     ObjectTypes type;
     ObjectStates state;
@@ -4563,7 +4564,7 @@ unsigned short compute_frisbee_target_and_route(unsigned short current_fisbee_x_
 
         break;
     }
-# 200 "./the3.h"
+# 201 "./the3.h"
     unsigned short x = current_fisbee_x_position;
     if (target_x < current_fisbee_x_position) {
         for (unsigned short i = 0; i < x_step_size; i++) {
@@ -4978,7 +4979,7 @@ GameStates game_state = GS_INACTIVE;
 GameElement objs[6];
 GameElement* display[4][16];
 byte segValues[11] = {0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111, 0b01000000};
-
+byte portbVals = 0;
 
 void SetupDebouncingTimer();
 void PrintPORTBandIntCounts();
@@ -4992,7 +4993,7 @@ void up(GameElement*);
 void down(GameElement*);
 
 void __attribute__((picinterrupt(("high_priority")))) highIsr(){
-    byte portbVals = PORTB;
+    portbVals = PORTB;
 
     if (INTCONbits.TMR0IF) {
         acceptInterrupts = 1;
@@ -5003,9 +5004,7 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
     if (INTCONbits.INT0IF ){
         if (acceptInterrupts) {
             a++;
-
-
-
+            right(&objs[selectedPlayer]);
             SetupDebouncingTimer();
         }
     }
@@ -5056,30 +5055,7 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 
 void __attribute__((picinterrupt(("low_priority")))) lowIsr(){
     PIR1bits.TMR2IF = 0;
-    byte temp_d = PORTD;
-    byte temp_a = PORTA;
-
-    switch (currentSegment) {
-        case 0:
-            LATA = 0b1000;
-            LATD = segValues[scoreA];
-            break;
-        case 1:
-            LATA = 0b10000;
-            LATD = segValues[10];
-            break;
-        case 2:
-            LATA = 0b100000;
-            LATD = segValues[scoreB];
-            break;
-        default:
-            break;
-    }
-    currentSegment = (currentSegment + 1) % 3;
-
-    LATA = temp_a;
-    LATD = temp_d;
-
+# 146 "main.c"
 }
 
 
@@ -5114,71 +5090,94 @@ void UpdateAndPrintDisplay() {
         display[objs[i].y-1][objs[i].x-1] = &objs[i];
     }
 
+    for (int i = 0; i < 6; i++) {
+        if (objs[i].oldX == 0 && objs[i].oldY == 0) {
+            continue;
+        }
+        lcd_x = objs[i].oldX;
+        lcd_y = objs[i].oldY;
+        LCDGoto(lcd_x, lcd_y);
+        LCDDat(' ');
+    }
 
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 16; j++) {
+    for (int i = 0; i < 6; i++) {
+        if (objs[i].active == 0) continue;
 
-            lcd_y = (byte)i+1;
-            lcd_x = (byte)j+1;
-            LCDGoto(lcd_x, lcd_y);
+        lcd_x = objs[i].x;
+        lcd_y = objs[i].y;
+        LCDGoto(lcd_x, lcd_y);
 
-            if (display[i][j] == ((void*)0) || display[i][j]->active == 0) {
-                LCDDat(' ');
-                continue;
-            }
+        switch(objs[i].type) {
+            case OT_FRISBEE:
+                LCDDat(6);
+                break;
 
+            case OT_TARGET:
+                LCDDat(7);
+                break;
 
+            case OT_PLAYERA:
+                switch (objs[i].state) {
+                    case OS_DEFAULT:
+                        LCDDat(0);
+                        break;
+                    case OS_SELECTED:
+                        LCDDat(2);
+                        break;
+                    case OS_SEL_W_FRISBEE:
+                        LCDDat(4);
+                        break;
+                    default:
 
-            switch(display[i][j]->type) {
-                case OT_FRISBEE:
-                    LCDDat(6);
-                    break;
+                        break;
+                }
+                break;
 
-                case OT_TARGET:
-                    LCDDat(7);
-                    break;
+            case OT_PLAYERB:
+                switch (objs[i].state) {
+                    case OS_DEFAULT:
+                        LCDDat(1);
+                        break;
+                    case OS_SELECTED:
+                        LCDDat(3);
+                        break;
+                    case OS_SEL_W_FRISBEE:
+                        LCDDat(5);
+                        break;
+                    default:
 
-                case OT_PLAYERA:
-                    switch (display[i][j]->state) {
-                        case OS_DEFAULT:
-                            LCDDat(0);
-                            break;
-                        case OS_SELECTED:
-                            LCDDat(2);
-                            break;
-                        case OS_SEL_W_FRISBEE:
-                            LCDDat(4);
-                            break;
-                        default:
+                        break;
+                }
+                break;
 
-                            break;
-                    }
-                    break;
+            default:
 
-                case OT_PLAYERB:
-                    switch (display[i][j]->state) {
-                        case OS_DEFAULT:
-                            LCDDat(1);
-                            break;
-                        case OS_SELECTED:
-                            LCDDat(3);
-                            break;
-                        case OS_SEL_W_FRISBEE:
-                            LCDDat(5);
-                            break;
-                        default:
-
-                            break;
-                    }
-                    break;
-
-                default:
-
-                    break;
-
-            }
+                break;
         }
     }
+# 311 "main.c"
+    byte temp_d = PORTD;
+
+    switch (currentSegment) {
+        case 0:
+            LATA = 0b1000;
+            LATD = segValues[scoreA];
+            break;
+        case 1:
+            LATA = 0b100000;
+            LATD = segValues[scoreB];
+            break;
+        case 2:
+            LATA = 0b10000;
+            LATD = segValues[10];
+            break;
+    }
+
+    _delay((unsigned long)((5)*(10000000L/4000.0)));
+    currentSegment = (currentSegment + 1) % 3;
+
+
+    LATD = temp_d;
 }
 
 void InitGameObjects() {
@@ -5192,36 +5191,48 @@ void InitGameObjects() {
 
     objs[0].x = 3;
     objs[0].y = 2;
+    objs[0].oldX = 0;
+    objs[0].oldY = 0;
     objs[0].type = OT_PLAYERA;
     objs[0].state = OS_SELECTED;
     objs[0].active = 1;
 
     objs[1].x = 3;
     objs[1].y = 3;
+    objs[1].oldX = 0;
+    objs[1].oldY = 0;
     objs[1].type = OT_PLAYERA;
     objs[1].state = OS_DEFAULT;
     objs[1].active = 1;
 
     objs[2].x = 14;
     objs[2].y = 2;
+    objs[2].oldX = 0;
+    objs[2].oldY = 0;
     objs[2].type = OT_PLAYERB;
     objs[2].state = OS_DEFAULT;
     objs[2].active = 1;
 
     objs[3].x = 14;
     objs[3].y = 3;
+    objs[3].oldX = 0;
+    objs[3].oldY = 0;
     objs[3].type = OT_PLAYERB;
     objs[3].state = OS_DEFAULT;
     objs[3].active = 1;
 
     objs[5].x = 9;
     objs[5].y = 2;
+    objs[5].oldX = 0;
+    objs[5].oldY = 0;
     objs[5].type = OT_FRISBEE;
     objs[5].state = OS_FELL;
     objs[5].active = 1;
 
     objs[4].x = 1;
     objs[4].y = 1;
+    objs[4].oldX = 0;
+    objs[4].oldY = 0;
     objs[4].type = OT_TARGET;
     objs[4].active = 0;
 
@@ -5296,18 +5307,7 @@ void InitInterrupts() {
     PORTB = PORTB;
     INTCONbits.RBIF = 0;
     INTCONbits.RBIE = 1;
-
-
-    INTCON2bits.RBIP = 1;
-    INTCON2bits.TMR0IP = 1;
-    INTCON3bits.INT1IP = 1;
-    IPR1bits.TMR1IP = 1;
-
-    PIE1bits.TMR2IE = 1;
-    PIR1bits.TMR2IF = 0;
-    IPR1bits.TMR2IP = 0;
-    RCONbits.IPEN = 1;
-    T2CON = 0b00001111;
+# 475 "main.c"
 }
 
 
@@ -5327,6 +5327,7 @@ void left(GameElement* pl) {
     if (display[pl->y-1][pl->x-2]->type == OT_FRISBEE) {
 
     }
+    pl->oldX = pl->x;
     pl->x--;
     return;
 }
@@ -5337,6 +5338,7 @@ void right(GameElement* pl) {
     if (display[pl->y-1][pl->x]->type == OT_FRISBEE) {
 
     }
+    pl->oldX = pl->x;
     pl->x++;
     return;
 }
@@ -5347,6 +5349,7 @@ void up(GameElement* pl) {
     if (display[pl->y-2][pl->x-1]->type == OT_FRISBEE) {
 
     }
+    pl->oldY = pl->y;
     pl->y--;
     return;
 }
@@ -5357,6 +5360,7 @@ void down(GameElement* pl) {
     if (display[pl->y][pl->x-1]->type == OT_FRISBEE) {
 
     }
+    pl->oldY = pl->y;
     pl->y++;
     return;
 }

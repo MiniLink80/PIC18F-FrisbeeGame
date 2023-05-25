@@ -24,7 +24,7 @@ GameStates game_state = GS_INACTIVE;
 GameElement objs[6];
 GameElement* display[4][16];
 byte segValues[11] = {0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111, 0b01000000};
-
+byte portbVals = 0;
 
 void SetupDebouncingTimer();
 void PrintPORTBandIntCounts();
@@ -38,7 +38,7 @@ void up(GameElement*);
 void down(GameElement*);
 
 void __interrupt(high_priority) highIsr(){
-    byte portbVals = PORTB;     // Read portb asap because bouncing can fuck the input up 
+    portbVals = PORTB;     // Read portb asap because bouncing can fuck the input up 
     
     if (INTCONbits.TMR0IF) {    // Start accepting interrupts again once TMR0 triggers
         acceptInterrupts = true;
@@ -49,9 +49,7 @@ void __interrupt(high_priority) highIsr(){
     if (INTCONbits.INT0IF/* && PORTBbits.RB0*/){         // INT0
         if (acceptInterrupts) {
             a++;
-            
-            //TEAM_A_P1.x++;
-            
+            right(&objs[selectedPlayer]);
             SetupDebouncingTimer();
         }
     }
@@ -102,9 +100,30 @@ void __interrupt(high_priority) highIsr(){
 
 void __interrupt(low_priority) lowIsr(){
     PIR1bits.TMR2IF = 0;
+    /*PIE1bits.TMR2IE = 0;
     byte temp_d = PORTD;
     byte temp_a = PORTA;
     
+    LATA = 0b1000;
+    LATD = segValues[scoreA];
+    __delay_us(3000);
+    
+    LATA = 0b10000;
+    LATD = segValues[10];
+    __delay_us(3000);
+    
+    LATA = 0b100000;
+    LATD = segValues[scoreB];
+    __delay_us(3000);
+    
+    LATA = temp_a;
+    LATD = temp_d;
+    
+    
+    
+    PIE1bits.TMR2IE = 1;*/
+    /*
+            
     switch (currentSegment) {
         case 0:
             LATA = 0b1000;
@@ -121,10 +140,8 @@ void __interrupt(low_priority) lowIsr(){
         default:
             break;
     }
-    currentSegment = (currentSegment + 1) % 3;
+    currentSegment = (currentSegment + 1) % 3;*/
     
-    LATA = temp_a;
-    LATD = temp_d;
     
 }
 
@@ -160,7 +177,72 @@ void UpdateAndPrintDisplay() {
         display[objs[i].y-1][objs[i].x-1] = &objs[i];
     }
     
+    for (int i = 0; i < OBJ_COUNT; i++) {
+        if (objs[i].oldX == 0 && objs[i].oldY == 0) {
+            continue;
+        }
+        lcd_x = objs[i].oldX;
+        lcd_y = objs[i].oldY;
+        LCDGoto(lcd_x, lcd_y);
+        LCDDat(' ');
+    }
     
+    for (int i = 0; i < OBJ_COUNT; i++) {
+        if (objs[i].active == false) continue;
+        
+        lcd_x = objs[i].x;
+        lcd_y = objs[i].y;
+        LCDGoto(lcd_x, lcd_y);
+        
+        switch(objs[i].type) {
+            case OT_FRISBEE:
+                LCDDat(FRISBEE_OFFSET);
+                break;
+
+            case OT_TARGET:
+                LCDDat(TARGET_OFFSET);
+                break;
+
+            case OT_PLAYERA:
+                switch (objs[i].state) {
+                    case OS_DEFAULT:
+                        LCDDat(PLA_OFFSET);
+                        break;
+                    case OS_SELECTED:
+                        LCDDat(PLA_SEL_OFFSET);
+                        break;
+                    case OS_SEL_W_FRISBEE:
+                        LCDDat(PLA_FRI_OFFSET);
+                        break;
+                    default:
+                        // shouldn't get here
+                        break;
+                }
+                break;
+
+            case OT_PLAYERB:
+                switch (objs[i].state) {
+                    case OS_DEFAULT:
+                        LCDDat(PLB_OFFSET);
+                        break;
+                    case OS_SELECTED:
+                        LCDDat(PLB_SEL_OFFSET);
+                        break;
+                    case OS_SEL_W_FRISBEE:
+                        LCDDat(PLB_FRI_OFFSET);
+                        break;
+                    default:
+                        // shouldn't get here
+                        break;
+                }
+                break;
+
+            default:
+                // shouldn't get here
+                break;
+        }
+    }
+    /*
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 16; j++) {
             
@@ -224,7 +306,30 @@ void UpdateAndPrintDisplay() {
                     
             }
         }
+    }*/
+    
+    byte temp_d = PORTD;
+    
+    switch (currentSegment) {
+        case 0:
+            LATA = 0b1000;
+            LATD = segValues[scoreA];
+            break;
+        case 1:
+            LATA = 0b100000;
+            LATD = segValues[scoreB];
+            break;
+        case 2:
+            LATA = 0b10000;
+            LATD = segValues[10];
+            break;
     }
+    
+    __delay_ms(5);
+    currentSegment = (currentSegment + 1) % 3;
+    
+    
+    LATD = temp_d;
 }
 
 void InitGameObjects() {
@@ -238,36 +343,48 @@ void InitGameObjects() {
     
     TEAM_A_P1.x = 3;
     TEAM_A_P1.y = 2;
+    TEAM_A_P1.oldX = 0;
+    TEAM_A_P1.oldY = 0;
     TEAM_A_P1.type = OT_PLAYERA;
     TEAM_A_P1.state = OS_SELECTED;
     TEAM_A_P1.active = true;
     
     TEAM_A_P2.x = 3;
     TEAM_A_P2.y = 3;
+    TEAM_A_P2.oldX = 0;
+    TEAM_A_P2.oldY = 0;
     TEAM_A_P2.type = OT_PLAYERA;
     TEAM_A_P2.state = OS_DEFAULT;
     TEAM_A_P2.active = true;
     
     TEAM_B_P1.x = 14;
     TEAM_B_P1.y = 2;
+    TEAM_B_P1.oldX = 0;
+    TEAM_B_P1.oldY = 0;
     TEAM_B_P1.type = OT_PLAYERB;
     TEAM_B_P1.state = OS_DEFAULT;
     TEAM_B_P1.active = true;
     
     TEAM_B_P2.x = 14;
     TEAM_B_P2.y = 3;
+    TEAM_B_P2.oldX = 0;
+    TEAM_B_P2.oldY = 0;
     TEAM_B_P2.type = OT_PLAYERB;
     TEAM_B_P2.state = OS_DEFAULT;
     TEAM_B_P2.active = true;
     
     FRISBEE.x = 9;
     FRISBEE.y = 2;
+    FRISBEE.oldX = 0;
+    FRISBEE.oldY = 0;
     FRISBEE.type = OT_FRISBEE;
     FRISBEE.state = OS_FELL;
     FRISBEE.active = true;
     
     TARGET.x = 1;
     TARGET.y = 1;
+    TARGET.oldX = 0;
+    TARGET.oldY = 0;
     TARGET.type = OT_TARGET;
     TARGET.active = false;
     
@@ -344,16 +461,17 @@ void InitInterrupts() {
     INTCONbits.RBIE = 1;
     
     
+    /*
     INTCON2bits.RBIP = 1;   // Set priorities for interrupts
     INTCON2bits.TMR0IP = 1;
     INTCON3bits.INT1IP = 1;
     IPR1bits.TMR1IP = 1;
     
-    PIE1bits.TMR2IE = 1;    // Setup tmr2 for the 7 segment display
+    PIE1bits.TMR2IE = 0;    // Setup tmr2 for the 7 segment display
     PIR1bits.TMR2IF = 0;
     IPR1bits.TMR2IP = 0;
     RCONbits.IPEN = 1;
-    T2CON = 0b00001111;
+    T2CON = 0b01111111;*/
 }
 
 
@@ -373,6 +491,7 @@ void left(GameElement* pl) {
     if (display[pl->y-1][pl->x-2]->type == OT_FRISBEE) {
         // do frisbee logic
     }
+    pl->oldX = pl->x;
     pl->x--;
     return;
 }
@@ -383,6 +502,7 @@ void right(GameElement* pl) {
     if (display[pl->y-1][pl->x]->type == OT_FRISBEE) {
         // do frisbee logic
     }
+    pl->oldX = pl->x;
     pl->x++;
     return;
 }
@@ -393,6 +513,7 @@ void up(GameElement* pl) {
     if (display[pl->y-2][pl->x-1]->type == OT_FRISBEE) {
         // do frisbee logic
     }
+    pl->oldY = pl->y;
     pl->y--;
     return;
 }
@@ -403,6 +524,7 @@ void down(GameElement* pl) {
     if (display[pl->y][pl->x-1]->type == OT_FRISBEE) {
         // do frisbee logic
     }
+    pl->oldY = pl->y;
     pl->y++;
     return;
 }
