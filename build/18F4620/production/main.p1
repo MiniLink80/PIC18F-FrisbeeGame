@@ -160,9 +160,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5878
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5878: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
 [v _T0CONbits `VS249 ~T0 @X0 0 e@4053 ]
-"36 main.c
-[; ;main.c: 36: void right(GameElement*);
-[v _right `(v ~T0 @X0 0 ef1`*S270 ]
+"2580
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2580:     struct {
+[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2590
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2590:     struct {
+[s S95 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S95 . . TX1IF RC1IF ]
+"2579
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2579: typedef union {
+[u S93 `S94 1 `S95 1 ]
+[n S93 . . . ]
+"2596
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2596: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS93 ~T0 @X0 0 e@3998 ]
+"5230
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5230:     struct {
+[s S221 :2 `uc 1 :1 `uc 1 ]
+[n S221 . . NOT_T1SYNC ]
+"5234
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5234:     struct {
+[s S222 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S222 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS T1RUN RD16 ]
+"5243
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5243:     struct {
+[s S223 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S223 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"5250
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5250:     struct {
+[s S224 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S224 . . SOSCEN . T1RD16 ]
+"5229
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5229: typedef union {
+[u S220 `S221 1 `S222 1 `S223 1 `S224 1 ]
+[n S220 . . . . . ]
+"5257
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5257: extern volatile T1CONbits_t T1CONbits __attribute__((address(0xFCD)));
+[v _T1CONbits `VS220 ~T0 @X0 0 e@4045 ]
+"5334
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5334: extern volatile unsigned char TMR1L __attribute__((address(0xFCE)));
+[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
+"5341
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5341: extern volatile unsigned char TMR1H __attribute__((address(0xFCF)));
+[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
+"34 main.c
+[; ;main.c: 34: GameElement* CheckIfCaughtFrisbee();
+[v _CheckIfCaughtFrisbee `(*S270 ~T0 @X0 0 e? ]
 "29
 [; ;main.c: 29: void SetupDebouncingTimer();
 [v _SetupDebouncingTimer `(v ~T0 @X0 0 e? ]
@@ -181,31 +225,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6239
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 6239: extern volatile INTCON3bits_t INTCON3bits __attribute__((address(0xFF0)));
 [v _INTCON3bits `VS255 ~T0 @X0 0 e@4080 ]
-"37 main.c
-[; ;main.c: 37: void up(GameElement*);
+"38 main.c
+[; ;main.c: 38: void up(GameElement*);
 [v _up `(v ~T0 @X0 0 ef1`*S270 ]
-"38
-[; ;main.c: 38: void down(GameElement*);
+"37
+[; ;main.c: 37: void right(GameElement*);
+[v _right `(v ~T0 @X0 0 ef1`*S270 ]
+"39
+[; ;main.c: 39: void down(GameElement*);
 [v _down `(v ~T0 @X0 0 ef1`*S270 ]
-"35
-[; ;main.c: 35: void left(GameElement*);
+"36
+[; ;main.c: 36: void left(GameElement*);
 [v _left `(v ~T0 @X0 0 ef1`*S270 ]
 [t T40 __interrupt low_priority ]
-"2580 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2580:     struct {
-[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S94 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-"2590
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2590:     struct {
-[s S95 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S95 . . TX1IF RC1IF ]
-"2579
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2579: typedef union {
-[u S93 `S94 1 `S95 1 ]
-[n S93 . . . ]
-"2596
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2596: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS93 ~T0 @X0 0 e@3998 ]
+"2503 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2503:     struct {
+[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S91 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2513
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2513:     struct {
+[s S92 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S92 . . TX1IE RC1IE ]
+"2502
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2502: typedef union {
+[u S90 `S91 1 `S92 1 ]
+[n S90 . . . ]
+"2519
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2519: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS90 ~T0 @X0 0 e@3997 ]
+"52
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 52: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"880
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 880: extern volatile unsigned char LATA __attribute__((address(0xF89)));
+[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"1216
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 1216: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 [p mainexit ]
 "32 main.c
 [; ;main.c: 32: void InitInterrupts();
@@ -216,12 +272,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31
 [; ;main.c: 31: void UpdateAndPrintDisplay();
 [v _UpdateAndPrintDisplay `(v ~T0 @X0 0 e? ]
-"880 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 880: extern volatile unsigned char LATA __attribute__((address(0xF89)));
-[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
-"1216
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 1216: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
-[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 "113 /opt/microchip/xc8/v2.30/pic/include/c99/stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "4444 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
@@ -264,6 +314,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5947
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5947: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"2657
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2657:     struct {
+[s S97 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S97 . TMR1IP TMR2IP CCP1IP SSPIP TXIP RCIP ADIP PSPIP ]
+"2667
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2667:     struct {
+[s S98 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S98 . . TX1IP RC1IP ]
+"2656
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2656: typedef union {
+[u S96 `S97 1 `S98 1 ]
+[n S96 . . . ]
+"2673
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 2673: extern volatile IPR1bits_t IPR1bits __attribute__((address(0xF9F)));
+[v _IPR1bits `VS96 ~T0 @X0 0 e@3999 ]
+"5224
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5224: extern volatile unsigned char T1CON __attribute__((address(0xFCD)));
+[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
+"5354
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5354:     struct {
+[s S226 :1 `uc 1 ]
+[n S226 . NOT_BOR ]
+"5357
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5357:     struct {
+[s S227 :1 `uc 1 :1 `uc 1 ]
+[n S227 . . NOT_POR ]
+"5361
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5361:     struct {
+[s S228 :2 `uc 1 :1 `uc 1 ]
+[n S228 . . NOT_PD ]
+"5365
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5365:     struct {
+[s S229 :3 `uc 1 :1 `uc 1 ]
+[n S229 . . NOT_TO ]
+"5369
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5369:     struct {
+[s S230 :4 `uc 1 :1 `uc 1 ]
+[n S230 . . NOT_RI ]
+"5373
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5373:     struct {
+[s S231 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S231 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"5383
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5383:     struct {
+[s S232 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S232 . BOR POR PD TO RI ]
+"5353
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5353: typedef union {
+[u S225 `S226 1 `S227 1 `S228 1 `S229 1 `S230 1 `S231 1 `S232 1 ]
+[n S225 . . . . . . . . ]
+"5391
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5391: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
+[v _RCONbits `VS225 ~T0 @X0 0 e@4048 ]
+"5036
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 5036: extern volatile unsigned char T2CON __attribute__((address(0xFCA)));
+[v _T2CON `Vuc ~T0 @X0 0 e@4042 ]
 "54 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -1432,7 +1538,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 20: _Bool acceptInterrupts;
 [v _acceptInterrupts `a ~T0 @X0 1 e ]
 "21
-[; ;main.c: 21: int a = 0, b = 0, c = 0, selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0;
+[; ;main.c: 21: int a = 0, b = 0, c = 0, selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0, gameSpeed = 16, pulseCounter = 0, frisbeeSteps = 0, curFrisbeeSteps = 0;
 [v _a `i ~T0 @X0 1 e ]
 [i _a
 -> 0 `i
@@ -1461,6 +1567,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _currentSegment
 -> 0 `i
 ]
+[v _gameSpeed `i ~T0 @X0 1 e ]
+[i _gameSpeed
+-> 16 `i
+]
+[v _pulseCounter `i ~T0 @X0 1 e ]
+[i _pulseCounter
+-> 0 `i
+]
+[v _frisbeeSteps `i ~T0 @X0 1 e ]
+[i _frisbeeSteps
+-> 0 `i
+]
+[v _curFrisbeeSteps `i ~T0 @X0 1 e ]
+[i _curFrisbeeSteps
+-> 0 `i
+]
 "23
 [; ;main.c: 23: GameStates game_state = GS_INACTIVE;
 [v _game_state `E2433 ~T0 @X0 1 e ]
@@ -1470,10 +1592,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;main.c: 24: GameElement objs[6];
 [v _objs `S270 ~T0 @X0 -> 6 `i e ]
-[v F2892 `*S270 ~T0 @X0 -> 16 `i t ]
+[v F2896 `*S270 ~T0 @X0 -> 16 `i t ]
 "25
 [; ;main.c: 25: GameElement* display[4][16];
-[v _display `F2892 ~T0 @X0 -> 4 `i e ]
+[v _display `F2896 ~T0 @X0 -> 4 `i e ]
 "26
 [; ;main.c: 26: byte segValues[11] = {0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111, 0b01000000};
 [v _segValues `uc ~T0 @X0 -> 11 `i e ]
@@ -1499,1151 +1621,1808 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [v $root$_highIsr `(v ~T0 @X0 0 e ]
-"40
-[; ;main.c: 40: void __attribute__((picinterrupt(("high_priority")))) highIsr(){
+"45
+[; ;main.c: 45: void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 [v _highIsr `(v ~T39 @X0 1 ef ]
 {
 [e :U _highIsr ]
 [f ]
-"41
-[; ;main.c: 41:     portbVals = PORTB;
+"46
+[; ;main.c: 46:     portbVals = PORTB;
 [e = _portbVals _PORTB ]
-"43
-[; ;main.c: 43:     if (INTCONbits.TMR0IF) {
+"48
+[; ;main.c: 48:     if (INTCONbits.TMR0IF) {
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 340  ]
 {
-"44
-[; ;main.c: 44:         acceptInterrupts = 1;
+"49
+[; ;main.c: 49:         acceptInterrupts = 1;
 [e = _acceptInterrupts -> -> 1 `i `a ]
-"45
-[; ;main.c: 45:         T0CONbits.TMR0ON = 0;
+"50
+[; ;main.c: 50:         T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:         INTCONbits.TMR0IF = 0;
+"51
+[; ;main.c: 51:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:     }
+"52
+[; ;main.c: 52:     }
 }
 [e :U 340 ]
-"49
-[; ;main.c: 49:     if (INTCONbits.INT0IF ){
-[e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 341  ]
-{
-"50
-[; ;main.c: 50:         if (acceptInterrupts) {
-[e $ ! != -> _acceptInterrupts `i -> 0 `i 342  ]
-{
-"51
-[; ;main.c: 51:             a++;
-[e ++ _a -> 1 `i ]
-"52
-[; ;main.c: 52:             right(&objs[selectedPlayer]);
-[e ( _right (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
-"53
-[; ;main.c: 53:             SetupDebouncingTimer();
-[e ( _SetupDebouncingTimer ..  ]
 "54
-[; ;main.c: 54:         }
+[; ;main.c: 54:     if (PIR1bits.TMR1IF) {
+[e $ ! != -> . . _PIR1bits 0 0 `i -> 0 `i 341  ]
+{
+"55
+[; ;main.c: 55:         PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"56
+[; ;main.c: 56:         T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+"57
+[; ;main.c: 57:         TMR1L = 0xED;
+[e = _TMR1L -> -> 237 `i `uc ]
+"58
+[; ;main.c: 58:         TMR1H = 0x85;
+[e = _TMR1H -> -> 133 `i `uc ]
+"59
+[; ;main.c: 59:         T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+"61
+[; ;main.c: 61:         pulseCounter++;
+[e ++ _pulseCounter -> 1 `i ]
+"63
+[; ;main.c: 63:         if (objs[5].state == OS_FLYING && pulseCounter % 2 == 0 && game_state == GS_ACTIVE) {
+[e $ ! && && == -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui -> . `E2437 3 `ui == % _pulseCounter -> 2 `i -> 0 `i == -> _game_state `ui -> . `E2433 0 `ui 342  ]
+{
+"64
+[; ;main.c: 64:             objs[4].active = ~objs[4].active;
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> ~ -> . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 `i `a ]
+"65
+[; ;main.c: 65:         }
 }
 [e :U 342 ]
-"55
-[; ;main.c: 55:     }
-}
-[e $U 343  ]
-"57
-[; ;main.c: 57:     else if (INTCON3bits.INT1IF ) {
-[e :U 341 ]
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> 0 `i 344  ]
-{
-"58
-[; ;main.c: 58:         if (acceptInterrupts) {
-[e $ ! != -> _acceptInterrupts `i -> 0 `i 345  ]
-{
-"59
-[; ;main.c: 59:             b++;
-[e ++ _b -> 1 `i ]
-"61
-[; ;main.c: 61:             objs[selectedPlayer].state = OS_DEFAULT;
-[e = . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 0 ]
-"62
-[; ;main.c: 62:             selectedPlayer++;
-[e ++ _selectedPlayer -> 1 `i ]
-"63
-[; ;main.c: 63:             selectedPlayer = selectedPlayer % 4;
-[e = _selectedPlayer % _selectedPlayer -> 4 `i ]
-"64
-[; ;main.c: 64:             objs[selectedPlayer].state = OS_SELECTED;
-[e = . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 1 ]
-"66
-[; ;main.c: 66:             SetupDebouncingTimer();
-[e ( _SetupDebouncingTimer ..  ]
 "67
-[; ;main.c: 67:         }
+[; ;main.c: 67:         if (pulseCounter == gameSpeed && game_state == GS_ACTIVE) {
+[e $ ! && == _pulseCounter _gameSpeed == -> _game_state `ui -> . `E2433 0 `ui 343  ]
+{
+"68
+[; ;main.c: 68:             pulseCounter = 0;
+[e = _pulseCounter -> 0 `i ]
+"69
+[; ;main.c: 69:             if (objs[5].state == OS_FLYING) {
+[e $ ! == -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui -> . `E2437 3 `ui 344  ]
+{
+"70
+[; ;main.c: 70:                 curFrisbeeSteps++;
+[e ++ _curFrisbeeSteps -> 1 `i ]
+"72
+[; ;main.c: 72:                 objs[5].oldX = objs[5].x;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 ]
+"73
+[; ;main.c: 73:                 objs[5].oldY = objs[5].y;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 ]
+"75
+[; ;main.c: 75:                 objs[5].x = frisbee_steps[curFrisbeeSteps][0];
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> *U + &U *U + &U _frisbee_steps * -> -> _curFrisbeeSteps `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> -> _curFrisbeeSteps `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux `uc ]
+"76
+[; ;main.c: 76:                 objs[5].y = frisbee_steps[curFrisbeeSteps][1];
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> *U + &U *U + &U _frisbee_steps * -> -> _curFrisbeeSteps `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> -> _curFrisbeeSteps `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux `uc ]
+"78
+[; ;main.c: 78:                 CheckIfCaughtFrisbee();
+[e ( _CheckIfCaughtFrisbee ..  ]
+"81
+[; ;main.c: 81:                 if (objs[5].x == objs[4].x && objs[5].y == objs[4].y) {
+[e $ ! && == -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i -> . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i == -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i 345  ]
+{
+"82
+[; ;main.c: 82:                     objs[5].state = OS_FELL;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 4 ]
+"83
+[; ;main.c: 83:                     objs[4].active = 0;
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 0 `i `a ]
+"84
+[; ;main.c: 84:                     display[objs[4].y-1][objs[4].x-1] = &objs[5];
+[e = *U + &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux &U *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux ]
+"85
+[; ;main.c: 85:                     objs[4].x = objs[4].y = objs[4].oldX = objs[4].oldY = 0;
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
+"86
+[; ;main.c: 86:                     game_state = GS_INACTIVE;
+[e = _game_state . `E2433 1 ]
+"88
+[; ;main.c: 88:                     curFrisbeeSteps = 0;
+[e = _curFrisbeeSteps -> 0 `i ]
+"89
+[; ;main.c: 89:                 }
 }
 [e :U 345 ]
-"68
-[; ;main.c: 68:     }
+"90
+[; ;main.c: 90:             }
 }
-[e $U 346  ]
-"70
-[; ;main.c: 70:     else if (INTCONbits.RBIF) {
 [e :U 344 ]
-[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 347  ]
-{
-"71
-[; ;main.c: 71:         if (acceptInterrupts) {
-[e $ ! != -> _acceptInterrupts `i -> 0 `i 348  ]
-{
-"72
-[; ;main.c: 72:             portbVals = portbVals >> 4;
-[e = _portbVals -> >> -> _portbVals `i -> 4 `i `uc ]
-"73
-[; ;main.c: 73:             switch (portbVals) {
-[e $U 350  ]
-{
-"74
-[; ;main.c: 74:                 case 0b1110:
-[e :U 351 ]
-"75
-[; ;main.c: 75:                     up(&objs[selectedPlayer]);
-[e ( _up (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
-"76
-[; ;main.c: 76:                     break;
-[e $U 349  ]
-"77
-[; ;main.c: 77:                 case 0b1101:
-[e :U 352 ]
-"78
-[; ;main.c: 78:                     right(&objs[selectedPlayer]);
-[e ( _right (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
-"79
-[; ;main.c: 79:                     break;
-[e $U 349  ]
-"80
-[; ;main.c: 80:                 case 0b1011:
-[e :U 353 ]
-"81
-[; ;main.c: 81:                     down(&objs[selectedPlayer]);
-[e ( _down (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
-"82
-[; ;main.c: 82:                     break;
-[e $U 349  ]
-"83
-[; ;main.c: 83:                 case 0b0111:
-[e :U 354 ]
-"84
-[; ;main.c: 84:                     left(&objs[selectedPlayer]);
-[e ( _left (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
-"85
-[; ;main.c: 85:                     break;
-[e $U 349  ]
-"86
-[; ;main.c: 86:                 default:
-[e :U 355 ]
-"87
-[; ;main.c: 87:                     portbVals = 0;
-[e = _portbVals -> -> 0 `i `uc ]
-"88
-[; ;main.c: 88:                     break;
-[e $U 349  ]
-"89
-[; ;main.c: 89:             }
-}
-[e $U 349  ]
-[e :U 350 ]
-[e [\ -> _portbVals `i , $ -> 14 `i 351
- , $ -> 13 `i 352
- , $ -> 11 `i 353
- , $ -> 7 `i 354
- 355 ]
-[e :U 349 ]
 "91
-[; ;main.c: 91:             c++;
-[e ++ _c -> 1 `i ]
+[; ;main.c: 91:         }
+}
+[e :U 343 ]
 "92
-[; ;main.c: 92:             SetupDebouncingTimer();
+[; ;main.c: 92:     }
+}
+[e :U 341 ]
+"94
+[; ;main.c: 94:     if (INTCONbits.INT0IF ){
+[e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 346  ]
+{
+"95
+[; ;main.c: 95:         if (acceptInterrupts) {
+[e $ ! != -> _acceptInterrupts `i -> 0 `i 347  ]
+{
+"96
+[; ;main.c: 96:             a++;
+[e ++ _a -> 1 `i ]
+"97
+[; ;main.c: 97:             SetupDebouncingTimer();
 [e ( _SetupDebouncingTimer ..  ]
-"93
-[; ;main.c: 93:         }
+"99
+[; ;main.c: 99:             if (objs[selectedPlayer].state == OS_SEL_W_FRISBEE) {
+[e $ ! == -> . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui -> . `E2437 2 `ui 348  ]
+{
+"100
+[; ;main.c: 100:                 frisbeeSteps = compute_frisbee_target_and_route(objs[selectedPlayer].x, objs[selectedPlayer].y);
+[e = _frisbeeSteps -> ( _compute_frisbee_target_and_route (2 , -> . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 0 `us -> . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 1 `us `i ]
+"102
+[; ;main.c: 102:                 objs[4].active = 1;
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 1 `i `a ]
+"104
+[; ;main.c: 104:                 objs[4].x = frisbee_steps[frisbeeSteps-1][0];
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> *U + &U *U + &U _frisbee_steps * -> -> - _frisbeeSteps -> 1 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> -> - _frisbeeSteps -> 1 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux `uc ]
+"105
+[; ;main.c: 105:                 objs[4].y = frisbee_steps[frisbeeSteps-1][1];
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> *U + &U *U + &U _frisbee_steps * -> -> - _frisbeeSteps -> 1 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> -> - _frisbeeSteps -> 1 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux `uc ]
+"106
+[; ;main.c: 106:                 objs[4].oldX = objs[4].oldY = 0;
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
+"108
+[; ;main.c: 108:                 objs[5].x = frisbee_steps[0][0];
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> *U + &U *U + &U _frisbee_steps * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux `uc ]
+"109
+[; ;main.c: 109:                 objs[5].y = frisbee_steps[0][1];
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> *U + &U *U + &U _frisbee_steps * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _frisbee_steps * -> -> -> 0 `i `ui `ux -> * -> # *U &U *U &U _frisbee_steps `ui -> -> 2 `i `ui `ux `ui `ux `uc ]
+"110
+[; ;main.c: 110:                 objs[5].oldX = objs[5].oldY = 0;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
+"111
+[; ;main.c: 111:                 objs[5].active = 1;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 1 `i `a ]
+"112
+[; ;main.c: 112:                 objs[5].state = OS_FLYING;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 3 ]
+"114
+[; ;main.c: 114:                 objs[selectedPlayer].state = OS_SELECTED;
+[e = . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 1 ]
+"116
+[; ;main.c: 116:                 CheckIfCaughtFrisbee();
+[e ( _CheckIfCaughtFrisbee ..  ]
+"119
+[; ;main.c: 119:                 game_state = GS_ACTIVE;
+[e = _game_state . `E2433 0 ]
+"121
+[; ;main.c: 121:                 PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"122
+[; ;main.c: 122:                 T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 1 0 -> -> 0 `i `uc ]
+"123
+[; ;main.c: 123:                 TMR1L = 0xED;
+[e = _TMR1L -> -> 237 `i `uc ]
+"124
+[; ;main.c: 124:                 TMR1H = 0x85;
+[e = _TMR1H -> -> 133 `i `uc ]
+"125
+[; ;main.c: 125:                 T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+"126
+[; ;main.c: 126:             }
 }
 [e :U 348 ]
-"94
-[; ;main.c: 94:     }
+"129
+[; ;main.c: 129:         }
 }
 [e :U 347 ]
+"130
+[; ;main.c: 130:     }
+}
+[e $U 349  ]
+"132
+[; ;main.c: 132:     else if (INTCON3bits.INT1IF ) {
 [e :U 346 ]
-[e :U 343 ]
-"95
-[; ;main.c: 95:     INTCON3bits.INT1IF = 0;
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> 0 `i 350  ]
+{
+"133
+[; ;main.c: 133:         if (acceptInterrupts) {
+[e $ ! != -> _acceptInterrupts `i -> 0 `i 351  ]
+{
+"134
+[; ;main.c: 134:             b++;
+[e ++ _b -> 1 `i ]
+"135
+[; ;main.c: 135:             if (objs[selectedPlayer].state != OS_SEL_W_FRISBEE) {
+[e $ ! != -> . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui -> . `E2437 2 `ui 352  ]
+{
+"136
+[; ;main.c: 136:                 objs[selectedPlayer].state = OS_DEFAULT;
+[e = . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 0 ]
+"137
+[; ;main.c: 137:                 selectedPlayer++;
+[e ++ _selectedPlayer -> 1 `i ]
+"138
+[; ;main.c: 138:                 selectedPlayer = selectedPlayer % 4;
+[e = _selectedPlayer % _selectedPlayer -> 4 `i ]
+"139
+[; ;main.c: 139:                 objs[selectedPlayer].state = OS_SELECTED;
+[e = . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 1 ]
+"140
+[; ;main.c: 140:             }
+}
+[e :U 352 ]
+"143
+[; ;main.c: 143:             SetupDebouncingTimer();
+[e ( _SetupDebouncingTimer ..  ]
+"144
+[; ;main.c: 144:         }
+}
+[e :U 351 ]
+"145
+[; ;main.c: 145:     }
+}
+[e $U 353  ]
+"147
+[; ;main.c: 147:     else if (INTCONbits.RBIF) {
+[e :U 350 ]
+[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 354  ]
+{
+"148
+[; ;main.c: 148:         if (acceptInterrupts) {
+[e $ ! != -> _acceptInterrupts `i -> 0 `i 355  ]
+{
+"149
+[; ;main.c: 149:             portbVals = portbVals >> 4;
+[e = _portbVals -> >> -> _portbVals `i -> 4 `i `uc ]
+"150
+[; ;main.c: 150:             switch (portbVals) {
+[e $U 357  ]
+{
+"151
+[; ;main.c: 151:                 case 0b1110:
+[e :U 358 ]
+"152
+[; ;main.c: 152:                     up(&objs[selectedPlayer]);
+[e ( _up (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
+"153
+[; ;main.c: 153:                     break;
+[e $U 356  ]
+"154
+[; ;main.c: 154:                 case 0b1101:
+[e :U 359 ]
+"155
+[; ;main.c: 155:                     right(&objs[selectedPlayer]);
+[e ( _right (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
+"156
+[; ;main.c: 156:                     break;
+[e $U 356  ]
+"157
+[; ;main.c: 157:                 case 0b1011:
+[e :U 360 ]
+"158
+[; ;main.c: 158:                     down(&objs[selectedPlayer]);
+[e ( _down (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
+"159
+[; ;main.c: 159:                     break;
+[e $U 356  ]
+"160
+[; ;main.c: 160:                 case 0b0111:
+[e :U 361 ]
+"161
+[; ;main.c: 161:                     left(&objs[selectedPlayer]);
+[e ( _left (1 &U *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux ]
+"162
+[; ;main.c: 162:                     break;
+[e $U 356  ]
+"163
+[; ;main.c: 163:                 default:
+[e :U 362 ]
+"164
+[; ;main.c: 164:                     portbVals = 0;
+[e = _portbVals -> -> 0 `i `uc ]
+"165
+[; ;main.c: 165:                     break;
+[e $U 356  ]
+"166
+[; ;main.c: 166:             }
+}
+[e $U 356  ]
+[e :U 357 ]
+[e [\ -> _portbVals `i , $ -> 14 `i 358
+ , $ -> 13 `i 359
+ , $ -> 11 `i 360
+ , $ -> 7 `i 361
+ 362 ]
+[e :U 356 ]
+"168
+[; ;main.c: 168:             c++;
+[e ++ _c -> 1 `i ]
+"169
+[; ;main.c: 169:             SetupDebouncingTimer();
+[e ( _SetupDebouncingTimer ..  ]
+"170
+[; ;main.c: 170:         }
+}
+[e :U 355 ]
+"171
+[; ;main.c: 171:     }
+}
+[e :U 354 ]
+[e :U 353 ]
+[e :U 349 ]
+"172
+[; ;main.c: 172:     INTCON3bits.INT1IF = 0;
 [e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"96
-[; ;main.c: 96:     INTCONbits.INT0IF = 0;
+"173
+[; ;main.c: 173:     INTCONbits.INT0IF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"97
-[; ;main.c: 97:     INTCONbits.RBIF = 0;
+"174
+[; ;main.c: 174:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"99
-[; ;main.c: 99: }
+"176
+[; ;main.c: 176: }
 [e :UE 339 ]
 }
 [v $root$_lowIsr `(v ~T0 @X0 0 e ]
-"101
-[; ;main.c: 101: void __attribute__((picinterrupt(("low_priority")))) lowIsr(){
+"178
+[; ;main.c: 178: void __attribute__((picinterrupt(("low_priority")))) lowIsr(){
 [v _lowIsr `(v ~T40 @X0 1 ef ]
 {
 [e :U _lowIsr ]
 [f ]
-"102
-[; ;main.c: 102:     PIR1bits.TMR2IF = 0;
+"179
+[; ;main.c: 179:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"146
-[; ;main.c: 146: }
-[e :UE 356 ]
+"180
+[; ;main.c: 180:     PIE1bits.TMR2IE = 0;
+[e = . . _PIE1bits 0 1 -> -> 0 `i `uc ]
+"182
+[; ;main.c: 182:     byte temp_d = PORTD;
+[v _temp_d `uc ~T0 @X0 1 a ]
+[e = _temp_d _PORTD ]
+"183
+[; ;main.c: 183:     byte temp_a = PORTA;
+[v _temp_a `uc ~T0 @X0 1 a ]
+[e = _temp_a _PORTA ]
+"185
+[; ;main.c: 185:     LATA = 0b1000;
+[e = _LATA -> -> 8 `i `uc ]
+"186
+[; ;main.c: 186:     LATD = segValues[scoreA];
+[e = _LATD *U + &U _segValues * -> -> _scoreA `ui `ux -> -> # *U &U _segValues `ui `ux ]
+"187
+[; ;main.c: 187:     _delay((unsigned long)((4000)*(10000000L/4000000.0)));
+[e ( __delay (1 -> * -> -> 4000 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
+"189
+[; ;main.c: 189:     LATA = 0b10000;
+[e = _LATA -> -> 16 `i `uc ]
+"190
+[; ;main.c: 190:     LATD = segValues[10];
+[e = _LATD *U + &U _segValues * -> -> -> 10 `i `ui `ux -> -> # *U &U _segValues `ui `ux ]
+"191
+[; ;main.c: 191:     _delay((unsigned long)((4000)*(10000000L/4000000.0)));
+[e ( __delay (1 -> * -> -> 4000 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
+"193
+[; ;main.c: 193:     LATA = 0b100000;
+[e = _LATA -> -> 32 `i `uc ]
+"194
+[; ;main.c: 194:     LATD = segValues[scoreB];
+[e = _LATD *U + &U _segValues * -> -> _scoreB `ui `ux -> -> # *U &U _segValues `ui `ux ]
+"195
+[; ;main.c: 195:     _delay((unsigned long)((4000)*(10000000L/4000000.0)));
+[e ( __delay (1 -> * -> -> 4000 `i `d / -> -> 10000000 `l `d .4000000.0 `ul ]
+"197
+[; ;main.c: 197:     LATA = temp_a;
+[e = _LATA _temp_a ]
+"198
+[; ;main.c: 198:     LATD = temp_d;
+[e = _LATD _temp_d ]
+"200
+[; ;main.c: 200:     PIE1bits.TMR2IE = 1;
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+"201
+[; ;main.c: 201: }
+[e :UE 363 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"152
-[; ;main.c: 152: void main(void)
+"207
+[; ;main.c: 207: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"153
-[; ;main.c: 153: {
+"208
+[; ;main.c: 208: {
 {
 [e :U _main ]
 [f ]
-"154
-[; ;main.c: 154:     InitInterrupts();
+"209
+[; ;main.c: 209:     InitInterrupts();
 [e ( _InitInterrupts ..  ]
-"155
-[; ;main.c: 155:     InitLCD();
+"210
+[; ;main.c: 210:     InitLCD();
 [e ( _InitLCD ..  ]
-"156
-[; ;main.c: 156:     InitGameObjects();
+"211
+[; ;main.c: 211:     InitGameObjects();
 [e ( _InitGameObjects ..  ]
-"158
-[; ;main.c: 158:     AddCustomCharacters();
+"213
+[; ;main.c: 213:     AddCustomCharacters();
 [e ( _AddCustomCharacters ..  ]
-"162
-[; ;main.c: 162:     while(1) {
-[e :U 359 ]
+"217
+[; ;main.c: 217:     while(1) {
+[e :U 366 ]
 {
-"165
-[; ;main.c: 165:         UpdateAndPrintDisplay();
+"218
+[; ;main.c: 218:         UpdateAndPrintDisplay();
 [e ( _UpdateAndPrintDisplay ..  ]
-"167
-[; ;main.c: 167:     }
+"219
+[; ;main.c: 219:     }
 }
-[e :U 358 ]
-[e $U 359  ]
-[e :U 360 ]
-"168
-[; ;main.c: 168: }
-[e :UE 357 ]
+[e :U 365 ]
+[e $U 366  ]
+[e :U 367 ]
+"220
+[; ;main.c: 220: }
+[e :UE 364 ]
 }
-"170
-[; ;main.c: 170: void UpdateAndPrintDisplay() {
+"222
+[; ;main.c: 222: void UpdateAndPrintDisplay() {
 [v _UpdateAndPrintDisplay `(v ~T0 @X0 1 ef ]
 {
 [e :U _UpdateAndPrintDisplay ]
 [f ]
-"171
-[; ;main.c: 171:     for (int i = 0; i < 4; i++) {
+"223
+[; ;main.c: 223:     for (int i = 0; i < 4; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 362  ]
-[e $U 363  ]
-[e :U 362 ]
+[e $ < _i -> 4 `i 369  ]
+[e $U 370  ]
+[e :U 369 ]
 {
-"172
-[; ;main.c: 172:         for (int j = 0; j < 16; j++) {
+"224
+[; ;main.c: 224:         for (int j = 0; j < 16; j++) {
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
-[e $ < _j -> 16 `i 365  ]
-[e $U 366  ]
-[e :U 365 ]
+[e $ < _j -> 16 `i 372  ]
+[e $U 373  ]
+[e :U 372 ]
 {
-"173
-[; ;main.c: 173:             display[i][j] = ((void*)0);
+"225
+[; ;main.c: 225:             display[i][j] = ((void*)0);
 [e = *U + &U *U + &U _display * -> -> _i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> _j `ui `ux -> -> # *U &U *U + &U _display * -> -> _i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 ]
-"174
-[; ;main.c: 174:         }
+"226
+[; ;main.c: 226:         }
 }
 [e ++ _j -> 1 `i ]
-[e $ < _j -> 16 `i 365  ]
-[e :U 366 ]
-}
-"175
-[; ;main.c: 175:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 362  ]
-[e :U 363 ]
-}
-"176
-[; ;main.c: 176:     for (int i = 0; i < 6; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 368  ]
-[e $U 369  ]
-[e :U 368 ]
-{
-"177
-[; ;main.c: 177:         display[objs[i].y-1][objs[i].x-1] = &objs[i];
-[e = *U + &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux &U *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux ]
-"178
-[; ;main.c: 178:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 368  ]
-[e :U 369 ]
-}
-"180
-[; ;main.c: 180:     for (int i = 0; i < 6; i++) {
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 371  ]
-[e $U 372  ]
-[e :U 371 ]
-{
-"181
-[; ;main.c: 181:         if (objs[i].oldX == 0 && objs[i].oldY == 0) {
-[e $ ! && == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 2 `i -> 0 `i == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 3 `i -> 0 `i 374  ]
-{
-"182
-[; ;main.c: 182:             continue;
-[e $U 373  ]
-"183
-[; ;main.c: 183:         }
-}
-[e :U 374 ]
-"184
-[; ;main.c: 184:         lcd_x = objs[i].oldX;
-[e = _lcd_x . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 2 ]
-"185
-[; ;main.c: 185:         lcd_y = objs[i].oldY;
-[e = _lcd_y . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 3 ]
-"186
-[; ;main.c: 186:         LCDGoto(lcd_x, lcd_y);
-[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"187
-[; ;main.c: 187:         LCDDat(' ');
-[e ( _LCDDat (1 -> -> 32 `ui `uc ]
-"188
-[; ;main.c: 188:     }
-}
+[e $ < _j -> 16 `i 372  ]
 [e :U 373 ]
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 371  ]
-[e :U 372 ]
 }
-"190
-[; ;main.c: 190:     for (int i = 0; i < 6; i++) {
+"227
+[; ;main.c: 227:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 369  ]
+[e :U 370 ]
+}
+"228
+[; ;main.c: 228:     for (int i = 6 -1; i >= 0; i--) {
 {
 [v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 375  ]
+[e = _i - -> 6 `i -> 1 `i ]
+[e $ >= _i -> 0 `i 375  ]
 [e $U 376  ]
 [e :U 375 ]
 {
-"191
-[; ;main.c: 191:         if (objs[i].active == 0) continue;
-[e $ ! == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 4 `i -> 0 `i 378  ]
-[e $U 377  ]
-[e :U 378 ]
-"193
-[; ;main.c: 193:         lcd_x = objs[i].x;
-[e = _lcd_x . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 0 ]
-"194
-[; ;main.c: 194:         lcd_y = objs[i].y;
-[e = _lcd_y . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 ]
-"195
-[; ;main.c: 195:         LCDGoto(lcd_x, lcd_y);
-[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"197
-[; ;main.c: 197:         switch(objs[i].type) {
-[e $U 380  ]
-{
-"198
-[; ;main.c: 198:             case OT_FRISBEE:
-[e :U 381 ]
-"199
-[; ;main.c: 199:                 LCDDat(6);
-[e ( _LCDDat (1 -> -> 6 `i `uc ]
-"200
-[; ;main.c: 200:                 break;
-[e $U 379  ]
-"202
-[; ;main.c: 202:             case OT_TARGET:
-[e :U 382 ]
-"203
-[; ;main.c: 203:                 LCDDat(7);
-[e ( _LCDDat (1 -> -> 7 `i `uc ]
-"204
-[; ;main.c: 204:                 break;
-[e $U 379  ]
-"206
-[; ;main.c: 206:             case OT_PLAYERA:
-[e :U 383 ]
-"207
-[; ;main.c: 207:                 switch (objs[i].state) {
-[e $U 385  ]
-{
-"208
-[; ;main.c: 208:                     case OS_DEFAULT:
-[e :U 386 ]
-"209
-[; ;main.c: 209:                         LCDDat(0);
-[e ( _LCDDat (1 -> -> 0 `i `uc ]
-"210
-[; ;main.c: 210:                         break;
-[e $U 384  ]
-"211
-[; ;main.c: 211:                     case OS_SELECTED:
-[e :U 387 ]
-"212
-[; ;main.c: 212:                         LCDDat(2);
-[e ( _LCDDat (1 -> -> 2 `i `uc ]
-"213
-[; ;main.c: 213:                         break;
-[e $U 384  ]
-"214
-[; ;main.c: 214:                     case OS_SEL_W_FRISBEE:
-[e :U 388 ]
-"215
-[; ;main.c: 215:                         LCDDat(4);
-[e ( _LCDDat (1 -> -> 4 `i `uc ]
-"216
-[; ;main.c: 216:                         break;
-[e $U 384  ]
-"217
-[; ;main.c: 217:                     default:
-[e :U 389 ]
-"219
-[; ;main.c: 219:                         break;
-[e $U 384  ]
-"220
-[; ;main.c: 220:                 }
-}
-[e $U 384  ]
-[e :U 385 ]
-[e [\ -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui , $ -> . `E2437 0 `ui 386
- , $ -> . `E2437 1 `ui 387
- , $ -> . `E2437 2 `ui 388
- 389 ]
-[e :U 384 ]
-"221
-[; ;main.c: 221:                 break;
-[e $U 379  ]
-"223
-[; ;main.c: 223:             case OT_PLAYERB:
-[e :U 390 ]
-"224
-[; ;main.c: 224:                 switch (objs[i].state) {
-[e $U 392  ]
-{
-"225
-[; ;main.c: 225:                     case OS_DEFAULT:
-[e :U 393 ]
-"226
-[; ;main.c: 226:                         LCDDat(1);
-[e ( _LCDDat (1 -> -> 1 `i `uc ]
-"227
-[; ;main.c: 227:                         break;
-[e $U 391  ]
-"228
-[; ;main.c: 228:                     case OS_SELECTED:
-[e :U 394 ]
 "229
-[; ;main.c: 229:                         LCDDat(3);
-[e ( _LCDDat (1 -> -> 3 `i `uc ]
+[; ;main.c: 229:         if (objs[i].active) {
+[e $ ! != -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 4 `i -> 0 `i 378  ]
+{
 "230
-[; ;main.c: 230:                         break;
-[e $U 391  ]
+[; ;main.c: 230:             display[objs[i].y-1][objs[i].x-1] = &objs[i];
+[e = *U + &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux &U *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux ]
 "231
-[; ;main.c: 231:                     case OS_SEL_W_FRISBEE:
-[e :U 395 ]
+[; ;main.c: 231:         }
+}
+[e :U 378 ]
 "232
-[; ;main.c: 232:                         LCDDat(5);
-[e ( _LCDDat (1 -> -> 5 `i `uc ]
-"233
-[; ;main.c: 233:                         break;
-[e $U 391  ]
+[; ;main.c: 232:     }
+}
+[e -- _i -> 1 `i ]
+[e $ >= _i -> 0 `i 375  ]
+[e :U 376 ]
+}
 "234
-[; ;main.c: 234:                     default:
-[e :U 396 ]
-"236
-[; ;main.c: 236:                         break;
-[e $U 391  ]
-"237
-[; ;main.c: 237:                 }
-}
-[e $U 391  ]
-[e :U 392 ]
-[e [\ -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui , $ -> . `E2437 0 `ui 393
- , $ -> . `E2437 1 `ui 394
- , $ -> . `E2437 2 `ui 395
- 396 ]
-[e :U 391 ]
-"238
-[; ;main.c: 238:                 break;
-[e $U 379  ]
-"240
-[; ;main.c: 240:             default:
-[e :U 397 ]
-"242
-[; ;main.c: 242:                 break;
-[e $U 379  ]
-"243
-[; ;main.c: 243:         }
-}
-[e $U 379  ]
-[e :U 380 ]
-[e [\ -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 5 `ui , $ -> . `E2444 2 `ui 381
- , $ -> . `E2444 3 `ui 382
- , $ -> . `E2444 0 `ui 383
- , $ -> . `E2444 1 `ui 390
- 397 ]
+[; ;main.c: 234:     for (int i = 0; i < 6; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 6 `i 379  ]
+[e $U 380  ]
 [e :U 379 ]
+{
+"237
+[; ;main.c: 237:         if ((objs[i].oldX == 0 && objs[i].oldY == 0) || display[objs[i].oldY-1][objs[i].oldX-1] != ((void*)0)) {
+[e $ ! || && == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 2 `i -> 0 `i == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 3 `i -> 0 `i != *U + &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 3 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 2 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 3 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 382  ]
+{
+"238
+[; ;main.c: 238:             continue;
+[e $U 381  ]
+"239
+[; ;main.c: 239:         }
+}
+[e :U 382 ]
+"240
+[; ;main.c: 240:         lcd_x = objs[i].oldX;
+[e = _lcd_x . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 2 ]
+"241
+[; ;main.c: 241:         lcd_y = objs[i].oldY;
+[e = _lcd_y . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 3 ]
+"242
+[; ;main.c: 242:         LCDGoto(lcd_x, lcd_y);
+[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
+"243
+[; ;main.c: 243:         LCDDat(' ');
+[e ( _LCDDat (1 -> -> 32 `ui `uc ]
 "244
 [; ;main.c: 244:     }
 }
-[e :U 377 ]
+[e :U 381 ]
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 375  ]
-[e :U 376 ]
+[e $ < _i -> 6 `i 379  ]
+[e :U 380 ]
 }
-"311
-[; ;main.c: 311:     byte temp_d = PORTD;
-[v _temp_d `uc ~T0 @X0 1 a ]
-[e = _temp_d _PORTD ]
-"313
-[; ;main.c: 313:     switch (currentSegment) {
-[e $U 399  ]
+"246
+[; ;main.c: 246:     for (int i = 0; i < 6; i++) {
 {
-"314
-[; ;main.c: 314:         case 0:
-[e :U 400 ]
-"315
-[; ;main.c: 315:             LATA = 0b1000;
-[e = _LATA -> -> 8 `i `uc ]
-"316
-[; ;main.c: 316:             LATD = segValues[scoreA];
-[e = _LATD *U + &U _segValues * -> -> _scoreA `ui `ux -> -> # *U &U _segValues `ui `ux ]
-"317
-[; ;main.c: 317:             break;
-[e $U 398  ]
-"318
-[; ;main.c: 318:         case 1:
-[e :U 401 ]
-"319
-[; ;main.c: 319:             LATA = 0b100000;
-[e = _LATA -> -> 32 `i `uc ]
-"320
-[; ;main.c: 320:             LATD = segValues[scoreB];
-[e = _LATD *U + &U _segValues * -> -> _scoreB `ui `ux -> -> # *U &U _segValues `ui `ux ]
-"321
-[; ;main.c: 321:             break;
-[e $U 398  ]
-"322
-[; ;main.c: 322:         case 2:
-[e :U 402 ]
-"323
-[; ;main.c: 323:             LATA = 0b10000;
-[e = _LATA -> -> 16 `i `uc ]
-"324
-[; ;main.c: 324:             LATD = segValues[10];
-[e = _LATD *U + &U _segValues * -> -> -> 10 `i `ui `ux -> -> # *U &U _segValues `ui `ux ]
-"325
-[; ;main.c: 325:             break;
-[e $U 398  ]
-"326
-[; ;main.c: 326:     }
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 6 `i 383  ]
+[e $U 384  ]
+[e :U 383 ]
+{
+"247
+[; ;main.c: 247:         lcd_x = objs[i].x;
+[e = _lcd_x . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 0 ]
+"248
+[; ;main.c: 248:         lcd_y = objs[i].y;
+[e = _lcd_y . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 ]
+"249
+[; ;main.c: 249:         if (objs[i].type == OT_TARGET || objs[i].type == OT_FRISBEE) {
+[e $ ! || == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 5 `ui -> . `E2444 3 `ui == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 5 `ui -> . `E2444 2 `ui 386  ]
+{
+"250
+[; ;main.c: 250:             if (display[lcd_y-1][lcd_x-1]->type == OT_PLAYERA) continue;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> _lcd_y `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> _lcd_x `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> _lcd_y `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 387  ]
+[e $U 385  ]
+[e :U 387 ]
+"251
+[; ;main.c: 251:             if (display[lcd_y-1][lcd_x-1]->type == OT_PLAYERB) continue;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> _lcd_y `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> _lcd_x `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> _lcd_y `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 388  ]
+[e $U 385  ]
+[e :U 388 ]
+"252
+[; ;main.c: 252:         }
 }
-[e $U 398  ]
-[e :U 399 ]
-[e [\ _currentSegment , $ -> 0 `i 400
- , $ -> 1 `i 401
- , $ -> 2 `i 402
- 398 ]
+[e :U 386 ]
+"254
+[; ;main.c: 254:         if (lcd_x == 0 || lcd_y == 0) {
+[e $ ! || == -> _lcd_x `i -> 0 `i == -> _lcd_y `i -> 0 `i 389  ]
+{
+"255
+[; ;main.c: 255:             continue;
+[e $U 385  ]
+"256
+[; ;main.c: 256:         }
+}
+[e :U 389 ]
+"257
+[; ;main.c: 257:         LCDGoto(lcd_x, lcd_y);
+[e ( _LCDGoto (2 , _lcd_x _lcd_y ]
+"259
+[; ;main.c: 259:         if (objs[i].active == 0) {
+[e $ ! == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 4 `i -> 0 `i 390  ]
+{
+"260
+[; ;main.c: 260:             LCDDat(' ');
+[e ( _LCDDat (1 -> -> 32 `ui `uc ]
+"261
+[; ;main.c: 261:             continue;
+[e $U 385  ]
+"262
+[; ;main.c: 262:         }
+}
+[e :U 390 ]
+"264
+[; ;main.c: 264:         switch(objs[i].type) {
+[e $U 392  ]
+{
+"265
+[; ;main.c: 265:             case OT_FRISBEE:
+[e :U 393 ]
+"266
+[; ;main.c: 266:                 LCDDat(6);
+[e ( _LCDDat (1 -> -> 6 `i `uc ]
+"267
+[; ;main.c: 267:                 break;
+[e $U 391  ]
+"268
+[; ;main.c: 268:             case OT_TARGET:
+[e :U 394 ]
+"269
+[; ;main.c: 269:                 LCDDat(7);
+[e ( _LCDDat (1 -> -> 7 `i `uc ]
+"270
+[; ;main.c: 270:                 break;
+[e $U 391  ]
+"271
+[; ;main.c: 271:             case OT_PLAYERA:
+[e :U 395 ]
+"272
+[; ;main.c: 272:                 switch (objs[i].state) {
+[e $U 397  ]
+{
+"273
+[; ;main.c: 273:                     case OS_DEFAULT:
 [e :U 398 ]
-"328
-[; ;main.c: 328:     _delay((unsigned long)((5)*(10000000L/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"329
-[; ;main.c: 329:     currentSegment = (currentSegment + 1) % 3;
-[e = _currentSegment % + _currentSegment -> 1 `i -> 3 `i ]
-"332
-[; ;main.c: 332:     LATD = temp_d;
-[e = _LATD _temp_d ]
-"333
-[; ;main.c: 333: }
-[e :UE 361 ]
+"274
+[; ;main.c: 274:                         LCDDat(0);
+[e ( _LCDDat (1 -> -> 0 `i `uc ]
+"275
+[; ;main.c: 275:                         break;
+[e $U 396  ]
+"276
+[; ;main.c: 276:                     case OS_SELECTED:
+[e :U 399 ]
+"277
+[; ;main.c: 277:                         LCDDat(2);
+[e ( _LCDDat (1 -> -> 2 `i `uc ]
+"278
+[; ;main.c: 278:                         break;
+[e $U 396  ]
+"279
+[; ;main.c: 279:                     case OS_SEL_W_FRISBEE:
+[e :U 400 ]
+"280
+[; ;main.c: 280:                         LCDDat(4);
+[e ( _LCDDat (1 -> -> 4 `i `uc ]
+"281
+[; ;main.c: 281:                         break;
+[e $U 396  ]
+"282
+[; ;main.c: 282:                     default:
+[e :U 401 ]
+"284
+[; ;main.c: 284:                         break;
+[e $U 396  ]
+"285
+[; ;main.c: 285:                 }
 }
-"335
-[; ;main.c: 335: void InitGameObjects() {
+[e $U 396  ]
+[e :U 397 ]
+[e [\ -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui , $ -> . `E2437 0 `ui 398
+ , $ -> . `E2437 1 `ui 399
+ , $ -> . `E2437 2 `ui 400
+ 401 ]
+[e :U 396 ]
+"286
+[; ;main.c: 286:                 break;
+[e $U 391  ]
+"287
+[; ;main.c: 287:             case OT_PLAYERB:
+[e :U 402 ]
+"288
+[; ;main.c: 288:                 switch (objs[i].state) {
+[e $U 404  ]
+{
+"289
+[; ;main.c: 289:                     case OS_DEFAULT:
+[e :U 405 ]
+"290
+[; ;main.c: 290:                         LCDDat(1);
+[e ( _LCDDat (1 -> -> 1 `i `uc ]
+"291
+[; ;main.c: 291:                         break;
+[e $U 403  ]
+"292
+[; ;main.c: 292:                     case OS_SELECTED:
+[e :U 406 ]
+"293
+[; ;main.c: 293:                         LCDDat(3);
+[e ( _LCDDat (1 -> -> 3 `i `uc ]
+"294
+[; ;main.c: 294:                         break;
+[e $U 403  ]
+"295
+[; ;main.c: 295:                     case OS_SEL_W_FRISBEE:
+[e :U 407 ]
+"296
+[; ;main.c: 296:                         LCDDat(5);
+[e ( _LCDDat (1 -> -> 5 `i `uc ]
+"297
+[; ;main.c: 297:                         break;
+[e $U 403  ]
+"298
+[; ;main.c: 298:                     default:
+[e :U 408 ]
+"300
+[; ;main.c: 300:                         break;
+[e $U 403  ]
+"301
+[; ;main.c: 301:                 }
+}
+[e $U 403  ]
+[e :U 404 ]
+[e [\ -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui , $ -> . `E2437 0 `ui 405
+ , $ -> . `E2437 1 `ui 406
+ , $ -> . `E2437 2 `ui 407
+ 408 ]
+[e :U 403 ]
+"302
+[; ;main.c: 302:                 break;
+[e $U 391  ]
+"303
+[; ;main.c: 303:             default:
+[e :U 409 ]
+"305
+[; ;main.c: 305:                 break;
+[e $U 391  ]
+"306
+[; ;main.c: 306:         }
+}
+[e $U 391  ]
+[e :U 392 ]
+[e [\ -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 5 `ui , $ -> . `E2444 2 `ui 393
+ , $ -> . `E2444 3 `ui 394
+ , $ -> . `E2444 0 `ui 395
+ , $ -> . `E2444 1 `ui 402
+ 409 ]
+[e :U 391 ]
+"307
+[; ;main.c: 307:     }
+}
+[e :U 385 ]
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 6 `i 383  ]
+[e :U 384 ]
+}
+"308
+[; ;main.c: 308: }
+[e :UE 368 ]
+}
+"310
+[; ;main.c: 310: void InitGameObjects() {
 [v _InitGameObjects `(v ~T0 @X0 1 ef ]
 {
 [e :U _InitGameObjects ]
 [f ]
-"336
-[; ;main.c: 336:     for (int i = 0; i < 4; i++) {
+"311
+[; ;main.c: 311:     for (int i = 0; i < 4; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 404  ]
-[e $U 405  ]
-[e :U 404 ]
+[e $ < _i -> 4 `i 411  ]
+[e $U 412  ]
+[e :U 411 ]
 {
-"337
-[; ;main.c: 337:         for (int j = 0; j < 16; j++) {
+"312
+[; ;main.c: 312:         for (int j = 0; j < 16; j++) {
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
-[e $ < _j -> 16 `i 407  ]
-[e $U 408  ]
-[e :U 407 ]
+[e $ < _j -> 16 `i 414  ]
+[e $U 415  ]
+[e :U 414 ]
 {
-"338
-[; ;main.c: 338:             display[i][j] = ((void*)0);
+"313
+[; ;main.c: 313:             display[i][j] = ((void*)0);
 [e = *U + &U *U + &U _display * -> -> _i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> _j `ui `ux -> -> # *U &U *U + &U _display * -> -> _i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 ]
-"339
-[; ;main.c: 339:         }
+"314
+[; ;main.c: 314:         }
 }
 [e ++ _j -> 1 `i ]
-[e $ < _j -> 16 `i 407  ]
-[e :U 408 ]
+[e $ < _j -> 16 `i 414  ]
+[e :U 415 ]
 }
-"340
-[; ;main.c: 340:     }
+"315
+[; ;main.c: 315:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 404  ]
-[e :U 405 ]
+[e $ < _i -> 4 `i 411  ]
+[e :U 412 ]
 }
-"342
-[; ;main.c: 342:     selectedPlayer = 0;
+"317
+[; ;main.c: 317:     selectedPlayer = 0;
 [e = _selectedPlayer -> 0 `i ]
-"344
-[; ;main.c: 344:     objs[0].x = 3;
+"319
+[; ;main.c: 319:     objs[0].x = 3;
 [e = . *U + &U _objs * -> -> -> 0 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> -> 3 `i `uc ]
-"345
-[; ;main.c: 345:     objs[0].y = 2;
+"320
+[; ;main.c: 320:     objs[0].y = 2;
 [e = . *U + &U _objs * -> -> -> 0 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> -> 2 `i `uc ]
-"346
-[; ;main.c: 346:     objs[0].oldX = 0;
+"321
+[; ;main.c: 321:     objs[0].oldX = 0;
 [e = . *U + &U _objs * -> -> -> 0 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 -> -> 0 `i `uc ]
-"347
-[; ;main.c: 347:     objs[0].oldY = 0;
+"322
+[; ;main.c: 322:     objs[0].oldY = 0;
 [e = . *U + &U _objs * -> -> -> 0 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
-"348
-[; ;main.c: 348:     objs[0].type = OT_PLAYERA;
+"323
+[; ;main.c: 323:     objs[0].type = OT_PLAYERA;
 [e = . *U + &U _objs * -> -> -> 0 `i `ui `ux -> -> # *U &U _objs `ui `ux 5 . `E2444 0 ]
-"349
-[; ;main.c: 349:     objs[0].state = OS_SELECTED;
+"324
+[; ;main.c: 324:     objs[0].state = OS_SELECTED;
 [e = . *U + &U _objs * -> -> -> 0 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 1 ]
-"350
-[; ;main.c: 350:     objs[0].active = 1;
+"325
+[; ;main.c: 325:     objs[0].active = 1;
 [e = . *U + &U _objs * -> -> -> 0 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 1 `i `a ]
-"352
-[; ;main.c: 352:     objs[1].x = 3;
+"327
+[; ;main.c: 327:     objs[1].x = 3;
 [e = . *U + &U _objs * -> -> -> 1 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> -> 3 `i `uc ]
-"353
-[; ;main.c: 353:     objs[1].y = 3;
+"328
+[; ;main.c: 328:     objs[1].y = 3;
 [e = . *U + &U _objs * -> -> -> 1 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> -> 3 `i `uc ]
-"354
-[; ;main.c: 354:     objs[1].oldX = 0;
+"329
+[; ;main.c: 329:     objs[1].oldX = 0;
 [e = . *U + &U _objs * -> -> -> 1 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 -> -> 0 `i `uc ]
-"355
-[; ;main.c: 355:     objs[1].oldY = 0;
+"330
+[; ;main.c: 330:     objs[1].oldY = 0;
 [e = . *U + &U _objs * -> -> -> 1 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
-"356
-[; ;main.c: 356:     objs[1].type = OT_PLAYERA;
+"331
+[; ;main.c: 331:     objs[1].type = OT_PLAYERA;
 [e = . *U + &U _objs * -> -> -> 1 `i `ui `ux -> -> # *U &U _objs `ui `ux 5 . `E2444 0 ]
-"357
-[; ;main.c: 357:     objs[1].state = OS_DEFAULT;
+"332
+[; ;main.c: 332:     objs[1].state = OS_DEFAULT;
 [e = . *U + &U _objs * -> -> -> 1 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 0 ]
-"358
-[; ;main.c: 358:     objs[1].active = 1;
+"333
+[; ;main.c: 333:     objs[1].active = 1;
 [e = . *U + &U _objs * -> -> -> 1 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 1 `i `a ]
-"360
-[; ;main.c: 360:     objs[2].x = 14;
+"335
+[; ;main.c: 335:     objs[2].x = 14;
 [e = . *U + &U _objs * -> -> -> 2 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> -> 14 `i `uc ]
-"361
-[; ;main.c: 361:     objs[2].y = 2;
+"336
+[; ;main.c: 336:     objs[2].y = 2;
 [e = . *U + &U _objs * -> -> -> 2 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> -> 2 `i `uc ]
-"362
-[; ;main.c: 362:     objs[2].oldX = 0;
+"337
+[; ;main.c: 337:     objs[2].oldX = 0;
 [e = . *U + &U _objs * -> -> -> 2 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 -> -> 0 `i `uc ]
-"363
-[; ;main.c: 363:     objs[2].oldY = 0;
+"338
+[; ;main.c: 338:     objs[2].oldY = 0;
 [e = . *U + &U _objs * -> -> -> 2 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
-"364
-[; ;main.c: 364:     objs[2].type = OT_PLAYERB;
+"339
+[; ;main.c: 339:     objs[2].type = OT_PLAYERB;
 [e = . *U + &U _objs * -> -> -> 2 `i `ui `ux -> -> # *U &U _objs `ui `ux 5 . `E2444 1 ]
-"365
-[; ;main.c: 365:     objs[2].state = OS_DEFAULT;
+"340
+[; ;main.c: 340:     objs[2].state = OS_DEFAULT;
 [e = . *U + &U _objs * -> -> -> 2 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 0 ]
-"366
-[; ;main.c: 366:     objs[2].active = 1;
+"341
+[; ;main.c: 341:     objs[2].active = 1;
 [e = . *U + &U _objs * -> -> -> 2 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 1 `i `a ]
-"368
-[; ;main.c: 368:     objs[3].x = 14;
+"343
+[; ;main.c: 343:     objs[3].x = 14;
 [e = . *U + &U _objs * -> -> -> 3 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> -> 14 `i `uc ]
-"369
-[; ;main.c: 369:     objs[3].y = 3;
+"344
+[; ;main.c: 344:     objs[3].y = 3;
 [e = . *U + &U _objs * -> -> -> 3 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> -> 3 `i `uc ]
-"370
-[; ;main.c: 370:     objs[3].oldX = 0;
+"345
+[; ;main.c: 345:     objs[3].oldX = 0;
 [e = . *U + &U _objs * -> -> -> 3 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 -> -> 0 `i `uc ]
-"371
-[; ;main.c: 371:     objs[3].oldY = 0;
+"346
+[; ;main.c: 346:     objs[3].oldY = 0;
 [e = . *U + &U _objs * -> -> -> 3 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
-"372
-[; ;main.c: 372:     objs[3].type = OT_PLAYERB;
+"347
+[; ;main.c: 347:     objs[3].type = OT_PLAYERB;
 [e = . *U + &U _objs * -> -> -> 3 `i `ui `ux -> -> # *U &U _objs `ui `ux 5 . `E2444 1 ]
-"373
-[; ;main.c: 373:     objs[3].state = OS_DEFAULT;
+"348
+[; ;main.c: 348:     objs[3].state = OS_DEFAULT;
 [e = . *U + &U _objs * -> -> -> 3 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 0 ]
-"374
-[; ;main.c: 374:     objs[3].active = 1;
+"349
+[; ;main.c: 349:     objs[3].active = 1;
 [e = . *U + &U _objs * -> -> -> 3 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 1 `i `a ]
-"376
-[; ;main.c: 376:     objs[5].x = 9;
+"351
+[; ;main.c: 351:     objs[5].x = 9;
 [e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> -> 9 `i `uc ]
-"377
-[; ;main.c: 377:     objs[5].y = 2;
+"352
+[; ;main.c: 352:     objs[5].y = 2;
 [e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> -> 2 `i `uc ]
-"378
-[; ;main.c: 378:     objs[5].oldX = 0;
+"353
+[; ;main.c: 353:     objs[5].oldX = 0;
 [e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 -> -> 0 `i `uc ]
-"379
-[; ;main.c: 379:     objs[5].oldY = 0;
+"354
+[; ;main.c: 354:     objs[5].oldY = 0;
 [e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
-"380
-[; ;main.c: 380:     objs[5].type = OT_FRISBEE;
+"355
+[; ;main.c: 355:     objs[5].type = OT_FRISBEE;
 [e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 5 . `E2444 2 ]
-"381
-[; ;main.c: 381:     objs[5].state = OS_FELL;
+"356
+[; ;main.c: 356:     objs[5].state = OS_FELL;
 [e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 4 ]
-"382
-[; ;main.c: 382:     objs[5].active = 1;
+"357
+[; ;main.c: 357:     objs[5].active = 1;
 [e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 1 `i `a ]
-"384
-[; ;main.c: 384:     objs[4].x = 1;
+"359
+[; ;main.c: 359:     objs[4].x = 1;
 [e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 -> -> 1 `i `uc ]
-"385
-[; ;main.c: 385:     objs[4].y = 1;
+"360
+[; ;main.c: 360:     objs[4].y = 1;
 [e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 -> -> 1 `i `uc ]
-"386
-[; ;main.c: 386:     objs[4].oldX = 0;
+"361
+[; ;main.c: 361:     objs[4].oldX = 0;
 [e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 -> -> 0 `i `uc ]
-"387
-[; ;main.c: 387:     objs[4].oldY = 0;
+"362
+[; ;main.c: 362:     objs[4].oldY = 0;
 [e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
-"388
-[; ;main.c: 388:     objs[4].type = OT_TARGET;
+"363
+[; ;main.c: 363:     objs[4].type = OT_TARGET;
 [e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 5 . `E2444 3 ]
-"389
-[; ;main.c: 389:     objs[4].active = 0;
+"364
+[; ;main.c: 364:     objs[4].active = 0;
 [e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 0 `i `a ]
-"391
-[; ;main.c: 391:     for (int i = 0; i < 6; i++) {
+"366
+[; ;main.c: 366:     for (int i = 0; i < 6; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 6 `i 410  ]
-[e $U 411  ]
-[e :U 410 ]
+[e $ < _i -> 6 `i 417  ]
+[e $U 418  ]
+[e :U 417 ]
 {
-"392
-[; ;main.c: 392:         display[objs[i].y][objs[i].x] = &objs[i];
+"367
+[; ;main.c: 367:         display[objs[i].y][objs[i].x] = &objs[i];
 [e = *U + &U *U + &U _display * -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 0 `ux -> -> # *U &U *U + &U _display * -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux &U *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux ]
-"393
-[; ;main.c: 393:     }
+"368
+[; ;main.c: 368:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 6 `i 410  ]
-[e :U 411 ]
+[e $ < _i -> 6 `i 417  ]
+[e :U 418 ]
 }
-"394
-[; ;main.c: 394: }
-[e :UE 403 ]
+"369
+[; ;main.c: 369: }
+[e :UE 410 ]
 }
-"396
-[; ;main.c: 396: void PrintPORTBandIntCounts() {
+"371
+[; ;main.c: 371: void PrintPORTBandIntCounts() {
 [v _PrintPORTBandIntCounts `(v ~T0 @X0 1 ef ]
 {
 [e :U _PrintPORTBandIntCounts ]
 [f ]
-"397
-[; ;main.c: 397:     char arr[5];
+"372
+[; ;main.c: 372:     char arr[5];
 [v _arr `uc ~T0 @X0 -> 5 `i a ]
-"399
-[; ;main.c: 399:     lcd_x = 1;
+"374
+[; ;main.c: 374:     lcd_x = 1;
 [e = _lcd_x -> -> 1 `i `uc ]
-"400
-[; ;main.c: 400:     lcd_y = 1;
+"375
+[; ;main.c: 375:     lcd_y = 1;
 [e = _lcd_y -> -> 1 `i `uc ]
-"401
-[; ;main.c: 401:     LCDGoto(lcd_x, lcd_y);
+"376
+[; ;main.c: 376:     LCDGoto(lcd_x, lcd_y);
 [e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"402
-[; ;main.c: 402:     for (int i = 7; i >= 0; i--) {
+"377
+[; ;main.c: 377:     for (int i = 7; i >= 0; i--) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 7 `i ]
-[e $ >= _i -> 0 `i 414  ]
-[e $U 415  ]
-[e :U 414 ]
+[e $ >= _i -> 0 `i 421  ]
+[e $U 422  ]
+[e :U 421 ]
 {
-"403
-[; ;main.c: 403:         LCDDat(((PORTB >> i) & 1) ? '1' : '0');
+"378
+[; ;main.c: 378:         LCDDat(((PORTB >> i) & 1) ? '1' : '0');
 [e ( _LCDDat (1 -> ? != & >> -> _PORTB `i _i -> 1 `i -> 0 `i : -> 49 `ui -> 48 `ui `uc ]
-"404
-[; ;main.c: 404:     }
+"379
+[; ;main.c: 379:     }
 }
 [e -- _i -> 1 `i ]
-[e $ >= _i -> 0 `i 414  ]
-[e :U 415 ]
+[e $ >= _i -> 0 `i 421  ]
+[e :U 422 ]
 }
-"406
-[; ;main.c: 406:     lcd_y = 2;
+"381
+[; ;main.c: 381:     lcd_y = 2;
 [e = _lcd_y -> -> 2 `i `uc ]
-"407
-[; ;main.c: 407:     lcd_x = 1;
+"382
+[; ;main.c: 382:     lcd_x = 1;
 [e = _lcd_x -> -> 1 `i `uc ]
-"408
-[; ;main.c: 408:     LCDGoto(lcd_x, lcd_y);
+"383
+[; ;main.c: 383:     LCDGoto(lcd_x, lcd_y);
 [e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"409
-[; ;main.c: 409:     sprintf(arr, "%d", a);
+"384
+[; ;main.c: 384:     sprintf(arr, "%d", a);
 [e ( _sprintf (1 , (. , &U _arr :s 1C _a ]
-"410
-[; ;main.c: 410:     LCDStr(arr);
+"385
+[; ;main.c: 385:     LCDStr(arr);
 [e ( _LCDStr (1 -> &U _arr `*Cuc ]
-"412
-[; ;main.c: 412:     lcd_y = 3;
+"387
+[; ;main.c: 387:     lcd_y = 3;
 [e = _lcd_y -> -> 3 `i `uc ]
-"413
-[; ;main.c: 413:     lcd_x = 1;
+"388
+[; ;main.c: 388:     lcd_x = 1;
 [e = _lcd_x -> -> 1 `i `uc ]
-"414
-[; ;main.c: 414:     LCDGoto(lcd_x, lcd_y);
+"389
+[; ;main.c: 389:     LCDGoto(lcd_x, lcd_y);
 [e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"415
-[; ;main.c: 415:     sprintf(arr, "%d", b);
+"390
+[; ;main.c: 390:     sprintf(arr, "%d", b);
 [e ( _sprintf (1 , (. , &U _arr :s 2C _b ]
-"416
-[; ;main.c: 416:     LCDStr(arr);
+"391
+[; ;main.c: 391:     LCDStr(arr);
 [e ( _LCDStr (1 -> &U _arr `*Cuc ]
-"418
-[; ;main.c: 418:     lcd_y = 4;
+"393
+[; ;main.c: 393:     lcd_y = 4;
 [e = _lcd_y -> -> 4 `i `uc ]
-"419
-[; ;main.c: 419:     lcd_x = 1;
+"394
+[; ;main.c: 394:     lcd_x = 1;
 [e = _lcd_x -> -> 1 `i `uc ]
-"420
-[; ;main.c: 420:     LCDGoto(lcd_x, lcd_y);
+"395
+[; ;main.c: 395:     LCDGoto(lcd_x, lcd_y);
 [e ( _LCDGoto (2 , _lcd_x _lcd_y ]
-"421
-[; ;main.c: 421:     sprintf(arr, "%d", c);
+"396
+[; ;main.c: 396:     sprintf(arr, "%d", c);
 [e ( _sprintf (1 , (. , &U _arr :s 3C _c ]
-"422
-[; ;main.c: 422:     LCDStr(arr);
+"397
+[; ;main.c: 397:     LCDStr(arr);
 [e ( _LCDStr (1 -> &U _arr `*Cuc ]
-"423
-[; ;main.c: 423: }
-[e :UE 413 ]
+"398
+[; ;main.c: 398: }
+[e :UE 420 ]
 }
-"425
-[; ;main.c: 425: void InitInterrupts() {
+"400
+[; ;main.c: 400: void InitInterrupts() {
 [v _InitInterrupts `(v ~T0 @X0 1 ef ]
 {
 [e :U _InitInterrupts ]
 [f ]
-"426
-[; ;main.c: 426:     a = b = c = 0;
+"401
+[; ;main.c: 401:     a = b = c = 0;
 [e = _a = _b = _c -> 0 `i ]
-"428
-[; ;main.c: 428:     ADCON1 = 0b0111;
+"403
+[; ;main.c: 403:     ADCON1 = 0b0111;
 [e = _ADCON1 -> -> 7 `i `uc ]
-"429
-[; ;main.c: 429:     INTCON2bits.RBPU = 0;
+"404
+[; ;main.c: 404:     INTCON2bits.RBPU = 0;
 [e = . . _INTCON2bits 2 1 -> -> 0 `i `uc ]
-"430
-[; ;main.c: 430:     PORTB = 0;
+"405
+[; ;main.c: 405:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"432
-[; ;main.c: 432:     T3CON = 0b10000001;
+"407
+[; ;main.c: 407:     T3CON = 0b10000001;
 [e = _T3CON -> -> 129 `i `uc ]
-"433
-[; ;main.c: 433:     TRISB = 0xff;
+"408
+[; ;main.c: 408:     TRISB = 0xff;
 [e = _TRISB -> -> 255 `i `uc ]
-"434
-[; ;main.c: 434:     TRISA = 0x0;
+"409
+[; ;main.c: 409:     TRISA = 0x0;
 [e = _TRISA -> -> 0 `i `uc ]
-"435
-[; ;main.c: 435:     TRISD = 0x0;
+"410
+[; ;main.c: 410:     TRISD = 0x0;
 [e = _TRISD -> -> 0 `i `uc ]
-"437
-[; ;main.c: 437:     T0CON = 0b00010011;
+"412
+[; ;main.c: 412:     T0CON = 0b00010011;
 [e = _T0CON -> -> 19 `i `uc ]
-"438
-[; ;main.c: 438:     acceptInterrupts = 0;
+"413
+[; ;main.c: 413:     acceptInterrupts = 0;
 [e = _acceptInterrupts -> -> 0 `i `a ]
-"439
-[; ;main.c: 439:     TMR0L = 0;
+"414
+[; ;main.c: 414:     TMR0L = 0;
 [e = _TMR0L -> -> 0 `i `uc ]
-"440
-[; ;main.c: 440:     TMR0H = 0x80;
+"415
+[; ;main.c: 415:     TMR0H = 0x80;
 [e = _TMR0H -> -> 128 `i `uc ]
-"441
-[; ;main.c: 441:     T0CONbits.TMR0ON = 1;
+"416
+[; ;main.c: 416:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"443
-[; ;main.c: 443:     INTCONbits.PEIE = 1;
+"418
+[; ;main.c: 418:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"444
-[; ;main.c: 444:     INTCONbits.INT0E = 1;
+"419
+[; ;main.c: 419:     INTCONbits.INT0E = 1;
 [e = . . _INTCONbits 1 4 -> -> 1 `i `uc ]
-"445
-[; ;main.c: 445:     INTCONbits.RBIE = 1;
+"420
+[; ;main.c: 420:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"446
-[; ;main.c: 446:     INTCONbits.T0IE = 1;
+"421
+[; ;main.c: 421:     INTCONbits.T0IE = 1;
 [e = . . _INTCONbits 1 5 -> -> 1 `i `uc ]
-"447
-[; ;main.c: 447:     INTCON3bits.INT1E = 1;
+"422
+[; ;main.c: 422:     INTCON3bits.INT1E = 1;
 [e = . . _INTCON3bits 1 3 -> -> 1 `i `uc ]
-"449
-[; ;main.c: 449:     INTCON2bits.INTEDG0 = 0;
+"424
+[; ;main.c: 424:     INTCON2bits.INTEDG0 = 0;
 [e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-"450
-[; ;main.c: 450:     INTCON2bits.INTEDG1 = 0;
+"425
+[; ;main.c: 425:     INTCON2bits.INTEDG1 = 0;
 [e = . . _INTCON2bits 1 5 -> -> 0 `i `uc ]
-"453
-[; ;main.c: 453:     INTCONbits.RBIF = 0;
+"428
+[; ;main.c: 428:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"454
-[; ;main.c: 454:     INTCONbits.INT0IF = 0;
+"429
+[; ;main.c: 429:     INTCONbits.INT0IF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"455
-[; ;main.c: 455:     INTCON3bits.INT1IF = 0;
+"430
+[; ;main.c: 430:     INTCON3bits.INT1IF = 0;
 [e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"457
-[; ;main.c: 457:     INTCONbits.RBIE = 0;
+"432
+[; ;main.c: 432:     INTCONbits.RBIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"458
-[; ;main.c: 458:     INTCONbits.GIE = 1;
+"433
+[; ;main.c: 433:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"459
-[; ;main.c: 459:     PORTB = PORTB;
+"434
+[; ;main.c: 434:     PORTB = PORTB;
 [e = _PORTB _PORTB ]
-"460
-[; ;main.c: 460:     INTCONbits.RBIF = 0;
+"435
+[; ;main.c: 435:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"461
-[; ;main.c: 461:     INTCONbits.RBIE = 1;
+"436
+[; ;main.c: 436:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"475
-[; ;main.c: 475: }
-[e :UE 417 ]
+"439
+[; ;main.c: 439:     INTCON2bits.RBIP = 1;
+[e = . . _INTCON2bits 1 0 -> -> 1 `i `uc ]
+"440
+[; ;main.c: 440:     INTCON2bits.TMR0IP = 1;
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+"441
+[; ;main.c: 441:     INTCON3bits.INT1IP = 1;
+[e = . . _INTCON3bits 0 6 -> -> 1 `i `uc ]
+"442
+[; ;main.c: 442:     IPR1bits.TMR1IP = 1;
+[e = . . _IPR1bits 0 0 -> -> 1 `i `uc ]
+"444
+[; ;main.c: 444:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"445
+[; ;main.c: 445:     PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"446
+[; ;main.c: 446:     IPR1bits.TMR1IP = 1;
+[e = . . _IPR1bits 0 0 -> -> 1 `i `uc ]
+"447
+[; ;main.c: 447:     TMR1L = 0xED;
+[e = _TMR1L -> -> 237 `i `uc ]
+"448
+[; ;main.c: 448:     TMR1H = 0x85;
+[e = _TMR1H -> -> 133 `i `uc ]
+"449
+[; ;main.c: 449:     T1CON = 0b10110000;
+[e = _T1CON -> -> 176 `i `uc ]
+"451
+[; ;main.c: 451:     PIE1bits.TMR2IE = 1;
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+"452
+[; ;main.c: 452:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"453
+[; ;main.c: 453:     IPR1bits.TMR2IP = 0;
+[e = . . _IPR1bits 0 1 -> -> 0 `i `uc ]
+"454
+[; ;main.c: 454:     RCONbits.IPEN = 1;
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+"455
+[; ;main.c: 455:     T2CON = 0b01111111;
+[e = _T2CON -> -> 127 `i `uc ]
+"456
+[; ;main.c: 456: }
+[e :UE 424 ]
 }
-"480
-[; ;main.c: 480: void SetupDebouncingTimer() {
+"461
+[; ;main.c: 461: void SetupDebouncingTimer() {
 [v _SetupDebouncingTimer `(v ~T0 @X0 1 ef ]
 {
 [e :U _SetupDebouncingTimer ]
 [f ]
-"481
-[; ;main.c: 481:     acceptInterrupts = 0;
+"462
+[; ;main.c: 462:     acceptInterrupts = 0;
 [e = _acceptInterrupts -> -> 0 `i `a ]
-"482
-[; ;main.c: 482:     TMR0L = 0;
+"463
+[; ;main.c: 463:     TMR0L = 0;
 [e = _TMR0L -> -> 0 `i `uc ]
-"483
-[; ;main.c: 483:     TMR0H = 0;
+"464
+[; ;main.c: 464:     TMR0H = 0;
 [e = _TMR0H -> -> 0 `i `uc ]
-"484
-[; ;main.c: 484:     T0CONbits.TMR0ON = 1;
+"465
+[; ;main.c: 465:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"485
-[; ;main.c: 485: }
-[e :UE 418 ]
+"466
+[; ;main.c: 466: }
+[e :UE 425 ]
 }
-"487
-[; ;main.c: 487: void left(GameElement* pl) {
+"468
+[; ;main.c: 468: GameElement* CheckIfCaughtFrisbee() {
+[v _CheckIfCaughtFrisbee `(*S270 ~T0 @X0 1 ef ]
+{
+[e :U _CheckIfCaughtFrisbee ]
+[f ]
+"471
+[; ;main.c: 471:     for (int i = 0; i < 4; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 4 `i 427  ]
+[e $U 428  ]
+[e :U 427 ]
+{
+"472
+[; ;main.c: 472:         if (objs[i].x == objs[5].x && objs[i].y == objs[5].y) {
+[e $ ! && == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i 430  ]
+{
+"473
+[; ;main.c: 473:             if (objs[i].type == OT_PLAYERA) {
+[e $ ! == -> . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 5 `ui -> . `E2444 0 `ui 431  ]
+{
+"474
+[; ;main.c: 474:                 scoreA++;
+[e ++ _scoreA -> 1 `i ]
+"475
+[; ;main.c: 475:             }
+}
+[e $U 432  ]
+"476
+[; ;main.c: 476:             else {
+[e :U 431 ]
+{
+"477
+[; ;main.c: 477:                 scoreB++;
+[e ++ _scoreB -> 1 `i ]
+"478
+[; ;main.c: 478:             }
+}
+[e :U 432 ]
+"479
+[; ;main.c: 479:             game_state = GS_INACTIVE;
+[e = _game_state . `E2433 1 ]
+"480
+[; ;main.c: 480:             curFrisbeeSteps = 0;
+[e = _curFrisbeeSteps -> 0 `i ]
+"481
+[; ;main.c: 481:             objs[4].active = 0;
+[e = . *U + &U _objs * -> -> -> 4 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 0 `i `a ]
+"482
+[; ;main.c: 482:             objs[5].active = 0;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 0 `i `a ]
+"483
+[; ;main.c: 483:             objs[5].state == OS_FELL;
+[e == -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 6 `ui -> . `E2437 4 `ui ]
+"484
+[; ;main.c: 484:             objs[selectedPlayer].state = OS_DEFAULT;
+[e = . *U + &U _objs * -> -> _selectedPlayer `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 0 ]
+"485
+[; ;main.c: 485:             objs[i].state = OS_SEL_W_FRISBEE;
+[e = . *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux 6 . `E2437 2 ]
+"486
+[; ;main.c: 486:             selectedPlayer = i;
+[e = _selectedPlayer _i ]
+"490
+[; ;main.c: 490:             return &objs[i];
+[e ) &U *U + &U _objs * -> -> _i `ui `ux -> -> # *U &U _objs `ui `ux ]
+[e $UE 426  ]
+"491
+[; ;main.c: 491:         }
+}
+[e :U 430 ]
+"492
+[; ;main.c: 492:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 4 `i 427  ]
+[e :U 428 ]
+}
+"494
+[; ;main.c: 494:     return ((void*)0);
+[e ) -> -> -> 0 `i `*v `*S270 ]
+[e $UE 426  ]
+"495
+[; ;main.c: 495: }
+[e :UE 426 ]
+}
+"497
+[; ;main.c: 497: void CatchFrisbee(GameElement* pl) {
+[v _CatchFrisbee `(v ~T0 @X0 1 ef1`*S270 ]
+{
+[e :U _CatchFrisbee ]
+[v _pl `*S270 ~T0 @X0 1 r1 ]
+[f ]
+"498
+[; ;main.c: 498:     if (game_state == GS_INACTIVE) {
+[e $ ! == -> _game_state `ui -> . `E2433 1 `ui 434  ]
+{
+"499
+[; ;main.c: 499:         pl->state = OS_SEL_W_FRISBEE;
+[e = . *U _pl 6 . `E2437 2 ]
+"500
+[; ;main.c: 500:         objs[5].active = 0;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 4 -> -> 0 `i `a ]
+"501
+[; ;main.c: 501:         display[objs[5].y-1][objs[5].x-1] = ((void*)0);
+[e = *U + &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 ]
+"502
+[; ;main.c: 502:         objs[5].x = objs[5].y = objs[5].oldX = objs[5].oldY = 0;
+[e = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 0 = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 1 = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 2 = . *U + &U _objs * -> -> -> 5 `i `ui `ux -> -> # *U &U _objs `ui `ux 3 -> -> 0 `i `uc ]
+"503
+[; ;main.c: 503:     }
+}
+[e :U 434 ]
+"505
+[; ;main.c: 505: }
+[e :UE 433 ]
+}
+"507
+[; ;main.c: 507: void left(GameElement* pl) {
 [v _left `(v ~T0 @X0 1 ef1`*S270 ]
 {
 [e :U _left ]
 [v _pl `*S270 ~T0 @X0 1 r1 ]
 [f ]
-"488
-[; ;main.c: 488:     if (pl->x == 1) return;
-[e $ ! == -> . *U _pl 0 `i -> 1 `i 420  ]
-[e $UE 419  ]
-[e :U 420 ]
-"489
-[; ;main.c: 489:     if (display[pl->y-1][pl->x-2]->type == OT_PLAYERA) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 421  ]
-[e $UE 419  ]
-[e :U 421 ]
-"490
-[; ;main.c: 490:     if (display[pl->y-1][pl->x-2]->type == OT_PLAYERB) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 422  ]
-[e $UE 419  ]
-[e :U 422 ]
-"491
-[; ;main.c: 491:     if (display[pl->y-1][pl->x-2]->type == OT_FRISBEE) {
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 423  ]
+"508
+[; ;main.c: 508:     if (pl->x == 1) return;
+[e $ ! == -> . *U _pl 0 `i -> 1 `i 436  ]
+[e $UE 435  ]
+[e :U 436 ]
+"509
+[; ;main.c: 509:     if (display[pl->y-1][pl->x-2] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 437  ]
 {
-"493
-[; ;main.c: 493:     }
+"510
+[; ;main.c: 510:         if (display[pl->y-1][pl->x-2]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 438  ]
+[e $UE 435  ]
+[e :U 438 ]
+"511
+[; ;main.c: 511:         if (display[pl->y-1][pl->x-2]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 439  ]
+[e $UE 435  ]
+[e :U 439 ]
+"512
+[; ;main.c: 512:         if (display[pl->y-1][pl->x-2]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 440  ]
+{
+"513
+[; ;main.c: 513:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"514
+[; ;main.c: 514:         }
 }
-[e :U 423 ]
-"494
-[; ;main.c: 494:     pl->oldX = pl->x;
+[e :U 440 ]
+"515
+[; ;main.c: 515:     }
+}
+[e :U 437 ]
+"516
+[; ;main.c: 516:     pl->oldX = pl->x;
 [e = . *U _pl 2 . *U _pl 0 ]
-"495
-[; ;main.c: 495:     pl->x--;
+"517
+[; ;main.c: 517:     pl->oldY = pl->y;
+[e = . *U _pl 3 . *U _pl 1 ]
+"518
+[; ;main.c: 518:     pl->x--;
 [e -- . *U _pl 0 -> -> 1 `i `uc ]
-"496
-[; ;main.c: 496:     return;
-[e $UE 419  ]
-"497
-[; ;main.c: 497: }
-[e :UE 419 ]
+"519
+[; ;main.c: 519:     return;
+[e $UE 435  ]
+"520
+[; ;main.c: 520: }
+[e :UE 435 ]
 }
-"498
-[; ;main.c: 498: void right(GameElement* pl) {
+"521
+[; ;main.c: 521: void right(GameElement* pl) {
 [v _right `(v ~T0 @X0 1 ef1`*S270 ]
 {
 [e :U _right ]
 [v _pl `*S270 ~T0 @X0 1 r1 ]
 [f ]
-"499
-[; ;main.c: 499:     if (pl->x == 16) return;
-[e $ ! == -> . *U _pl 0 `i -> 16 `i 425  ]
-[e $UE 424  ]
-[e :U 425 ]
-"500
-[; ;main.c: 500:     if (display[pl->y-1][pl->x]->type == OT_PLAYERA) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 426  ]
-[e $UE 424  ]
-[e :U 426 ]
-"501
-[; ;main.c: 501:     if (display[pl->y-1][pl->x]->type == OT_PLAYERB) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 427  ]
-[e $UE 424  ]
-[e :U 427 ]
-"502
-[; ;main.c: 502:     if (display[pl->y-1][pl->x]->type == OT_FRISBEE) {
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 428  ]
+"522
+[; ;main.c: 522:     if (pl->x == 16) return;
+[e $ ! == -> . *U _pl 0 `i -> 16 `i 442  ]
+[e $UE 441  ]
+[e :U 442 ]
+"523
+[; ;main.c: 523:     if (display[pl->y-1][pl->x] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 443  ]
 {
-"504
-[; ;main.c: 504:     }
+"524
+[; ;main.c: 524:         if (display[pl->y-1][pl->x]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 444  ]
+[e $UE 441  ]
+[e :U 444 ]
+"525
+[; ;main.c: 525:         if (display[pl->y-1][pl->x]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 445  ]
+[e $UE 441  ]
+[e :U 445 ]
+"526
+[; ;main.c: 526:         if (display[pl->y-1][pl->x]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 446  ]
+{
+"527
+[; ;main.c: 527:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"528
+[; ;main.c: 528:         }
 }
-[e :U 428 ]
-"505
-[; ;main.c: 505:     pl->oldX = pl->x;
+[e :U 446 ]
+"529
+[; ;main.c: 529:     }
+}
+[e :U 443 ]
+"530
+[; ;main.c: 530:     pl->oldX = pl->x;
 [e = . *U _pl 2 . *U _pl 0 ]
-"506
-[; ;main.c: 506:     pl->x++;
+"531
+[; ;main.c: 531:     pl->oldY = pl->y;
+[e = . *U _pl 3 . *U _pl 1 ]
+"532
+[; ;main.c: 532:     pl->x++;
 [e ++ . *U _pl 0 -> -> 1 `i `uc ]
-"507
-[; ;main.c: 507:     return;
-[e $UE 424  ]
-"508
-[; ;main.c: 508: }
-[e :UE 424 ]
+"533
+[; ;main.c: 533:     return;
+[e $UE 441  ]
+"534
+[; ;main.c: 534: }
+[e :UE 441 ]
 }
-"509
-[; ;main.c: 509: void up(GameElement* pl) {
+"535
+[; ;main.c: 535: void up(GameElement* pl) {
 [v _up `(v ~T0 @X0 1 ef1`*S270 ]
 {
 [e :U _up ]
 [v _pl `*S270 ~T0 @X0 1 r1 ]
 [f ]
-"510
-[; ;main.c: 510:     if (pl->y == 1) return;
-[e $ ! == -> . *U _pl 1 `i -> 1 `i 430  ]
-[e $UE 429  ]
-[e :U 430 ]
-"511
-[; ;main.c: 511:     if (display[pl->y-2][pl->x-1]->type == OT_PLAYERA) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 431  ]
-[e $UE 429  ]
-[e :U 431 ]
-"512
-[; ;main.c: 512:     if (display[pl->y-2][pl->x-1]->type == OT_PLAYERB) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 432  ]
-[e $UE 429  ]
-[e :U 432 ]
-"513
-[; ;main.c: 513:     if (display[pl->y-2][pl->x-1]->type == OT_FRISBEE) {
-[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 433  ]
+"536
+[; ;main.c: 536:     if (pl->y == 1) return;
+[e $ ! == -> . *U _pl 1 `i -> 1 `i 448  ]
+[e $UE 447  ]
+[e :U 448 ]
+"537
+[; ;main.c: 537:     if (display[pl->y-2][pl->x-1] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 449  ]
 {
-"515
-[; ;main.c: 515:     }
+"538
+[; ;main.c: 538:         if (display[pl->y-2][pl->x-1]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 450  ]
+[e $UE 447  ]
+[e :U 450 ]
+"539
+[; ;main.c: 539:         if (display[pl->y-2][pl->x-1]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 451  ]
+[e $UE 447  ]
+[e :U 451 ]
+"540
+[; ;main.c: 540:         if (display[pl->y-2][pl->x-1]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 452  ]
+{
+"541
+[; ;main.c: 541:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"542
+[; ;main.c: 542:         }
 }
-[e :U 433 ]
-"516
-[; ;main.c: 516:     pl->oldY = pl->y;
+[e :U 452 ]
+"543
+[; ;main.c: 543:     }
+}
+[e :U 449 ]
+"544
+[; ;main.c: 544:     pl->oldX = pl->x;
+[e = . *U _pl 2 . *U _pl 0 ]
+"545
+[; ;main.c: 545:     pl->oldY = pl->y;
 [e = . *U _pl 3 . *U _pl 1 ]
-"517
-[; ;main.c: 517:     pl->y--;
+"546
+[; ;main.c: 546:     pl->y--;
 [e -- . *U _pl 1 -> -> 1 `i `uc ]
-"518
-[; ;main.c: 518:     return;
-[e $UE 429  ]
-"519
-[; ;main.c: 519: }
-[e :UE 429 ]
+"547
+[; ;main.c: 547:     return;
+[e $UE 447  ]
+"548
+[; ;main.c: 548: }
+[e :UE 447 ]
 }
-"520
-[; ;main.c: 520: void down(GameElement* pl) {
+"549
+[; ;main.c: 549: void down(GameElement* pl) {
 [v _down `(v ~T0 @X0 1 ef1`*S270 ]
 {
 [e :U _down ]
 [v _pl `*S270 ~T0 @X0 1 r1 ]
 [f ]
-"521
-[; ;main.c: 521:     if (pl->y == 4) return;
-[e $ ! == -> . *U _pl 1 `i -> 4 `i 435  ]
-[e $UE 434  ]
-[e :U 435 ]
-"522
-[; ;main.c: 522:     if (display[pl->y][pl->x-1]->type == OT_PLAYERA) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 436  ]
-[e $UE 434  ]
-[e :U 436 ]
-"523
-[; ;main.c: 523:     if (display[pl->y][pl->x-1]->type == OT_PLAYERB) return;
-[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 437  ]
-[e $UE 434  ]
-[e :U 437 ]
-"524
-[; ;main.c: 524:     if (display[pl->y][pl->x-1]->type == OT_FRISBEE) {
-[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 438  ]
+"550
+[; ;main.c: 550:     if (pl->y == 4) return;
+[e $ ! == -> . *U _pl 1 `i -> 4 `i 454  ]
+[e $UE 453  ]
+[e :U 454 ]
+"551
+[; ;main.c: 551:     if (display[pl->y][pl->x-1] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 455  ]
 {
-"526
-[; ;main.c: 526:     }
+"552
+[; ;main.c: 552:         if (display[pl->y][pl->x-1]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 456  ]
+[e $UE 453  ]
+[e :U 456 ]
+"553
+[; ;main.c: 553:         if (display[pl->y][pl->x-1]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 457  ]
+[e $UE 453  ]
+[e :U 457 ]
+"554
+[; ;main.c: 554:         if (display[pl->y][pl->x-1]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 1 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 458  ]
+{
+"555
+[; ;main.c: 555:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"556
+[; ;main.c: 556:         }
 }
-[e :U 438 ]
-"527
-[; ;main.c: 527:     pl->oldY = pl->y;
+[e :U 458 ]
+"557
+[; ;main.c: 557:     }
+}
+[e :U 455 ]
+"558
+[; ;main.c: 558:     pl->oldX = pl->x;
+[e = . *U _pl 2 . *U _pl 0 ]
+"559
+[; ;main.c: 559:     pl->oldY = pl->y;
 [e = . *U _pl 3 . *U _pl 1 ]
-"528
-[; ;main.c: 528:     pl->y++;
+"560
+[; ;main.c: 560:     pl->y++;
 [e ++ . *U _pl 1 -> -> 1 `i `uc ]
-"529
-[; ;main.c: 529:     return;
-[e $UE 434  ]
-"530
-[; ;main.c: 530: }
-[e :UE 434 ]
+"561
+[; ;main.c: 561:     return;
+[e $UE 453  ]
+"562
+[; ;main.c: 562: }
+[e :UE 453 ]
+}
+"565
+[; ;main.c: 565: void upleft(GameElement* pl) {
+[v _upleft `(v ~T0 @X0 1 ef1`*S270 ]
+{
+[e :U _upleft ]
+[v _pl `*S270 ~T0 @X0 1 r1 ]
+[f ]
+"566
+[; ;main.c: 566:     if (pl->x == 1 || pl->y == 1) return;
+[e $ ! || == -> . *U _pl 0 `i -> 1 `i == -> . *U _pl 1 `i -> 1 `i 460  ]
+[e $UE 459  ]
+[e :U 460 ]
+"567
+[; ;main.c: 567:     if (display[pl->y-2][pl->x-2] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 461  ]
+{
+"568
+[; ;main.c: 568:         if (display[pl->y-2][pl->x-2]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 462  ]
+[e $UE 459  ]
+[e :U 462 ]
+"569
+[; ;main.c: 569:         if (display[pl->y-2][pl->x-2]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 463  ]
+[e $UE 459  ]
+[e :U 463 ]
+"570
+[; ;main.c: 570:         if (display[pl->y-2][pl->x-2]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 464  ]
+{
+"571
+[; ;main.c: 571:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"572
+[; ;main.c: 572:         }
+}
+[e :U 464 ]
+"573
+[; ;main.c: 573:     }
+}
+[e :U 461 ]
+"574
+[; ;main.c: 574:     pl->oldX = pl->x;
+[e = . *U _pl 2 . *U _pl 0 ]
+"575
+[; ;main.c: 575:     pl->oldY = pl->y;
+[e = . *U _pl 3 . *U _pl 1 ]
+"576
+[; ;main.c: 576:     pl->x--;
+[e -- . *U _pl 0 -> -> 1 `i `uc ]
+"577
+[; ;main.c: 577:     pl->y--;
+[e -- . *U _pl 1 -> -> 1 `i `uc ]
+"578
+[; ;main.c: 578:     return;
+[e $UE 459  ]
+"579
+[; ;main.c: 579: }
+[e :UE 459 ]
+}
+"580
+[; ;main.c: 580: void upright(GameElement* pl) {
+[v _upright `(v ~T0 @X0 1 ef1`*S270 ]
+{
+[e :U _upright ]
+[v _pl `*S270 ~T0 @X0 1 r1 ]
+[f ]
+"581
+[; ;main.c: 581:     if (pl->x == 16 || pl->y == 1) return;
+[e $ ! || == -> . *U _pl 0 `i -> 16 `i == -> . *U _pl 1 `i -> 1 `i 466  ]
+[e $UE 465  ]
+[e :U 466 ]
+"582
+[; ;main.c: 582:     if (display[pl->y-2][pl->x] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 467  ]
+{
+"583
+[; ;main.c: 583:         if (display[pl->y-2][pl->x]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 468  ]
+[e $UE 465  ]
+[e :U 468 ]
+"584
+[; ;main.c: 584:         if (display[pl->y-2][pl->x]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 469  ]
+[e $UE 465  ]
+[e :U 469 ]
+"585
+[; ;main.c: 585:         if (display[pl->y-2][pl->x]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> -> - -> . *U _pl 1 `i -> 2 `i `ui `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 470  ]
+{
+"586
+[; ;main.c: 586:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"587
+[; ;main.c: 587:         }
+}
+[e :U 470 ]
+"588
+[; ;main.c: 588:     }
+}
+[e :U 467 ]
+"589
+[; ;main.c: 589:     pl->oldX = pl->x;
+[e = . *U _pl 2 . *U _pl 0 ]
+"590
+[; ;main.c: 590:     pl->oldY = pl->y;
+[e = . *U _pl 3 . *U _pl 1 ]
+"591
+[; ;main.c: 591:     pl->x++;
+[e ++ . *U _pl 0 -> -> 1 `i `uc ]
+"592
+[; ;main.c: 592:     pl->y--;
+[e -- . *U _pl 1 -> -> 1 `i `uc ]
+"593
+[; ;main.c: 593:     return;
+[e $UE 465  ]
+"594
+[; ;main.c: 594: }
+[e :UE 465 ]
+}
+"596
+[; ;main.c: 596: void downleft(GameElement* pl) {
+[v _downleft `(v ~T0 @X0 1 ef1`*S270 ]
+{
+[e :U _downleft ]
+[v _pl `*S270 ~T0 @X0 1 r1 ]
+[f ]
+"597
+[; ;main.c: 597:     if (pl->x == 1 || pl->y == 16) return;
+[e $ ! || == -> . *U _pl 0 `i -> 1 `i == -> . *U _pl 1 `i -> 16 `i 472  ]
+[e $UE 471  ]
+[e :U 472 ]
+"598
+[; ;main.c: 598:     if (display[pl->y][pl->x-2] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 473  ]
+{
+"599
+[; ;main.c: 599:         if (display[pl->y][pl->x-2]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 474  ]
+[e $UE 471  ]
+[e :U 474 ]
+"600
+[; ;main.c: 600:         if (display[pl->y][pl->x-2]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 475  ]
+[e $UE 471  ]
+[e :U 475 ]
+"601
+[; ;main.c: 601:         if (display[pl->y][pl->x-2]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> -> - -> . *U _pl 0 `i -> 2 `i `ui `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 476  ]
+{
+"602
+[; ;main.c: 602:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"603
+[; ;main.c: 603:         }
+}
+[e :U 476 ]
+"604
+[; ;main.c: 604:     }
+}
+[e :U 473 ]
+"605
+[; ;main.c: 605:     pl->oldX = pl->x;
+[e = . *U _pl 2 . *U _pl 0 ]
+"606
+[; ;main.c: 606:     pl->oldY = pl->y;
+[e = . *U _pl 3 . *U _pl 1 ]
+"607
+[; ;main.c: 607:     pl->x--;
+[e -- . *U _pl 0 -> -> 1 `i `uc ]
+"608
+[; ;main.c: 608:     pl->y++;
+[e ++ . *U _pl 1 -> -> 1 `i `uc ]
+"609
+[; ;main.c: 609:     return;
+[e $UE 471  ]
+"610
+[; ;main.c: 610: }
+[e :UE 471 ]
+}
+"611
+[; ;main.c: 611: void downright(GameElement* pl) {
+[v _downright `(v ~T0 @X0 1 ef1`*S270 ]
+{
+[e :U _downright ]
+[v _pl `*S270 ~T0 @X0 1 r1 ]
+[f ]
+"612
+[; ;main.c: 612:     if (pl->x == 16 || pl->y == 16) return;
+[e $ ! || == -> . *U _pl 0 `i -> 16 `i == -> . *U _pl 1 `i -> 16 `i 478  ]
+[e $UE 477  ]
+[e :U 478 ]
+"613
+[; ;main.c: 613:     if (display[pl->y][pl->x] != ((void*)0)) {
+[e $ ! != *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux -> -> -> 0 `i `*v `*S270 479  ]
+{
+"614
+[; ;main.c: 614:         if (display[pl->y][pl->x]->type == OT_PLAYERA) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 0 `ui 480  ]
+[e $UE 477  ]
+[e :U 480 ]
+"615
+[; ;main.c: 615:         if (display[pl->y][pl->x]->type == OT_PLAYERB) return;
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 1 `ui 481  ]
+[e $UE 477  ]
+[e :U 481 ]
+"616
+[; ;main.c: 616:         if (display[pl->y][pl->x]->type == OT_FRISBEE) {
+[e $ ! == -> . *U *U + &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux * -> . *U _pl 0 `ux -> -> # *U &U *U + &U _display * -> . *U _pl 1 `ux -> * -> # *U &U *U &U _display `ui -> -> 16 `i `ui `ux `ui `ux 5 `ui -> . `E2444 2 `ui 482  ]
+{
+"617
+[; ;main.c: 617:             CatchFrisbee(pl);
+[e ( _CatchFrisbee (1 _pl ]
+"618
+[; ;main.c: 618:         }
+}
+[e :U 482 ]
+"619
+[; ;main.c: 619:     }
+}
+[e :U 479 ]
+"620
+[; ;main.c: 620:     pl->oldX = pl->x;
+[e = . *U _pl 2 . *U _pl 0 ]
+"621
+[; ;main.c: 621:     pl->oldY = pl->y;
+[e = . *U _pl 3 . *U _pl 1 ]
+"622
+[; ;main.c: 622:     pl->x++;
+[e ++ . *U _pl 0 -> -> 1 `i `uc ]
+"623
+[; ;main.c: 623:     pl->y++;
+[e ++ . *U _pl 1 -> -> 1 `i `uc ]
+"624
+[; ;main.c: 624:     return;
+[e $UE 477  ]
+"625
+[; ;main.c: 625: }
+[e :UE 477 ]
 }
 [p f _sprintf 8388736 ]
 [a 1C 37 100 0 ]

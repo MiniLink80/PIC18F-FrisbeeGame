@@ -12,44 +12,49 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/18F4620/production/THE3.X.production.o
-intcodelo CODE 0 18 18 10 1
-cinit CODE 0 1FDA 1FDA 72 1
+intcodelo CODE 0 18 18 AA 1
+cinit CODE 0 2E36 2E36 72 1
 idloc IDLOC 5 200000 200000 8 1
-intcode_body CODE 0 1500 1500 230 1
-text0 CODE 0 2220 2220 1C 1
-text1 CODE 0 1006 1006 4FA 1
-text2 CODE 0 1E32 1E32 B2 1
-text3 CODE 0 213E 213E 32 1
-text4 CODE 0 204C 204C 64 1
-text5 CODE 0 1730 1730 206 1
-text6 CODE 0 21D2 21D2 28 1
-text7 CODE 0 1EE4 1EE4 82 1
-text8 CODE 0 20B0 20B0 4A 1
-text9 CODE 0 1F66 1F66 74 1
-text10 CODE 0 21A2 21A2 30 1
-text11 CODE 0 2170 2170 32 1
-text14 CODE 0 21FA 21FA 26 1
-text15 CODE 0 1936 1936 14C 1
-text16 CODE 0 1BC2 1BC2 13A 1
-text17 CODE 0 1A82 1A82 140 1
-text18 CODE 0 1CFC 1CFC 136 1
-text19 CODE 0 223C 223C 10 1
-idataCOMRAM CODE 0 224C 224C B 1
-cstackCOMRAM COMRAM 1 3B 3B 1E 1
-cstackBANK1 BANK1 1 180 180 17 1
-temp COMRAM 1 64 64 1 1
-bssBANK0 BANK0 1 C3 C3 3C 1
-bssBANK1 BANK1 1 100 100 80 1
+intcode_body CODE 0 16E6 16E6 548 1
+text0 CODE 0 30E0 30E0 1C 1
+text1 CODE 0 1006 1006 6E0 1
+text2 CODE 0 302E 302E 32 1
+text3 CODE 0 2CB2 2CB2 8A 1
+text4 CODE 0 28BA 28BA 220 1
+text5 CODE 0 3092 3092 28 1
+text6 CODE 0 2D3C 2D3C 82 1
+text7 CODE 0 2F76 2F76 4A 1
+text8 CODE 0 2DBE 2DBE 78 1
+text9 CODE 0 3060 3060 32 1
+text10 CODE 0 2FFA 2FFA 34 1
+text13 CODE 0 1F86 1F86 260 1
+text14 CODE 0 243E 243E 24A 1
+text15 CODE 0 21E6 21E6 258 1
+text16 CODE 0 2688 2688 232 1
+text17 CODE 0 2C26 2C26 8C 1
+text18 CODE 0 1C2E 1C2E 358 1
+text19 CODE 0 2EA8 2EA8 6A 1
+text20 CODE 0 2F12 2F12 64 1
+text21 CODE 0 3112 3112 10 1
+text22 CODE 0 2ADA 2ADA 14C 1
+text23 CODE 0 30BA 30BA 26 1
+idataCOMRAM CODE 0 30FC 30FC 16 1
+cstackCOMRAM COMRAM 1 1 1 3B 1
+cstackBANK0 BANK0 1 E4 E4 14 1
+cstackBANK1 BANK1 1 1BC 1BC 14 1
+temp COMRAM 1 68 68 1 1
+bssBANK0 BANK0 1 BA BA 2A 1
+bssBANK1 BANK1 1 100 100 BC 1
 intcode CODE 0 8 8 6 1
 smallconst SMALLCONST 0 1000 1000 6 1
-idataBANK0 CODE 0 20FA 20FA 43 1
-dataBANK0 BANK0 1 80 80 43 1
-dataCOMRAM COMRAM 1 59 59 B 1
-bssCOMRAM COMRAM 1 1 1 3A 1
+idataBANK0 CODE 0 2FC0 2FC0 3A 1
+dataBANK0 BANK0 1 80 80 3A 1
+dataCOMRAM COMRAM 1 52 52 16 1
+bssCOMRAM COMRAM 1 3C 3C 16 1
 config CONFIG 4 300000 300000 E 1
-$/tmp/xcXfkhhOe.o
+$/tmp/xcXBKlFEa.o
 idloc IDLOC 5 200000 200000 8 1
-init CODE 0 28 28 4 1
+init CODE 0 C2 C2 4 1
 reset_vec CODE 0 0 0 4 1
 config CONFIG 4 300000 300000 E 1
 # %UNUSED Section
@@ -58,11 +63,11 @@ config CONFIG 4 300000 300000 E 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM FF-FF 1
-RAM 197-F7F 1
+RAM F8-FF 1
+RAM 1D0-F7F 1
 SFR F80-FFF 1
-BANK0 FF-FF 1
-BANK1 197-1FF 1
+BANK0 F8-FF 1
+BANK1 1D0-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
 BANK4 400-4FF 1
@@ -73,30 +78,26 @@ BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
 CONST E-17 1
-CONST 2C-FFF 1
-CONST 213D-213D 1
-CONST 2257-FFFF 1
-STACK 197-F7F 1
-SMALLCONST 213D-213D 1
-SMALLCONST 2257-FFFF 1
+CONST C6-FFF 1
+CONST 3122-FFFF 1
+STACK 1D0-F7F 1
+SMALLCONST 3122-FFFF 1
 CODE 4-7 1
 CODE E-17 1
-CODE 2C-FFF 1
-CODE 213D-213D 1
-CODE 2257-FFFF 1
+CODE C6-FFF 1
+CODE 3122-FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EFF 1
 BANK15 F00-F7F 1
-BIGRAM 65-7F 1
-BIGRAM FF-FF 1
-BIGRAM 197-F7F 1
-COMRAM 65-7F 1
+BIGRAM 69-7F 1
+BIGRAM F8-FF 1
+BIGRAM 1D0-F7F 1
+COMRAM 69-7F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 213D-213D 1
-MEDIUMCONST 2257-FFFF 1
+MEDIUMCONST 3122-FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -111,380 +112,539 @@ MEDIUMCONST 2257-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/18F4620/production/THE3.X.production.o
-18 intcodelo CODE >4148:/tmp/xcXicjNaE.s
-18 intcodelo CODE >101:/home/eren/MPLABXProjects/THE3.X/main.c
-1E intcodelo CODE >102:/home/eren/MPLABXProjects/THE3.X/main.c
-20 intcodelo CODE >146:/home/eren/MPLABXProjects/THE3.X/main.c
-8 intcode CODE >4215:/tmp/xcXicjNaE.s
-8 intcode CODE >40:/home/eren/MPLABXProjects/THE3.X/main.c
-223C text19 CODE >480:/home/eren/MPLABXProjects/THE3.X/main.c
-223C text19 CODE >481:/home/eren/MPLABXProjects/THE3.X/main.c
-2240 text19 CODE >482:/home/eren/MPLABXProjects/THE3.X/main.c
-2244 text19 CODE >483:/home/eren/MPLABXProjects/THE3.X/main.c
-2248 text19 CODE >484:/home/eren/MPLABXProjects/THE3.X/main.c
-224A text19 CODE >485:/home/eren/MPLABXProjects/THE3.X/main.c
-1CFC text18 CODE >520:/home/eren/MPLABXProjects/THE3.X/main.c
-1CFC text18 CODE >521:/home/eren/MPLABXProjects/THE3.X/main.c
-1D1E text18 CODE >522:/home/eren/MPLABXProjects/THE3.X/main.c
-1D92 text18 CODE >523:/home/eren/MPLABXProjects/THE3.X/main.c
-1E06 text18 CODE >527:/home/eren/MPLABXProjects/THE3.X/main.c
-1E22 text18 CODE >528:/home/eren/MPLABXProjects/THE3.X/main.c
-1E30 text18 CODE >530:/home/eren/MPLABXProjects/THE3.X/main.c
-1A82 text17 CODE >487:/home/eren/MPLABXProjects/THE3.X/main.c
-1A82 text17 CODE >488:/home/eren/MPLABXProjects/THE3.X/main.c
-1A9E text17 CODE >489:/home/eren/MPLABXProjects/THE3.X/main.c
-1B1E text17 CODE >490:/home/eren/MPLABXProjects/THE3.X/main.c
-1B9E text17 CODE >494:/home/eren/MPLABXProjects/THE3.X/main.c
-1BB6 text17 CODE >495:/home/eren/MPLABXProjects/THE3.X/main.c
-1BC0 text17 CODE >497:/home/eren/MPLABXProjects/THE3.X/main.c
-1BC2 text16 CODE >498:/home/eren/MPLABXProjects/THE3.X/main.c
-1BC2 text16 CODE >499:/home/eren/MPLABXProjects/THE3.X/main.c
-1BE0 text16 CODE >500:/home/eren/MPLABXProjects/THE3.X/main.c
-1C5C text16 CODE >501:/home/eren/MPLABXProjects/THE3.X/main.c
-1CD8 text16 CODE >505:/home/eren/MPLABXProjects/THE3.X/main.c
-1CF0 text16 CODE >506:/home/eren/MPLABXProjects/THE3.X/main.c
-1CFA text16 CODE >508:/home/eren/MPLABXProjects/THE3.X/main.c
-1936 text15 CODE >509:/home/eren/MPLABXProjects/THE3.X/main.c
-1936 text15 CODE >510:/home/eren/MPLABXProjects/THE3.X/main.c
-1956 text15 CODE >511:/home/eren/MPLABXProjects/THE3.X/main.c
-19D6 text15 CODE >512:/home/eren/MPLABXProjects/THE3.X/main.c
-1A56 text15 CODE >516:/home/eren/MPLABXProjects/THE3.X/main.c
-1A72 text15 CODE >517:/home/eren/MPLABXProjects/THE3.X/main.c
-1A80 text15 CODE >519:/home/eren/MPLABXProjects/THE3.X/main.c
-21FA text14 CODE >15:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-21FA text14 CODE >37:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-2206 text14 CODE >38:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-220E text14 CODE >39:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-2216 text14 CODE >52:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-221E text14 CODE >53:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-1500 intcode_body CODE >40:/home/eren/MPLABXProjects/THE3.X/main.c
-151A intcode_body CODE >41:/home/eren/MPLABXProjects/THE3.X/main.c
-151E intcode_body CODE >43:/home/eren/MPLABXProjects/THE3.X/main.c
-152C intcode_body CODE >44:/home/eren/MPLABXProjects/THE3.X/main.c
-1530 intcode_body CODE >45:/home/eren/MPLABXProjects/THE3.X/main.c
-1532 intcode_body CODE >46:/home/eren/MPLABXProjects/THE3.X/main.c
-1534 intcode_body CODE >49:/home/eren/MPLABXProjects/THE3.X/main.c
-1542 intcode_body CODE >50:/home/eren/MPLABXProjects/THE3.X/main.c
-1552 intcode_body CODE >51:/home/eren/MPLABXProjects/THE3.X/main.c
-1556 intcode_body CODE >52:/home/eren/MPLABXProjects/THE3.X/main.c
-157A intcode_body CODE >53:/home/eren/MPLABXProjects/THE3.X/main.c
-1582 intcode_body CODE >57:/home/eren/MPLABXProjects/THE3.X/main.c
-1590 intcode_body CODE >58:/home/eren/MPLABXProjects/THE3.X/main.c
-15A0 intcode_body CODE >59:/home/eren/MPLABXProjects/THE3.X/main.c
-15A4 intcode_body CODE >61:/home/eren/MPLABXProjects/THE3.X/main.c
-15C8 intcode_body CODE >62:/home/eren/MPLABXProjects/THE3.X/main.c
-15CC intcode_body CODE >63:/home/eren/MPLABXProjects/THE3.X/main.c
-15D4 intcode_body CODE >64:/home/eren/MPLABXProjects/THE3.X/main.c
-15FC intcode_body CODE >70:/home/eren/MPLABXProjects/THE3.X/main.c
-160A intcode_body CODE >71:/home/eren/MPLABXProjects/THE3.X/main.c
-161A intcode_body CODE >72:/home/eren/MPLABXProjects/THE3.X/main.c
-1620 intcode_body CODE >73:/home/eren/MPLABXProjects/THE3.X/main.c
-1624 intcode_body CODE >75:/home/eren/MPLABXProjects/THE3.X/main.c
-1648 intcode_body CODE >76:/home/eren/MPLABXProjects/THE3.X/main.c
-164C intcode_body CODE >78:/home/eren/MPLABXProjects/THE3.X/main.c
-1670 intcode_body CODE >79:/home/eren/MPLABXProjects/THE3.X/main.c
-1674 intcode_body CODE >81:/home/eren/MPLABXProjects/THE3.X/main.c
-1698 intcode_body CODE >82:/home/eren/MPLABXProjects/THE3.X/main.c
-169C intcode_body CODE >84:/home/eren/MPLABXProjects/THE3.X/main.c
-16C0 intcode_body CODE >85:/home/eren/MPLABXProjects/THE3.X/main.c
-16C4 intcode_body CODE >87:/home/eren/MPLABXProjects/THE3.X/main.c
-16C8 intcode_body CODE >88:/home/eren/MPLABXProjects/THE3.X/main.c
-16CC intcode_body CODE >89:/home/eren/MPLABXProjects/THE3.X/main.c
-1706 intcode_body CODE >91:/home/eren/MPLABXProjects/THE3.X/main.c
-170E intcode_body CODE >95:/home/eren/MPLABXProjects/THE3.X/main.c
-1710 intcode_body CODE >96:/home/eren/MPLABXProjects/THE3.X/main.c
-1712 intcode_body CODE >97:/home/eren/MPLABXProjects/THE3.X/main.c
-1714 intcode_body CODE >99:/home/eren/MPLABXProjects/THE3.X/main.c
-2170 text11 CODE >74:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2172 text11 CODE >75:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2174 text11 CODE >76:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2176 text11 CODE >77:/home/eren/MPLABXProjects/THE3.X/lcd.h
-217A text11 CODE >78:/home/eren/MPLABXProjects/THE3.X/lcd.h
-217C text11 CODE >79:/home/eren/MPLABXProjects/THE3.X/lcd.h
-218C text11 CODE >80:/home/eren/MPLABXProjects/THE3.X/lcd.h
-218E text11 CODE >81:/home/eren/MPLABXProjects/THE3.X/lcd.h
-219E text11 CODE >82:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21A0 text11 CODE >83:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21A2 text10 CODE >64:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21A4 text10 CODE >65:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21A6 text10 CODE >66:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21A8 text10 CODE >67:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21AC text10 CODE >68:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21AE text10 CODE >69:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21BE text10 CODE >70:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21C0 text10 CODE >71:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21D0 text10 CODE >72:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F66 text9 CODE >88:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F68 text9 CODE >89:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F78 text9 CODE >90:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F82 text9 CODE >91:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F86 text9 CODE >92:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F98 text9 CODE >93:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FA2 text9 CODE >94:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FA6 text9 CODE >95:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FB8 text9 CODE >96:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FC2 text9 CODE >97:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FC6 text9 CODE >99:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FD0 text9 CODE >101:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FD4 text9 CODE >102:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1FD8 text9 CODE >103:/home/eren/MPLABXProjects/THE3.X/lcd.h
-20B0 text8 CODE >145:/home/eren/MPLABXProjects/THE3.X/lcd.h
-20B4 text8 CODE >151:/home/eren/MPLABXProjects/THE3.X/lcd.h
-20C2 text8 CODE >152:/home/eren/MPLABXProjects/THE3.X/lcd.h
-20C8 text8 CODE >153:/home/eren/MPLABXProjects/THE3.X/lcd.h
-20DA text8 CODE >154:/home/eren/MPLABXProjects/THE3.X/lcd.h
-20EE text8 CODE >156:/home/eren/MPLABXProjects/THE3.X/lcd.h
-20F8 text8 CODE >158:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1EE4 text7 CODE >161:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1EE4 text7 CODE >162:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1EF4 text7 CODE >163:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F04 text7 CODE >164:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F14 text7 CODE >165:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F24 text7 CODE >166:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F34 text7 CODE >167:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F44 text7 CODE >168:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F54 text7 CODE >169:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1F64 text7 CODE >170:/home/eren/MPLABXProjects/THE3.X/lcd.h
-21D2 text6 CODE >15:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-21D2 text6 CODE >37:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-21DE text6 CODE >38:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-21E8 text6 CODE >39:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-21F0 text6 CODE >52:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-21F8 text6 CODE >53:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
-1730 text5 CODE >335:/home/eren/MPLABXProjects/THE3.X/main.c
-1730 text5 CODE >336:/home/eren/MPLABXProjects/THE3.X/main.c
-173A text5 CODE >337:/home/eren/MPLABXProjects/THE3.X/main.c
-1742 text5 CODE >338:/home/eren/MPLABXProjects/THE3.X/main.c
-1782 text5 CODE >339:/home/eren/MPLABXProjects/THE3.X/main.c
-17A2 text5 CODE >340:/home/eren/MPLABXProjects/THE3.X/main.c
-17C2 text5 CODE >342:/home/eren/MPLABXProjects/THE3.X/main.c
-17CA text5 CODE >344:/home/eren/MPLABXProjects/THE3.X/main.c
-17CE text5 CODE >345:/home/eren/MPLABXProjects/THE3.X/main.c
-17D2 text5 CODE >346:/home/eren/MPLABXProjects/THE3.X/main.c
-17D6 text5 CODE >347:/home/eren/MPLABXProjects/THE3.X/main.c
-17DA text5 CODE >348:/home/eren/MPLABXProjects/THE3.X/main.c
-17DE text5 CODE >349:/home/eren/MPLABXProjects/THE3.X/main.c
-17E2 text5 CODE >350:/home/eren/MPLABXProjects/THE3.X/main.c
-17E6 text5 CODE >352:/home/eren/MPLABXProjects/THE3.X/main.c
-17EA text5 CODE >353:/home/eren/MPLABXProjects/THE3.X/main.c
-17EE text5 CODE >354:/home/eren/MPLABXProjects/THE3.X/main.c
-17F2 text5 CODE >355:/home/eren/MPLABXProjects/THE3.X/main.c
-17F6 text5 CODE >356:/home/eren/MPLABXProjects/THE3.X/main.c
-17FA text5 CODE >357:/home/eren/MPLABXProjects/THE3.X/main.c
-17FE text5 CODE >358:/home/eren/MPLABXProjects/THE3.X/main.c
-1802 text5 CODE >360:/home/eren/MPLABXProjects/THE3.X/main.c
-1806 text5 CODE >361:/home/eren/MPLABXProjects/THE3.X/main.c
-180A text5 CODE >362:/home/eren/MPLABXProjects/THE3.X/main.c
-180E text5 CODE >363:/home/eren/MPLABXProjects/THE3.X/main.c
-1812 text5 CODE >364:/home/eren/MPLABXProjects/THE3.X/main.c
-1816 text5 CODE >365:/home/eren/MPLABXProjects/THE3.X/main.c
-181A text5 CODE >366:/home/eren/MPLABXProjects/THE3.X/main.c
-181E text5 CODE >368:/home/eren/MPLABXProjects/THE3.X/main.c
-1822 text5 CODE >369:/home/eren/MPLABXProjects/THE3.X/main.c
-1826 text5 CODE >370:/home/eren/MPLABXProjects/THE3.X/main.c
-182A text5 CODE >371:/home/eren/MPLABXProjects/THE3.X/main.c
-182E text5 CODE >372:/home/eren/MPLABXProjects/THE3.X/main.c
-1832 text5 CODE >373:/home/eren/MPLABXProjects/THE3.X/main.c
-1836 text5 CODE >374:/home/eren/MPLABXProjects/THE3.X/main.c
-183A text5 CODE >376:/home/eren/MPLABXProjects/THE3.X/main.c
-183E text5 CODE >377:/home/eren/MPLABXProjects/THE3.X/main.c
-1842 text5 CODE >378:/home/eren/MPLABXProjects/THE3.X/main.c
-1846 text5 CODE >379:/home/eren/MPLABXProjects/THE3.X/main.c
-184A text5 CODE >380:/home/eren/MPLABXProjects/THE3.X/main.c
-184E text5 CODE >381:/home/eren/MPLABXProjects/THE3.X/main.c
-1852 text5 CODE >382:/home/eren/MPLABXProjects/THE3.X/main.c
-1856 text5 CODE >384:/home/eren/MPLABXProjects/THE3.X/main.c
-185A text5 CODE >385:/home/eren/MPLABXProjects/THE3.X/main.c
-185E text5 CODE >386:/home/eren/MPLABXProjects/THE3.X/main.c
-1862 text5 CODE >387:/home/eren/MPLABXProjects/THE3.X/main.c
-1866 text5 CODE >388:/home/eren/MPLABXProjects/THE3.X/main.c
-186A text5 CODE >389:/home/eren/MPLABXProjects/THE3.X/main.c
-186E text5 CODE >391:/home/eren/MPLABXProjects/THE3.X/main.c
-1876 text5 CODE >392:/home/eren/MPLABXProjects/THE3.X/main.c
-1914 text5 CODE >393:/home/eren/MPLABXProjects/THE3.X/main.c
-1934 text5 CODE >394:/home/eren/MPLABXProjects/THE3.X/main.c
-204C text4 CODE >425:/home/eren/MPLABXProjects/THE3.X/main.c
-204C text4 CODE >426:/home/eren/MPLABXProjects/THE3.X/main.c
-2064 text4 CODE >428:/home/eren/MPLABXProjects/THE3.X/main.c
-2068 text4 CODE >429:/home/eren/MPLABXProjects/THE3.X/main.c
-206A text4 CODE >430:/home/eren/MPLABXProjects/THE3.X/main.c
-206E text4 CODE >432:/home/eren/MPLABXProjects/THE3.X/main.c
-2072 text4 CODE >433:/home/eren/MPLABXProjects/THE3.X/main.c
-2074 text4 CODE >434:/home/eren/MPLABXProjects/THE3.X/main.c
-2078 text4 CODE >435:/home/eren/MPLABXProjects/THE3.X/main.c
-207C text4 CODE >437:/home/eren/MPLABXProjects/THE3.X/main.c
-2080 text4 CODE >438:/home/eren/MPLABXProjects/THE3.X/main.c
-2084 text4 CODE >439:/home/eren/MPLABXProjects/THE3.X/main.c
-2088 text4 CODE >440:/home/eren/MPLABXProjects/THE3.X/main.c
-208C text4 CODE >441:/home/eren/MPLABXProjects/THE3.X/main.c
-208E text4 CODE >443:/home/eren/MPLABXProjects/THE3.X/main.c
-2090 text4 CODE >444:/home/eren/MPLABXProjects/THE3.X/main.c
-2092 text4 CODE >445:/home/eren/MPLABXProjects/THE3.X/main.c
-2094 text4 CODE >446:/home/eren/MPLABXProjects/THE3.X/main.c
-2096 text4 CODE >447:/home/eren/MPLABXProjects/THE3.X/main.c
-2098 text4 CODE >449:/home/eren/MPLABXProjects/THE3.X/main.c
-209A text4 CODE >450:/home/eren/MPLABXProjects/THE3.X/main.c
-209C text4 CODE >453:/home/eren/MPLABXProjects/THE3.X/main.c
-209E text4 CODE >454:/home/eren/MPLABXProjects/THE3.X/main.c
-20A0 text4 CODE >455:/home/eren/MPLABXProjects/THE3.X/main.c
-20A2 text4 CODE >457:/home/eren/MPLABXProjects/THE3.X/main.c
-20A4 text4 CODE >458:/home/eren/MPLABXProjects/THE3.X/main.c
-20A6 text4 CODE >459:/home/eren/MPLABXProjects/THE3.X/main.c
-20AA text4 CODE >460:/home/eren/MPLABXProjects/THE3.X/main.c
-20AC text4 CODE >461:/home/eren/MPLABXProjects/THE3.X/main.c
-20AE text4 CODE >475:/home/eren/MPLABXProjects/THE3.X/main.c
-213E text3 CODE >124:/home/eren/MPLABXProjects/THE3.X/lcd.h
-213E text3 CODE >125:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2140 text3 CODE >126:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2142 text3 CODE >127:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2146 text3 CODE >129:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2148 text3 CODE >130:/home/eren/MPLABXProjects/THE3.X/lcd.h
-214A text3 CODE >131:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2150 text3 CODE >132:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2156 text3 CODE >133:/home/eren/MPLABXProjects/THE3.X/lcd.h
-215C text3 CODE >134:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2162 text3 CODE >135:/home/eren/MPLABXProjects/THE3.X/lcd.h
-2168 text3 CODE >136:/home/eren/MPLABXProjects/THE3.X/lcd.h
-216E text3 CODE >137:/home/eren/MPLABXProjects/THE3.X/lcd.h
-1E32 text2 CODE >7:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E32 text2 CODE >12:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E38 text2 CODE >13:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E46 text2 CODE >14:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E4E text2 CODE >15:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E52 text2 CODE >17:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E60 text2 CODE >18:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E68 text2 CODE >19:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E7A text2 CODE >20:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E7E text2 CODE >21:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E82 text2 CODE >22:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E88 text2 CODE >23:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E8A text2 CODE >21:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1E98 text2 CODE >26:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1EAE text2 CODE >27:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1EB6 text2 CODE >28:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1EBC text2 CODE >29:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1EC2 text2 CODE >31:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1ED2 text2 CODE >32:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1EDA text2 CODE >33:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1EE2 text2 CODE >34:/opt/microchip/xc8/v2.30/pic/sources/c99/common/awmod.c
-1006 text1 CODE >170:/home/eren/MPLABXProjects/THE3.X/main.c
-1006 text1 CODE >171:/home/eren/MPLABXProjects/THE3.X/main.c
-1010 text1 CODE >172:/home/eren/MPLABXProjects/THE3.X/main.c
-1018 text1 CODE >173:/home/eren/MPLABXProjects/THE3.X/main.c
-1058 text1 CODE >174:/home/eren/MPLABXProjects/THE3.X/main.c
-1078 text1 CODE >175:/home/eren/MPLABXProjects/THE3.X/main.c
-1098 text1 CODE >176:/home/eren/MPLABXProjects/THE3.X/main.c
-10A0 text1 CODE >177:/home/eren/MPLABXProjects/THE3.X/main.c
-115E text1 CODE >178:/home/eren/MPLABXProjects/THE3.X/main.c
-117E text1 CODE >180:/home/eren/MPLABXProjects/THE3.X/main.c
-1186 text1 CODE >181:/home/eren/MPLABXProjects/THE3.X/main.c
-11EA text1 CODE >184:/home/eren/MPLABXProjects/THE3.X/main.c
-120E text1 CODE >185:/home/eren/MPLABXProjects/THE3.X/main.c
-1232 text1 CODE >186:/home/eren/MPLABXProjects/THE3.X/main.c
-123C text1 CODE >187:/home/eren/MPLABXProjects/THE3.X/main.c
-1242 text1 CODE >188:/home/eren/MPLABXProjects/THE3.X/main.c
-1264 text1 CODE >190:/home/eren/MPLABXProjects/THE3.X/main.c
-126C text1 CODE >191:/home/eren/MPLABXProjects/THE3.X/main.c
-12A0 text1 CODE >193:/home/eren/MPLABXProjects/THE3.X/main.c
-12C4 text1 CODE >194:/home/eren/MPLABXProjects/THE3.X/main.c
-12E8 text1 CODE >195:/home/eren/MPLABXProjects/THE3.X/main.c
-12F2 text1 CODE >197:/home/eren/MPLABXProjects/THE3.X/main.c
-12F6 text1 CODE >199:/home/eren/MPLABXProjects/THE3.X/main.c
-12FC text1 CODE >200:/home/eren/MPLABXProjects/THE3.X/main.c
-1300 text1 CODE >203:/home/eren/MPLABXProjects/THE3.X/main.c
-1306 text1 CODE >204:/home/eren/MPLABXProjects/THE3.X/main.c
-130A text1 CODE >209:/home/eren/MPLABXProjects/THE3.X/main.c
-1310 text1 CODE >210:/home/eren/MPLABXProjects/THE3.X/main.c
-1314 text1 CODE >212:/home/eren/MPLABXProjects/THE3.X/main.c
-131A text1 CODE >213:/home/eren/MPLABXProjects/THE3.X/main.c
-131E text1 CODE >215:/home/eren/MPLABXProjects/THE3.X/main.c
-1324 text1 CODE >216:/home/eren/MPLABXProjects/THE3.X/main.c
-1328 text1 CODE >220:/home/eren/MPLABXProjects/THE3.X/main.c
-137C text1 CODE >226:/home/eren/MPLABXProjects/THE3.X/main.c
-1382 text1 CODE >227:/home/eren/MPLABXProjects/THE3.X/main.c
-1386 text1 CODE >229:/home/eren/MPLABXProjects/THE3.X/main.c
-138C text1 CODE >230:/home/eren/MPLABXProjects/THE3.X/main.c
-1390 text1 CODE >232:/home/eren/MPLABXProjects/THE3.X/main.c
-1396 text1 CODE >233:/home/eren/MPLABXProjects/THE3.X/main.c
-139A text1 CODE >237:/home/eren/MPLABXProjects/THE3.X/main.c
-13EE text1 CODE >243:/home/eren/MPLABXProjects/THE3.X/main.c
-144A text1 CODE >244:/home/eren/MPLABXProjects/THE3.X/main.c
-146C text1 CODE >311:/home/eren/MPLABXProjects/THE3.X/main.c
-1470 text1 CODE >313:/home/eren/MPLABXProjects/THE3.X/main.c
-1474 text1 CODE >315:/home/eren/MPLABXProjects/THE3.X/main.c
-1478 text1 CODE >316:/home/eren/MPLABXProjects/THE3.X/main.c
-147C text1 CODE >317:/home/eren/MPLABXProjects/THE3.X/main.c
-1480 text1 CODE >319:/home/eren/MPLABXProjects/THE3.X/main.c
-1488 text1 CODE >323:/home/eren/MPLABXProjects/THE3.X/main.c
-148C text1 CODE >324:/home/eren/MPLABXProjects/THE3.X/main.c
-1490 text1 CODE >325:/home/eren/MPLABXProjects/THE3.X/main.c
-1494 text1 CODE >326:/home/eren/MPLABXProjects/THE3.X/main.c
-14C8 text1 CODE >328:/home/eren/MPLABXProjects/THE3.X/main.c
-14DA text1 CODE >329:/home/eren/MPLABXProjects/THE3.X/main.c
-14FA text1 CODE >332:/home/eren/MPLABXProjects/THE3.X/main.c
-14FE text1 CODE >333:/home/eren/MPLABXProjects/THE3.X/main.c
-2220 text0 CODE >152:/home/eren/MPLABXProjects/THE3.X/main.c
-2220 text0 CODE >154:/home/eren/MPLABXProjects/THE3.X/main.c
-2224 text0 CODE >155:/home/eren/MPLABXProjects/THE3.X/main.c
-2228 text0 CODE >156:/home/eren/MPLABXProjects/THE3.X/main.c
-222C text0 CODE >158:/home/eren/MPLABXProjects/THE3.X/main.c
-2230 text0 CODE >165:/home/eren/MPLABXProjects/THE3.X/main.c
-1FDA cinit CODE >621:/tmp/xcXicjNaE.s
-1FDA cinit CODE >623:/tmp/xcXicjNaE.s
-1FDA cinit CODE >626:/tmp/xcXicjNaE.s
-1FDA cinit CODE >755:/tmp/xcXicjNaE.s
-1FDC cinit CODE >756:/tmp/xcXicjNaE.s
-1FDE cinit CODE >757:/tmp/xcXicjNaE.s
-1FE0 cinit CODE >758:/tmp/xcXicjNaE.s
-1FE2 cinit CODE >759:/tmp/xcXicjNaE.s
-1FE4 cinit CODE >760:/tmp/xcXicjNaE.s
-1FE6 cinit CODE >761:/tmp/xcXicjNaE.s
-1FEA cinit CODE >762:/tmp/xcXicjNaE.s
-1FEE cinit CODE >763:/tmp/xcXicjNaE.s
-1FEE cinit CODE >764:/tmp/xcXicjNaE.s
-1FF0 cinit CODE >765:/tmp/xcXicjNaE.s
-1FF4 cinit CODE >766:/tmp/xcXicjNaE.s
-1FF6 cinit CODE >767:/tmp/xcXicjNaE.s
-1FF8 cinit CODE >768:/tmp/xcXicjNaE.s
-1FFA cinit CODE >772:/tmp/xcXicjNaE.s
-1FFC cinit CODE >773:/tmp/xcXicjNaE.s
-1FFE cinit CODE >774:/tmp/xcXicjNaE.s
-2000 cinit CODE >775:/tmp/xcXicjNaE.s
-2002 cinit CODE >776:/tmp/xcXicjNaE.s
-2004 cinit CODE >777:/tmp/xcXicjNaE.s
-2006 cinit CODE >778:/tmp/xcXicjNaE.s
-200A cinit CODE >779:/tmp/xcXicjNaE.s
-200E cinit CODE >780:/tmp/xcXicjNaE.s
-200E cinit CODE >781:/tmp/xcXicjNaE.s
-2010 cinit CODE >782:/tmp/xcXicjNaE.s
-2014 cinit CODE >783:/tmp/xcXicjNaE.s
-2016 cinit CODE >784:/tmp/xcXicjNaE.s
-2018 cinit CODE >785:/tmp/xcXicjNaE.s
-201A cinit CODE >789:/tmp/xcXicjNaE.s
-201E cinit CODE >790:/tmp/xcXicjNaE.s
-2020 cinit CODE >791:/tmp/xcXicjNaE.s
-2020 cinit CODE >792:/tmp/xcXicjNaE.s
-2022 cinit CODE >793:/tmp/xcXicjNaE.s
-2024 cinit CODE >794:/tmp/xcXicjNaE.s
-2026 cinit CODE >797:/tmp/xcXicjNaE.s
-202A cinit CODE >798:/tmp/xcXicjNaE.s
-202C cinit CODE >799:/tmp/xcXicjNaE.s
-202C cinit CODE >800:/tmp/xcXicjNaE.s
-202E cinit CODE >801:/tmp/xcXicjNaE.s
-2030 cinit CODE >802:/tmp/xcXicjNaE.s
-2032 cinit CODE >805:/tmp/xcXicjNaE.s
-2036 cinit CODE >806:/tmp/xcXicjNaE.s
-2038 cinit CODE >807:/tmp/xcXicjNaE.s
-2038 cinit CODE >808:/tmp/xcXicjNaE.s
-203A cinit CODE >809:/tmp/xcXicjNaE.s
-203C cinit CODE >810:/tmp/xcXicjNaE.s
-203E cinit CODE >816:/tmp/xcXicjNaE.s
-203E cinit CODE >818:/tmp/xcXicjNaE.s
-2040 cinit CODE >819:/tmp/xcXicjNaE.s
-2042 cinit CODE >821:/tmp/xcXicjNaE.s
-2044 cinit CODE >822:/tmp/xcXicjNaE.s
-2046 cinit CODE >823:/tmp/xcXicjNaE.s
-2048 cinit CODE >824:/tmp/xcXicjNaE.s
+18 intcodelo CODE >4399:/tmp/xcXCDkHEI.s
+18 intcodelo CODE >178:/home/eren/MPLABXProjects/THE3.X/main.c
+2E intcodelo CODE >179:/home/eren/MPLABXProjects/THE3.X/main.c
+30 intcodelo CODE >180:/home/eren/MPLABXProjects/THE3.X/main.c
+32 intcodelo CODE >182:/home/eren/MPLABXProjects/THE3.X/main.c
+36 intcodelo CODE >183:/home/eren/MPLABXProjects/THE3.X/main.c
+3A intcodelo CODE >185:/home/eren/MPLABXProjects/THE3.X/main.c
+3E intcodelo CODE >186:/home/eren/MPLABXProjects/THE3.X/main.c
+4E intcodelo CODE >187:/home/eren/MPLABXProjects/THE3.X/main.c
+60 intcodelo CODE >189:/home/eren/MPLABXProjects/THE3.X/main.c
+64 intcodelo CODE >190:/home/eren/MPLABXProjects/THE3.X/main.c
+68 intcodelo CODE >191:/home/eren/MPLABXProjects/THE3.X/main.c
+7A intcodelo CODE >193:/home/eren/MPLABXProjects/THE3.X/main.c
+7E intcodelo CODE >194:/home/eren/MPLABXProjects/THE3.X/main.c
+8E intcodelo CODE >195:/home/eren/MPLABXProjects/THE3.X/main.c
+A0 intcodelo CODE >197:/home/eren/MPLABXProjects/THE3.X/main.c
+A4 intcodelo CODE >198:/home/eren/MPLABXProjects/THE3.X/main.c
+A8 intcodelo CODE >200:/home/eren/MPLABXProjects/THE3.X/main.c
+AA intcodelo CODE >201:/home/eren/MPLABXProjects/THE3.X/main.c
+8 intcode CODE >4601:/tmp/xcXCDkHEI.s
+8 intcode CODE >45:/home/eren/MPLABXProjects/THE3.X/main.c
+30BA text23 CODE >15:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30BA text23 CODE >37:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30C6 text23 CODE >38:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30CE text23 CODE >39:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30D6 text23 CODE >52:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30DE text23 CODE >53:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+2ADA text22 CODE >468:/home/eren/MPLABXProjects/THE3.X/main.c
+2ADA text22 CODE >471:/home/eren/MPLABXProjects/THE3.X/main.c
+2AE2 text22 CODE >472:/home/eren/MPLABXProjects/THE3.X/main.c
+2B4A text22 CODE >473:/home/eren/MPLABXProjects/THE3.X/main.c
+2B7A text22 CODE >474:/home/eren/MPLABXProjects/THE3.X/main.c
+2B7E text22 CODE >475:/home/eren/MPLABXProjects/THE3.X/main.c
+2B82 text22 CODE >477:/home/eren/MPLABXProjects/THE3.X/main.c
+2B86 text22 CODE >479:/home/eren/MPLABXProjects/THE3.X/main.c
+2B8A text22 CODE >480:/home/eren/MPLABXProjects/THE3.X/main.c
+2B92 text22 CODE >481:/home/eren/MPLABXProjects/THE3.X/main.c
+2B98 text22 CODE >482:/home/eren/MPLABXProjects/THE3.X/main.c
+2B9C text22 CODE >484:/home/eren/MPLABXProjects/THE3.X/main.c
+2BC0 text22 CODE >485:/home/eren/MPLABXProjects/THE3.X/main.c
+2BE4 text22 CODE >486:/home/eren/MPLABXProjects/THE3.X/main.c
+2BEC text22 CODE >490:/home/eren/MPLABXProjects/THE3.X/main.c
+2C04 text22 CODE >492:/home/eren/MPLABXProjects/THE3.X/main.c
+2C24 text22 CODE >495:/home/eren/MPLABXProjects/THE3.X/main.c
+3112 text21 CODE >461:/home/eren/MPLABXProjects/THE3.X/main.c
+3112 text21 CODE >462:/home/eren/MPLABXProjects/THE3.X/main.c
+3116 text21 CODE >463:/home/eren/MPLABXProjects/THE3.X/main.c
+311A text21 CODE >464:/home/eren/MPLABXProjects/THE3.X/main.c
+311E text21 CODE >465:/home/eren/MPLABXProjects/THE3.X/main.c
+3120 text21 CODE >466:/home/eren/MPLABXProjects/THE3.X/main.c
+2F12 text20 CODE >7:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F12 text20 CODE >12:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F24 text20 CODE >13:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F28 text20 CODE >14:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F2C text20 CODE >15:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F32 text20 CODE >16:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F34 text20 CODE >14:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F42 text20 CODE >19:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F58 text20 CODE >20:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F60 text20 CODE >21:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F66 text20 CODE >22:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F6C text20 CODE >23:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F6C text20 CODE >24:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2F74 text20 CODE >25:/opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
+2EA8 text19 CODE >237:/home/eren/MPLABXProjects/THE3.X/the3.h
+2EA8 text19 CODE >244:/home/eren/MPLABXProjects/THE3.X/the3.h
+2EAA text19 CODE >246:/home/eren/MPLABXProjects/THE3.X/the3.h
+2EC0 text19 CODE >247:/home/eren/MPLABXProjects/THE3.X/the3.h
+2EC4 text19 CODE >249:/home/eren/MPLABXProjects/THE3.X/the3.h
+2ED0 text19 CODE >250:/home/eren/MPLABXProjects/THE3.X/the3.h
+2ED6 text19 CODE >251:/home/eren/MPLABXProjects/THE3.X/the3.h
+2EDA text19 CODE >252:/home/eren/MPLABXProjects/THE3.X/the3.h
+2EE2 text19 CODE >253:/home/eren/MPLABXProjects/THE3.X/the3.h
+2F08 text19 CODE >256:/home/eren/MPLABXProjects/THE3.X/the3.h
+2F0A text19 CODE >257:/home/eren/MPLABXProjects/THE3.X/the3.h
+2F10 text19 CODE >258:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C2E text18 CODE >151:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C2E text18 CODE >163:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C2E text18 CODE >165:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C46 text18 CODE >166:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C5E text18 CODE >169:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C74 text18 CODE >170:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C84 text18 CODE >172:/home/eren/MPLABXProjects/THE3.X/the3.h
+1C90 text18 CODE >175:/home/eren/MPLABXProjects/THE3.X/the3.h
+1CA6 text18 CODE >176:/home/eren/MPLABXProjects/THE3.X/the3.h
+1CB6 text18 CODE >178:/home/eren/MPLABXProjects/THE3.X/the3.h
+1CC2 text18 CODE >181:/home/eren/MPLABXProjects/THE3.X/the3.h
+1CF2 text18 CODE >185:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D08 text18 CODE >186:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D14 text18 CODE >187:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D14 text18 CODE >188:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D1C text18 CODE >191:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D1C text18 CODE >201:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D24 text18 CODE >202:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D3A text18 CODE >203:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D46 text18 CODE >204:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D52 text18 CODE >205:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D7A text18 CODE >206:/home/eren/MPLABXProjects/THE3.X/the3.h
+1D98 text18 CODE >209:/home/eren/MPLABXProjects/THE3.X/the3.h
+1DA4 text18 CODE >210:/home/eren/MPLABXProjects/THE3.X/the3.h
+1DB0 text18 CODE >211:/home/eren/MPLABXProjects/THE3.X/the3.h
+1DD8 text18 CODE >212:/home/eren/MPLABXProjects/THE3.X/the3.h
+1DF2 text18 CODE >213:/home/eren/MPLABXProjects/THE3.X/the3.h
+1DF2 text18 CODE >214:/home/eren/MPLABXProjects/THE3.X/the3.h
+1DFE text18 CODE >215:/home/eren/MPLABXProjects/THE3.X/the3.h
+1E40 text18 CODE >218:/home/eren/MPLABXProjects/THE3.X/the3.h
+1E48 text18 CODE >219:/home/eren/MPLABXProjects/THE3.X/the3.h
+1E5E text18 CODE >220:/home/eren/MPLABXProjects/THE3.X/the3.h
+1E6A text18 CODE >221:/home/eren/MPLABXProjects/THE3.X/the3.h
+1E76 text18 CODE >222:/home/eren/MPLABXProjects/THE3.X/the3.h
+1EA6 text18 CODE >223:/home/eren/MPLABXProjects/THE3.X/the3.h
+1EC4 text18 CODE >226:/home/eren/MPLABXProjects/THE3.X/the3.h
+1ED0 text18 CODE >227:/home/eren/MPLABXProjects/THE3.X/the3.h
+1EDC text18 CODE >228:/home/eren/MPLABXProjects/THE3.X/the3.h
+1F0C text18 CODE >229:/home/eren/MPLABXProjects/THE3.X/the3.h
+1F26 text18 CODE >230:/home/eren/MPLABXProjects/THE3.X/the3.h
+1F26 text18 CODE >231:/home/eren/MPLABXProjects/THE3.X/the3.h
+1F32 text18 CODE >232:/home/eren/MPLABXProjects/THE3.X/the3.h
+1F7C text18 CODE >234:/home/eren/MPLABXProjects/THE3.X/the3.h
+1F84 text18 CODE >235:/home/eren/MPLABXProjects/THE3.X/the3.h
+2C26 text17 CODE >497:/home/eren/MPLABXProjects/THE3.X/main.c
+2C26 text17 CODE >498:/home/eren/MPLABXProjects/THE3.X/main.c
+2C36 text17 CODE >499:/home/eren/MPLABXProjects/THE3.X/main.c
+2C46 text17 CODE >500:/home/eren/MPLABXProjects/THE3.X/main.c
+2C4C text17 CODE >501:/home/eren/MPLABXProjects/THE3.X/main.c
+2CA0 text17 CODE >502:/home/eren/MPLABXProjects/THE3.X/main.c
+2CB0 text17 CODE >505:/home/eren/MPLABXProjects/THE3.X/main.c
+2688 text16 CODE >549:/home/eren/MPLABXProjects/THE3.X/main.c
+2688 text16 CODE >550:/home/eren/MPLABXProjects/THE3.X/main.c
+26AA text16 CODE >551:/home/eren/MPLABXProjects/THE3.X/main.c
+2710 text16 CODE >552:/home/eren/MPLABXProjects/THE3.X/main.c
+2784 text16 CODE >553:/home/eren/MPLABXProjects/THE3.X/main.c
+27F8 text16 CODE >554:/home/eren/MPLABXProjects/THE3.X/main.c
+286A text16 CODE >555:/home/eren/MPLABXProjects/THE3.X/main.c
+2876 text16 CODE >558:/home/eren/MPLABXProjects/THE3.X/main.c
+288E text16 CODE >559:/home/eren/MPLABXProjects/THE3.X/main.c
+28AA text16 CODE >560:/home/eren/MPLABXProjects/THE3.X/main.c
+28B8 text16 CODE >562:/home/eren/MPLABXProjects/THE3.X/main.c
+21E6 text15 CODE >507:/home/eren/MPLABXProjects/THE3.X/main.c
+21E6 text15 CODE >508:/home/eren/MPLABXProjects/THE3.X/main.c
+2202 text15 CODE >509:/home/eren/MPLABXProjects/THE3.X/main.c
+2274 text15 CODE >510:/home/eren/MPLABXProjects/THE3.X/main.c
+22F4 text15 CODE >511:/home/eren/MPLABXProjects/THE3.X/main.c
+2374 text15 CODE >512:/home/eren/MPLABXProjects/THE3.X/main.c
+23F2 text15 CODE >513:/home/eren/MPLABXProjects/THE3.X/main.c
+23FE text15 CODE >516:/home/eren/MPLABXProjects/THE3.X/main.c
+2416 text15 CODE >517:/home/eren/MPLABXProjects/THE3.X/main.c
+2432 text15 CODE >518:/home/eren/MPLABXProjects/THE3.X/main.c
+243C text15 CODE >520:/home/eren/MPLABXProjects/THE3.X/main.c
+243E text14 CODE >521:/home/eren/MPLABXProjects/THE3.X/main.c
+243E text14 CODE >522:/home/eren/MPLABXProjects/THE3.X/main.c
+245C text14 CODE >523:/home/eren/MPLABXProjects/THE3.X/main.c
+24CA text14 CODE >524:/home/eren/MPLABXProjects/THE3.X/main.c
+2546 text14 CODE >525:/home/eren/MPLABXProjects/THE3.X/main.c
+25C2 text14 CODE >526:/home/eren/MPLABXProjects/THE3.X/main.c
+263C text14 CODE >527:/home/eren/MPLABXProjects/THE3.X/main.c
+2648 text14 CODE >530:/home/eren/MPLABXProjects/THE3.X/main.c
+2660 text14 CODE >531:/home/eren/MPLABXProjects/THE3.X/main.c
+267C text14 CODE >532:/home/eren/MPLABXProjects/THE3.X/main.c
+2686 text14 CODE >534:/home/eren/MPLABXProjects/THE3.X/main.c
+1F86 text13 CODE >535:/home/eren/MPLABXProjects/THE3.X/main.c
+1F86 text13 CODE >536:/home/eren/MPLABXProjects/THE3.X/main.c
+1FA6 text13 CODE >537:/home/eren/MPLABXProjects/THE3.X/main.c
+2018 text13 CODE >538:/home/eren/MPLABXProjects/THE3.X/main.c
+2098 text13 CODE >539:/home/eren/MPLABXProjects/THE3.X/main.c
+2118 text13 CODE >540:/home/eren/MPLABXProjects/THE3.X/main.c
+2196 text13 CODE >541:/home/eren/MPLABXProjects/THE3.X/main.c
+21A2 text13 CODE >544:/home/eren/MPLABXProjects/THE3.X/main.c
+21BA text13 CODE >545:/home/eren/MPLABXProjects/THE3.X/main.c
+21D6 text13 CODE >546:/home/eren/MPLABXProjects/THE3.X/main.c
+21E4 text13 CODE >548:/home/eren/MPLABXProjects/THE3.X/main.c
+16E6 intcode_body CODE >45:/home/eren/MPLABXProjects/THE3.X/main.c
+1700 intcode_body CODE >46:/home/eren/MPLABXProjects/THE3.X/main.c
+1704 intcode_body CODE >48:/home/eren/MPLABXProjects/THE3.X/main.c
+1712 intcode_body CODE >49:/home/eren/MPLABXProjects/THE3.X/main.c
+1716 intcode_body CODE >50:/home/eren/MPLABXProjects/THE3.X/main.c
+1718 intcode_body CODE >51:/home/eren/MPLABXProjects/THE3.X/main.c
+171A intcode_body CODE >54:/home/eren/MPLABXProjects/THE3.X/main.c
+1728 intcode_body CODE >55:/home/eren/MPLABXProjects/THE3.X/main.c
+172A intcode_body CODE >56:/home/eren/MPLABXProjects/THE3.X/main.c
+172C intcode_body CODE >57:/home/eren/MPLABXProjects/THE3.X/main.c
+1730 intcode_body CODE >58:/home/eren/MPLABXProjects/THE3.X/main.c
+1734 intcode_body CODE >59:/home/eren/MPLABXProjects/THE3.X/main.c
+1736 intcode_body CODE >61:/home/eren/MPLABXProjects/THE3.X/main.c
+173A intcode_body CODE >63:/home/eren/MPLABXProjects/THE3.X/main.c
+176C intcode_body CODE >64:/home/eren/MPLABXProjects/THE3.X/main.c
+1782 intcode_body CODE >65:/home/eren/MPLABXProjects/THE3.X/main.c
+1782 intcode_body CODE >67:/home/eren/MPLABXProjects/THE3.X/main.c
+17AA intcode_body CODE >68:/home/eren/MPLABXProjects/THE3.X/main.c
+17B2 intcode_body CODE >69:/home/eren/MPLABXProjects/THE3.X/main.c
+17C4 intcode_body CODE >70:/home/eren/MPLABXProjects/THE3.X/main.c
+17C8 intcode_body CODE >72:/home/eren/MPLABXProjects/THE3.X/main.c
+17CC intcode_body CODE >73:/home/eren/MPLABXProjects/THE3.X/main.c
+17D0 intcode_body CODE >75:/home/eren/MPLABXProjects/THE3.X/main.c
+17F4 intcode_body CODE >76:/home/eren/MPLABXProjects/THE3.X/main.c
+1820 intcode_body CODE >78:/home/eren/MPLABXProjects/THE3.X/main.c
+1824 intcode_body CODE >81:/home/eren/MPLABXProjects/THE3.X/main.c
+184A intcode_body CODE >82:/home/eren/MPLABXProjects/THE3.X/main.c
+184E intcode_body CODE >83:/home/eren/MPLABXProjects/THE3.X/main.c
+1852 intcode_body CODE >84:/home/eren/MPLABXProjects/THE3.X/main.c
+18A6 intcode_body CODE >85:/home/eren/MPLABXProjects/THE3.X/main.c
+18B6 intcode_body CODE >86:/home/eren/MPLABXProjects/THE3.X/main.c
+18BA intcode_body CODE >88:/home/eren/MPLABXProjects/THE3.X/main.c
+18C6 intcode_body CODE >91:/home/eren/MPLABXProjects/THE3.X/main.c
+18C6 intcode_body CODE >94:/home/eren/MPLABXProjects/THE3.X/main.c
+18D4 intcode_body CODE >95:/home/eren/MPLABXProjects/THE3.X/main.c
+18E4 intcode_body CODE >96:/home/eren/MPLABXProjects/THE3.X/main.c
+18E8 intcode_body CODE >97:/home/eren/MPLABXProjects/THE3.X/main.c
+18EC intcode_body CODE >99:/home/eren/MPLABXProjects/THE3.X/main.c
+191E intcode_body CODE >100:/home/eren/MPLABXProjects/THE3.X/main.c
+197E intcode_body CODE >102:/home/eren/MPLABXProjects/THE3.X/main.c
+1984 intcode_body CODE >104:/home/eren/MPLABXProjects/THE3.X/main.c
+19B8 intcode_body CODE >105:/home/eren/MPLABXProjects/THE3.X/main.c
+19EC intcode_body CODE >106:/home/eren/MPLABXProjects/THE3.X/main.c
+19F4 intcode_body CODE >108:/home/eren/MPLABXProjects/THE3.X/main.c
+19F8 intcode_body CODE >109:/home/eren/MPLABXProjects/THE3.X/main.c
+19FC intcode_body CODE >110:/home/eren/MPLABXProjects/THE3.X/main.c
+1A04 intcode_body CODE >111:/home/eren/MPLABXProjects/THE3.X/main.c
+1A08 intcode_body CODE >112:/home/eren/MPLABXProjects/THE3.X/main.c
+1A0C intcode_body CODE >114:/home/eren/MPLABXProjects/THE3.X/main.c
+1A30 intcode_body CODE >116:/home/eren/MPLABXProjects/THE3.X/main.c
+1A34 intcode_body CODE >119:/home/eren/MPLABXProjects/THE3.X/main.c
+1A38 intcode_body CODE >121:/home/eren/MPLABXProjects/THE3.X/main.c
+1A3A intcode_body CODE >122:/home/eren/MPLABXProjects/THE3.X/main.c
+1A3C intcode_body CODE >123:/home/eren/MPLABXProjects/THE3.X/main.c
+1A40 intcode_body CODE >124:/home/eren/MPLABXProjects/THE3.X/main.c
+1A44 intcode_body CODE >125:/home/eren/MPLABXProjects/THE3.X/main.c
+1A4A intcode_body CODE >132:/home/eren/MPLABXProjects/THE3.X/main.c
+1A58 intcode_body CODE >133:/home/eren/MPLABXProjects/THE3.X/main.c
+1A68 intcode_body CODE >134:/home/eren/MPLABXProjects/THE3.X/main.c
+1A6C intcode_body CODE >135:/home/eren/MPLABXProjects/THE3.X/main.c
+1A9E intcode_body CODE >136:/home/eren/MPLABXProjects/THE3.X/main.c
+1AC2 intcode_body CODE >137:/home/eren/MPLABXProjects/THE3.X/main.c
+1AC6 intcode_body CODE >138:/home/eren/MPLABXProjects/THE3.X/main.c
+1ACE intcode_body CODE >139:/home/eren/MPLABXProjects/THE3.X/main.c
+1AF2 intcode_body CODE >143:/home/eren/MPLABXProjects/THE3.X/main.c
+1AFA intcode_body CODE >147:/home/eren/MPLABXProjects/THE3.X/main.c
+1B08 intcode_body CODE >148:/home/eren/MPLABXProjects/THE3.X/main.c
+1B18 intcode_body CODE >149:/home/eren/MPLABXProjects/THE3.X/main.c
+1B1E intcode_body CODE >150:/home/eren/MPLABXProjects/THE3.X/main.c
+1B22 intcode_body CODE >152:/home/eren/MPLABXProjects/THE3.X/main.c
+1B46 intcode_body CODE >153:/home/eren/MPLABXProjects/THE3.X/main.c
+1B4A intcode_body CODE >155:/home/eren/MPLABXProjects/THE3.X/main.c
+1B6E intcode_body CODE >156:/home/eren/MPLABXProjects/THE3.X/main.c
+1B72 intcode_body CODE >158:/home/eren/MPLABXProjects/THE3.X/main.c
+1B96 intcode_body CODE >159:/home/eren/MPLABXProjects/THE3.X/main.c
+1B9A intcode_body CODE >161:/home/eren/MPLABXProjects/THE3.X/main.c
+1BBE intcode_body CODE >162:/home/eren/MPLABXProjects/THE3.X/main.c
+1BC2 intcode_body CODE >164:/home/eren/MPLABXProjects/THE3.X/main.c
+1BC6 intcode_body CODE >165:/home/eren/MPLABXProjects/THE3.X/main.c
+1BCA intcode_body CODE >166:/home/eren/MPLABXProjects/THE3.X/main.c
+1C04 intcode_body CODE >168:/home/eren/MPLABXProjects/THE3.X/main.c
+1C0C intcode_body CODE >172:/home/eren/MPLABXProjects/THE3.X/main.c
+1C0E intcode_body CODE >173:/home/eren/MPLABXProjects/THE3.X/main.c
+1C10 intcode_body CODE >174:/home/eren/MPLABXProjects/THE3.X/main.c
+1C12 intcode_body CODE >176:/home/eren/MPLABXProjects/THE3.X/main.c
+2FFA text10 CODE >74:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2FFE text10 CODE >75:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3000 text10 CODE >76:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3002 text10 CODE >77:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3006 text10 CODE >78:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3008 text10 CODE >79:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3018 text10 CODE >80:/home/eren/MPLABXProjects/THE3.X/lcd.h
+301A text10 CODE >81:/home/eren/MPLABXProjects/THE3.X/lcd.h
+302A text10 CODE >82:/home/eren/MPLABXProjects/THE3.X/lcd.h
+302C text10 CODE >83:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3060 text9 CODE >64:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3064 text9 CODE >65:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3066 text9 CODE >66:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3068 text9 CODE >67:/home/eren/MPLABXProjects/THE3.X/lcd.h
+306C text9 CODE >68:/home/eren/MPLABXProjects/THE3.X/lcd.h
+306E text9 CODE >69:/home/eren/MPLABXProjects/THE3.X/lcd.h
+307E text9 CODE >70:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3080 text9 CODE >71:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3090 text9 CODE >72:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DBE text8 CODE >88:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DC2 text8 CODE >89:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DD4 text8 CODE >90:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DDE text8 CODE >91:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DE2 text8 CODE >92:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DF4 text8 CODE >93:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DFE text8 CODE >94:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2E02 text8 CODE >95:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2E14 text8 CODE >96:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2E1E text8 CODE >97:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2E22 text8 CODE >99:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2E2C text8 CODE >101:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2E30 text8 CODE >102:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2E34 text8 CODE >103:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2F76 text7 CODE >145:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2F7A text7 CODE >151:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2F88 text7 CODE >152:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2F8E text7 CODE >153:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2FA0 text7 CODE >154:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2FB4 text7 CODE >156:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2FBE text7 CODE >158:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D3C text6 CODE >161:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D3C text6 CODE >162:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D4C text6 CODE >163:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D5C text6 CODE >164:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D6C text6 CODE >165:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D7C text6 CODE >166:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D8C text6 CODE >167:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2D9C text6 CODE >168:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DAC text6 CODE >169:/home/eren/MPLABXProjects/THE3.X/lcd.h
+2DBC text6 CODE >170:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3092 text5 CODE >15:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+3092 text5 CODE >37:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30A0 text5 CODE >38:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30A8 text5 CODE >39:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30B0 text5 CODE >52:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+30B8 text5 CODE >53:/opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
+28BA text4 CODE >310:/home/eren/MPLABXProjects/THE3.X/main.c
+28BA text4 CODE >311:/home/eren/MPLABXProjects/THE3.X/main.c
+28C4 text4 CODE >312:/home/eren/MPLABXProjects/THE3.X/main.c
+28CC text4 CODE >313:/home/eren/MPLABXProjects/THE3.X/main.c
+2912 text4 CODE >314:/home/eren/MPLABXProjects/THE3.X/main.c
+2934 text4 CODE >315:/home/eren/MPLABXProjects/THE3.X/main.c
+2954 text4 CODE >317:/home/eren/MPLABXProjects/THE3.X/main.c
+295C text4 CODE >319:/home/eren/MPLABXProjects/THE3.X/main.c
+2960 text4 CODE >320:/home/eren/MPLABXProjects/THE3.X/main.c
+2964 text4 CODE >321:/home/eren/MPLABXProjects/THE3.X/main.c
+2968 text4 CODE >322:/home/eren/MPLABXProjects/THE3.X/main.c
+296C text4 CODE >323:/home/eren/MPLABXProjects/THE3.X/main.c
+2970 text4 CODE >324:/home/eren/MPLABXProjects/THE3.X/main.c
+2974 text4 CODE >325:/home/eren/MPLABXProjects/THE3.X/main.c
+2978 text4 CODE >327:/home/eren/MPLABXProjects/THE3.X/main.c
+297C text4 CODE >328:/home/eren/MPLABXProjects/THE3.X/main.c
+2980 text4 CODE >329:/home/eren/MPLABXProjects/THE3.X/main.c
+2984 text4 CODE >330:/home/eren/MPLABXProjects/THE3.X/main.c
+2988 text4 CODE >331:/home/eren/MPLABXProjects/THE3.X/main.c
+298C text4 CODE >332:/home/eren/MPLABXProjects/THE3.X/main.c
+2990 text4 CODE >333:/home/eren/MPLABXProjects/THE3.X/main.c
+2994 text4 CODE >335:/home/eren/MPLABXProjects/THE3.X/main.c
+2998 text4 CODE >336:/home/eren/MPLABXProjects/THE3.X/main.c
+299C text4 CODE >337:/home/eren/MPLABXProjects/THE3.X/main.c
+29A0 text4 CODE >338:/home/eren/MPLABXProjects/THE3.X/main.c
+29A4 text4 CODE >339:/home/eren/MPLABXProjects/THE3.X/main.c
+29A8 text4 CODE >340:/home/eren/MPLABXProjects/THE3.X/main.c
+29AC text4 CODE >341:/home/eren/MPLABXProjects/THE3.X/main.c
+29B0 text4 CODE >343:/home/eren/MPLABXProjects/THE3.X/main.c
+29B4 text4 CODE >344:/home/eren/MPLABXProjects/THE3.X/main.c
+29B8 text4 CODE >345:/home/eren/MPLABXProjects/THE3.X/main.c
+29BC text4 CODE >346:/home/eren/MPLABXProjects/THE3.X/main.c
+29C0 text4 CODE >347:/home/eren/MPLABXProjects/THE3.X/main.c
+29C4 text4 CODE >348:/home/eren/MPLABXProjects/THE3.X/main.c
+29C8 text4 CODE >349:/home/eren/MPLABXProjects/THE3.X/main.c
+29CC text4 CODE >351:/home/eren/MPLABXProjects/THE3.X/main.c
+29D0 text4 CODE >352:/home/eren/MPLABXProjects/THE3.X/main.c
+29D4 text4 CODE >353:/home/eren/MPLABXProjects/THE3.X/main.c
+29D8 text4 CODE >354:/home/eren/MPLABXProjects/THE3.X/main.c
+29DC text4 CODE >355:/home/eren/MPLABXProjects/THE3.X/main.c
+29E0 text4 CODE >356:/home/eren/MPLABXProjects/THE3.X/main.c
+29E4 text4 CODE >357:/home/eren/MPLABXProjects/THE3.X/main.c
+29E8 text4 CODE >359:/home/eren/MPLABXProjects/THE3.X/main.c
+29EC text4 CODE >360:/home/eren/MPLABXProjects/THE3.X/main.c
+29F0 text4 CODE >361:/home/eren/MPLABXProjects/THE3.X/main.c
+29F4 text4 CODE >362:/home/eren/MPLABXProjects/THE3.X/main.c
+29F8 text4 CODE >363:/home/eren/MPLABXProjects/THE3.X/main.c
+29FC text4 CODE >364:/home/eren/MPLABXProjects/THE3.X/main.c
+2A00 text4 CODE >366:/home/eren/MPLABXProjects/THE3.X/main.c
+2A08 text4 CODE >367:/home/eren/MPLABXProjects/THE3.X/main.c
+2AB6 text4 CODE >368:/home/eren/MPLABXProjects/THE3.X/main.c
+2AD8 text4 CODE >369:/home/eren/MPLABXProjects/THE3.X/main.c
+2CB2 text3 CODE >400:/home/eren/MPLABXProjects/THE3.X/main.c
+2CB2 text3 CODE >401:/home/eren/MPLABXProjects/THE3.X/main.c
+2CCA text3 CODE >403:/home/eren/MPLABXProjects/THE3.X/main.c
+2CCE text3 CODE >404:/home/eren/MPLABXProjects/THE3.X/main.c
+2CD0 text3 CODE >405:/home/eren/MPLABXProjects/THE3.X/main.c
+2CD4 text3 CODE >407:/home/eren/MPLABXProjects/THE3.X/main.c
+2CD8 text3 CODE >408:/home/eren/MPLABXProjects/THE3.X/main.c
+2CDA text3 CODE >409:/home/eren/MPLABXProjects/THE3.X/main.c
+2CDE text3 CODE >410:/home/eren/MPLABXProjects/THE3.X/main.c
+2CE2 text3 CODE >412:/home/eren/MPLABXProjects/THE3.X/main.c
+2CE6 text3 CODE >413:/home/eren/MPLABXProjects/THE3.X/main.c
+2CEA text3 CODE >414:/home/eren/MPLABXProjects/THE3.X/main.c
+2CEE text3 CODE >415:/home/eren/MPLABXProjects/THE3.X/main.c
+2CF2 text3 CODE >416:/home/eren/MPLABXProjects/THE3.X/main.c
+2CF4 text3 CODE >418:/home/eren/MPLABXProjects/THE3.X/main.c
+2CF6 text3 CODE >419:/home/eren/MPLABXProjects/THE3.X/main.c
+2CF8 text3 CODE >420:/home/eren/MPLABXProjects/THE3.X/main.c
+2CFA text3 CODE >421:/home/eren/MPLABXProjects/THE3.X/main.c
+2CFC text3 CODE >422:/home/eren/MPLABXProjects/THE3.X/main.c
+2CFE text3 CODE >424:/home/eren/MPLABXProjects/THE3.X/main.c
+2D00 text3 CODE >425:/home/eren/MPLABXProjects/THE3.X/main.c
+2D02 text3 CODE >428:/home/eren/MPLABXProjects/THE3.X/main.c
+2D04 text3 CODE >429:/home/eren/MPLABXProjects/THE3.X/main.c
+2D06 text3 CODE >430:/home/eren/MPLABXProjects/THE3.X/main.c
+2D08 text3 CODE >432:/home/eren/MPLABXProjects/THE3.X/main.c
+2D0A text3 CODE >433:/home/eren/MPLABXProjects/THE3.X/main.c
+2D0C text3 CODE >434:/home/eren/MPLABXProjects/THE3.X/main.c
+2D10 text3 CODE >435:/home/eren/MPLABXProjects/THE3.X/main.c
+2D12 text3 CODE >436:/home/eren/MPLABXProjects/THE3.X/main.c
+2D14 text3 CODE >439:/home/eren/MPLABXProjects/THE3.X/main.c
+2D16 text3 CODE >440:/home/eren/MPLABXProjects/THE3.X/main.c
+2D18 text3 CODE >441:/home/eren/MPLABXProjects/THE3.X/main.c
+2D1A text3 CODE >442:/home/eren/MPLABXProjects/THE3.X/main.c
+2D1C text3 CODE >444:/home/eren/MPLABXProjects/THE3.X/main.c
+2D1E text3 CODE >445:/home/eren/MPLABXProjects/THE3.X/main.c
+2D20 text3 CODE >446:/home/eren/MPLABXProjects/THE3.X/main.c
+2D22 text3 CODE >447:/home/eren/MPLABXProjects/THE3.X/main.c
+2D26 text3 CODE >448:/home/eren/MPLABXProjects/THE3.X/main.c
+2D2A text3 CODE >449:/home/eren/MPLABXProjects/THE3.X/main.c
+2D2E text3 CODE >451:/home/eren/MPLABXProjects/THE3.X/main.c
+2D30 text3 CODE >452:/home/eren/MPLABXProjects/THE3.X/main.c
+2D32 text3 CODE >453:/home/eren/MPLABXProjects/THE3.X/main.c
+2D34 text3 CODE >454:/home/eren/MPLABXProjects/THE3.X/main.c
+2D36 text3 CODE >455:/home/eren/MPLABXProjects/THE3.X/main.c
+2D3A text3 CODE >456:/home/eren/MPLABXProjects/THE3.X/main.c
+302E text2 CODE >124:/home/eren/MPLABXProjects/THE3.X/lcd.h
+302E text2 CODE >125:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3030 text2 CODE >126:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3032 text2 CODE >127:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3036 text2 CODE >129:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3038 text2 CODE >130:/home/eren/MPLABXProjects/THE3.X/lcd.h
+303A text2 CODE >131:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3040 text2 CODE >132:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3046 text2 CODE >133:/home/eren/MPLABXProjects/THE3.X/lcd.h
+304C text2 CODE >134:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3052 text2 CODE >135:/home/eren/MPLABXProjects/THE3.X/lcd.h
+3058 text2 CODE >136:/home/eren/MPLABXProjects/THE3.X/lcd.h
+305E text2 CODE >137:/home/eren/MPLABXProjects/THE3.X/lcd.h
+1006 text1 CODE >222:/home/eren/MPLABXProjects/THE3.X/main.c
+1006 text1 CODE >223:/home/eren/MPLABXProjects/THE3.X/main.c
+1010 text1 CODE >224:/home/eren/MPLABXProjects/THE3.X/main.c
+1018 text1 CODE >225:/home/eren/MPLABXProjects/THE3.X/main.c
+1058 text1 CODE >226:/home/eren/MPLABXProjects/THE3.X/main.c
+1078 text1 CODE >227:/home/eren/MPLABXProjects/THE3.X/main.c
+1098 text1 CODE >228:/home/eren/MPLABXProjects/THE3.X/main.c
+10A0 text1 CODE >229:/home/eren/MPLABXProjects/THE3.X/main.c
+10D4 text1 CODE >230:/home/eren/MPLABXProjects/THE3.X/main.c
+11A2 text1 CODE >232:/home/eren/MPLABXProjects/THE3.X/main.c
+11B8 text1 CODE >234:/home/eren/MPLABXProjects/THE3.X/main.c
+11C0 text1 CODE >237:/home/eren/MPLABXProjects/THE3.X/main.c
+12D2 text1 CODE >240:/home/eren/MPLABXProjects/THE3.X/main.c
+12FA text1 CODE >241:/home/eren/MPLABXProjects/THE3.X/main.c
+1320 text1 CODE >242:/home/eren/MPLABXProjects/THE3.X/main.c
+132A text1 CODE >243:/home/eren/MPLABXProjects/THE3.X/main.c
+1330 text1 CODE >244:/home/eren/MPLABXProjects/THE3.X/main.c
+1352 text1 CODE >246:/home/eren/MPLABXProjects/THE3.X/main.c
+135A text1 CODE >247:/home/eren/MPLABXProjects/THE3.X/main.c
+1382 text1 CODE >248:/home/eren/MPLABXProjects/THE3.X/main.c
+13A8 text1 CODE >249:/home/eren/MPLABXProjects/THE3.X/main.c
+1410 text1 CODE >250:/home/eren/MPLABXProjects/THE3.X/main.c
+1482 text1 CODE >251:/home/eren/MPLABXProjects/THE3.X/main.c
+14F6 text1 CODE >254:/home/eren/MPLABXProjects/THE3.X/main.c
+151C text1 CODE >257:/home/eren/MPLABXProjects/THE3.X/main.c
+1526 text1 CODE >259:/home/eren/MPLABXProjects/THE3.X/main.c
+155A text1 CODE >260:/home/eren/MPLABXProjects/THE3.X/main.c
+1560 text1 CODE >261:/home/eren/MPLABXProjects/THE3.X/main.c
+1564 text1 CODE >266:/home/eren/MPLABXProjects/THE3.X/main.c
+156A text1 CODE >267:/home/eren/MPLABXProjects/THE3.X/main.c
+156E text1 CODE >269:/home/eren/MPLABXProjects/THE3.X/main.c
+1574 text1 CODE >270:/home/eren/MPLABXProjects/THE3.X/main.c
+1578 text1 CODE >274:/home/eren/MPLABXProjects/THE3.X/main.c
+157E text1 CODE >275:/home/eren/MPLABXProjects/THE3.X/main.c
+1582 text1 CODE >277:/home/eren/MPLABXProjects/THE3.X/main.c
+1588 text1 CODE >278:/home/eren/MPLABXProjects/THE3.X/main.c
+158C text1 CODE >280:/home/eren/MPLABXProjects/THE3.X/main.c
+1592 text1 CODE >281:/home/eren/MPLABXProjects/THE3.X/main.c
+1596 text1 CODE >285:/home/eren/MPLABXProjects/THE3.X/main.c
+15EE text1 CODE >290:/home/eren/MPLABXProjects/THE3.X/main.c
+15F4 text1 CODE >291:/home/eren/MPLABXProjects/THE3.X/main.c
+15F8 text1 CODE >293:/home/eren/MPLABXProjects/THE3.X/main.c
+15FE text1 CODE >294:/home/eren/MPLABXProjects/THE3.X/main.c
+1602 text1 CODE >296:/home/eren/MPLABXProjects/THE3.X/main.c
+1608 text1 CODE >297:/home/eren/MPLABXProjects/THE3.X/main.c
+160C text1 CODE >301:/home/eren/MPLABXProjects/THE3.X/main.c
+1664 text1 CODE >306:/home/eren/MPLABXProjects/THE3.X/main.c
+16C2 text1 CODE >307:/home/eren/MPLABXProjects/THE3.X/main.c
+16E4 text1 CODE >308:/home/eren/MPLABXProjects/THE3.X/main.c
+30E0 text0 CODE >207:/home/eren/MPLABXProjects/THE3.X/main.c
+30E0 text0 CODE >209:/home/eren/MPLABXProjects/THE3.X/main.c
+30E4 text0 CODE >210:/home/eren/MPLABXProjects/THE3.X/main.c
+30E8 text0 CODE >211:/home/eren/MPLABXProjects/THE3.X/main.c
+30EC text0 CODE >213:/home/eren/MPLABXProjects/THE3.X/main.c
+30F0 text0 CODE >218:/home/eren/MPLABXProjects/THE3.X/main.c
+2E36 cinit CODE >656:/tmp/xcXCDkHEI.s
+2E36 cinit CODE >658:/tmp/xcXCDkHEI.s
+2E36 cinit CODE >661:/tmp/xcXCDkHEI.s
+2E36 cinit CODE >805:/tmp/xcXCDkHEI.s
+2E38 cinit CODE >806:/tmp/xcXCDkHEI.s
+2E3A cinit CODE >807:/tmp/xcXCDkHEI.s
+2E3C cinit CODE >808:/tmp/xcXCDkHEI.s
+2E3E cinit CODE >809:/tmp/xcXCDkHEI.s
+2E40 cinit CODE >810:/tmp/xcXCDkHEI.s
+2E42 cinit CODE >811:/tmp/xcXCDkHEI.s
+2E46 cinit CODE >812:/tmp/xcXCDkHEI.s
+2E4A cinit CODE >813:/tmp/xcXCDkHEI.s
+2E4A cinit CODE >814:/tmp/xcXCDkHEI.s
+2E4C cinit CODE >815:/tmp/xcXCDkHEI.s
+2E50 cinit CODE >816:/tmp/xcXCDkHEI.s
+2E52 cinit CODE >817:/tmp/xcXCDkHEI.s
+2E54 cinit CODE >818:/tmp/xcXCDkHEI.s
+2E56 cinit CODE >822:/tmp/xcXCDkHEI.s
+2E58 cinit CODE >823:/tmp/xcXCDkHEI.s
+2E5A cinit CODE >824:/tmp/xcXCDkHEI.s
+2E5C cinit CODE >825:/tmp/xcXCDkHEI.s
+2E5E cinit CODE >826:/tmp/xcXCDkHEI.s
+2E60 cinit CODE >827:/tmp/xcXCDkHEI.s
+2E62 cinit CODE >828:/tmp/xcXCDkHEI.s
+2E66 cinit CODE >829:/tmp/xcXCDkHEI.s
+2E6A cinit CODE >830:/tmp/xcXCDkHEI.s
+2E6A cinit CODE >831:/tmp/xcXCDkHEI.s
+2E6C cinit CODE >832:/tmp/xcXCDkHEI.s
+2E70 cinit CODE >833:/tmp/xcXCDkHEI.s
+2E72 cinit CODE >834:/tmp/xcXCDkHEI.s
+2E74 cinit CODE >835:/tmp/xcXCDkHEI.s
+2E76 cinit CODE >839:/tmp/xcXCDkHEI.s
+2E7A cinit CODE >840:/tmp/xcXCDkHEI.s
+2E7C cinit CODE >841:/tmp/xcXCDkHEI.s
+2E7C cinit CODE >842:/tmp/xcXCDkHEI.s
+2E7E cinit CODE >843:/tmp/xcXCDkHEI.s
+2E80 cinit CODE >844:/tmp/xcXCDkHEI.s
+2E82 cinit CODE >847:/tmp/xcXCDkHEI.s
+2E86 cinit CODE >848:/tmp/xcXCDkHEI.s
+2E88 cinit CODE >849:/tmp/xcXCDkHEI.s
+2E88 cinit CODE >850:/tmp/xcXCDkHEI.s
+2E8A cinit CODE >851:/tmp/xcXCDkHEI.s
+2E8C cinit CODE >852:/tmp/xcXCDkHEI.s
+2E8E cinit CODE >855:/tmp/xcXCDkHEI.s
+2E92 cinit CODE >856:/tmp/xcXCDkHEI.s
+2E94 cinit CODE >857:/tmp/xcXCDkHEI.s
+2E94 cinit CODE >858:/tmp/xcXCDkHEI.s
+2E96 cinit CODE >859:/tmp/xcXCDkHEI.s
+2E98 cinit CODE >860:/tmp/xcXCDkHEI.s
+2E9A cinit CODE >866:/tmp/xcXCDkHEI.s
+2E9A cinit CODE >868:/tmp/xcXCDkHEI.s
+2E9C cinit CODE >869:/tmp/xcXCDkHEI.s
+2E9E cinit CODE >871:/tmp/xcXCDkHEI.s
+2EA0 cinit CODE >872:/tmp/xcXCDkHEI.s
+2EA2 cinit CODE >873:/tmp/xcXCDkHEI.s
+2EA4 cinit CODE >874:/tmp/xcXCDkHEI.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -497,116 +657,136 @@ $dist/18F4620/production/THE3.X.production.o
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-_selected_teamB_player_with_frisbee 9B 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
-_a D 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-_b B 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-_c 9 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+_selected_teamB_player_with_frisbee 8A 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+_a 4E 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+_b 4C 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+_c 4A 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+___lwmod@counter 5 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __LdataBANK0 0 0 ABS 0 dataBANK0 dist/18F4620/production/THE3.X.production.o
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/18F4620/production/THE3.X.production.o
-__Hspace_0 2257 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__Hspace_1 197 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+__Hspace_0 3122 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+__Hspace_1 1D0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Hspace_4 60000E 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-LCDDat@dat 56 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+LCDDat@dat ED 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/18F4620/production/THE3.X.production.o
-__end_of_LCDAddSpecialCharacter 20FA 0 CODE 0 text8 dist/18F4620/production/THE3.X.production.o
+__end_of_LCDAddSpecialCharacter 2FC0 0 CODE 0 text7 dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@target_x 22 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@target_y 24 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/18F4620/production/THE3.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXfkhhOe.o
-_segValues 80 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
-_InitGameObjects 1730 0 CODE 0 text5 dist/18F4620/production/THE3.X.production.o
-_game_state 59 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXBKlFEa.o
+_segValues 52 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
+_InitGameObjects 28BA 0 CODE 0 text4 dist/18F4620/production/THE3.X.production.o
+_game_state 5F 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/18F4620/production/THE3.X.production.o
-__end_of_LCDCmd 21D2 0 CODE 0 text10 dist/18F4620/production/THE3.X.production.o
-__end_of_LCDDat 21A2 0 CODE 0 text11 dist/18F4620/production/THE3.X.production.o
-_up 1936 0 CODE 0 text15 dist/18F4620/production/THE3.X.production.o
-_frisbee_steps C3 0 BANK0 1 bssBANK0 dist/18F4620/production/THE3.X.production.o
-__end_of_highIsr 1730 0 CODE 0 intcode_body dist/18F4620/production/THE3.X.production.o
+__end_of_LCDCmd 3092 0 CODE 0 text9 dist/18F4620/production/THE3.X.production.o
+__end_of_LCDDat 302E 0 CODE 0 text10 dist/18F4620/production/THE3.X.production.o
+_T1CONbits FCD 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+_up 1F86 0 CODE 0 text13 dist/18F4620/production/THE3.X.production.o
+_frisbee_steps 180 0 BANK1 1 bssBANK1 dist/18F4620/production/THE3.X.production.o
+__end_of_highIsr 1C2E 0 CODE 0 intcode_body dist/18F4620/production/THE3.X.production.o
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/18F4620/production/THE3.X.production.o
 _LATA F89 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _LATD F8C 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-___sp 0 0 STACK 2 stack /tmp/xcXfkhhOe.o
-_down 1CFC 0 CODE 0 text18 dist/18F4620/production/THE3.X.production.o
-_left 1A82 0 CODE 0 text17 dist/18F4620/production/THE3.X.production.o
-_main 2220 0 CODE 0 text0 dist/18F4620/production/THE3.X.production.o
-_objs 11 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-btemp 64 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
-start 28 0 CODE 0 init /tmp/xcXfkhhOe.o
-up@pl 41 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-__size_of___awmod 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXBKlFEa.o
+_down 2688 0 CODE 0 text16 dist/18F4620/production/THE3.X.production.o
+_left 21E6 0 CODE 0 text15 dist/18F4620/production/THE3.X.production.o
+_main 30E0 0 CODE 0 text0 dist/18F4620/production/THE3.X.production.o
+_objs BA 0 BANK0 1 bssBANK0 dist/18F4620/production/THE3.X.production.o
+btemp 68 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+start C2 0 CODE 0 init /tmp/xcXBKlFEa.o
+up@pl B 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __size_of_down 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __size_of_left 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __size_of_main 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+__size_of___lwmod 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __size_of_AddCustomCharacters 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-?___wmul 55 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+?___wmul EC 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 __size_of_LCDGoto 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 dist/18F4620/production/THE3.X.production.o
-__Hpowerup 28 0 CODE 0 powerup dist/18F4620/production/THE3.X.production.o
-___awmod@sign 181 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+?_compute_frisbee_target_and_route E 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__Hpowerup C2 0 CODE 0 powerup dist/18F4620/production/THE3.X.production.o
+_CheckIfCaughtFrisbee 2ADA 0 CODE 0 text22 dist/18F4620/production/THE3.X.production.o
 _T0CONbits FD5 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-ttemp5 65 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
-ttemp6 68 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
-ttemp7 6C 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+ttemp5 69 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+ttemp6 6C 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+ttemp7 70 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/18F4620/production/THE3.X.production.o
-down@pl 41 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-__accesstop 80 0 ABS 0 - /tmp/xcXfkhhOe.o
-intlevel0 0 0 CODE 0 text /tmp/xcXfkhhOe.o
-intlevel1 0 0 CODE 0 text /tmp/xcXfkhhOe.o
-intlevel2 0 0 CODE 0 text /tmp/xcXfkhhOe.o
-intlevel3 0 0 CODE 0 text /tmp/xcXfkhhOe.o
+down@pl B 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__accesstop 80 0 ABS 0 - /tmp/xcXBKlFEa.o
+intlevel0 0 0 CODE 0 text /tmp/xcXBKlFEa.o
+intlevel1 0 0 CODE 0 text /tmp/xcXBKlFEa.o
+intlevel2 0 0 CODE 0 text /tmp/xcXBKlFEa.o
+intlevel3 0 0 CODE 0 text /tmp/xcXBKlFEa.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-_InitLCD 213E 0 CODE 0 text3 dist/18F4620/production/THE3.X.production.o
+_InitLCD 302E 0 CODE 0 text2 dist/18F4620/production/THE3.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/18F4620/production/THE3.X.production.o
-wtemp8 65 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
-_selected_teamB_player AB 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+lowIsr@temp_a EB 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+lowIsr@temp_d EA 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+wtemp8 69 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+_selected_teamB_player 9A 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/18F4620/production/THE3.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/18F4620/production/THE3.X.production.o
-_currentSegment 1 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-__pidataCOMRAM 224C 0 CODE 0 idataCOMRAM dist/18F4620/production/THE3.X.production.o
-_AddCustomCharacters 1EE4 0 CODE 0 text7 dist/18F4620/production/THE3.X.production.o
-___wmul@multiplicand 57 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+_currentSegment 42 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+random_generator@modulo 6 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__pidataCOMRAM 30FC 0 CODE 0 idataCOMRAM dist/18F4620/production/THE3.X.production.o
+_AddCustomCharacters 2D3C 0 CODE 0 text6 dist/18F4620/production/THE3.X.production.o
+___wmul@multiplicand EE 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 _ADCON1 FC1 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-i2___wmul@multiplier 3B 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXfkhhOe.o
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXfkhhOe.o
+i2___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+_CatchFrisbee 2C26 0 CODE 0 text17 dist/18F4620/production/THE3.X.production.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXBKlFEa.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXBKlFEa.o
 __size_ofi2___wmul 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/18F4620/production/THE3.X.production.o
 _display 100 0 BANK1 1 bssBANK1 dist/18F4620/production/THE3.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/18F4620/production/THE3.X.production.o
 __size_of_InitGameObjects 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-InitGameObjects@i_627 192 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-__end_of___wmul 21FA 0 CODE 0 text6 dist/18F4620/production/THE3.X.production.o
-_selected_teamA_player B3 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+InitGameObjects@i_841 F6 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+__end_of___wmul 30BA 0 CODE 0 text5 dist/18F4620/production/THE3.X.production.o
+_selected_teamA_player A2 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/18F4620/production/THE3.X.production.o
-right@pl 41 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+right@pl B 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+CatchFrisbee@pl 1 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/18F4620/production/THE3.X.production.o
-__Hintcodelo 28 0 CODE 0 intcodelo dist/18F4620/production/THE3.X.production.o
-__end_of___awmod 1EE4 0 CODE 0 text2 dist/18F4620/production/THE3.X.production.o
-__end_of_LCDGoto 1FDA 0 CODE 0 text9 dist/18F4620/production/THE3.X.production.o
+__Hintcodelo C2 0 CODE 0 intcodelo dist/18F4620/production/THE3.X.production.o
+___lwmod@divisor 3 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__end_of___lwmod 2F76 0 CODE 0 text20 dist/18F4620/production/THE3.X.production.o
+__end_of_LCDGoto 2E36 0 CODE 0 text8 dist/18F4620/production/THE3.X.production.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/18F4620/production/THE3.X.production.o
-_LCDCmd 21A2 0 CODE 0 text10 dist/18F4620/production/THE3.X.production.o
-_LCDDat 2170 0 CODE 0 text11 dist/18F4620/production/THE3.X.production.o
+_LCDCmd 3060 0 CODE 0 text9 dist/18F4620/production/THE3.X.production.o
+_LCDDat 2FFA 0 CODE 0 text10 dist/18F4620/production/THE3.X.production.o
+__size_of_CatchFrisbee 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __size_of_right 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _INTCON2bits FF1 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _INTCON3bits FF0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+___lwmod@dividend 1 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+CheckIfCaughtFrisbee@i 8 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lintcodelo 18 0 CODE 0 intcodelo dist/18F4620/production/THE3.X.production.o
 __size_of_SetupDebouncingTimer 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-start_initialization 1FDA 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
+start_initialization 2E36 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/18F4620/production/THE3.X.production.o
-i2___wmul 21FA 0 CODE 0 text14 dist/18F4620/production/THE3.X.production.o
-_teamB_player BB 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+i2___wmul 30BA 0 CODE 0 text23 dist/18F4620/production/THE3.X.production.o
+_teamB_player AA 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
 _TRISEbits F96 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __size_of_LCDAddSpecialCharacter 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__end_of_lowIsr 28 0 CODE 0 intcodelo dist/18F4620/production/THE3.X.production.o
+__end_of_lowIsr C2 0 CODE 0 intcodelo dist/18F4620/production/THE3.X.production.o
+_random_generator 2EA8 0 CODE 0 text19 dist/18F4620/production/THE3.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__end_of_up 1A82 0 CODE 0 text15 dist/18F4620/production/THE3.X.production.o
-__end_ofi2___wmul 2220 0 CODE 0 text14 dist/18F4620/production/THE3.X.production.o
-__pcstackBANK1 180 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-__end_of_SetupDebouncingTimer 224C 0 CODE 0 text19 dist/18F4620/production/THE3.X.production.o
-__end_of_AddCustomCharacters 1F66 0 CODE 0 text7 dist/18F4620/production/THE3.X.production.o
+__end_of_up 21E6 0 CODE 0 text13 dist/18F4620/production/THE3.X.production.o
+_curFrisbeeSteps 3C 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+__end_ofi2___wmul 30E0 0 CODE 0 text23 dist/18F4620/production/THE3.X.production.o
+__end_of_CatchFrisbee 2CB2 0 CODE 0 text17 dist/18F4620/production/THE3.X.production.o
+__pcstackBANK0 E4 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+__pcstackBANK1 1BC 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+_IPR1bits F9F 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+__end_of_SetupDebouncingTimer 3122 0 CODE 0 text21 dist/18F4620/production/THE3.X.production.o
+__end_of_AddCustomCharacters 2DBE 0 CODE 0 text6 dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@y_step_size 2C 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __size_of_LCDCmd 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __size_of_LCDDat 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-_InitInterrupts 204C 0 CODE 0 text4 dist/18F4620/production/THE3.X.production.o
+_InitInterrupts 2CB2 0 CODE 0 text3 dist/18F4620/production/THE3.X.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/18F4620/production/THE3.X.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/18F4620/production/THE3.X.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/18F4620/production/THE3.X.production.o
@@ -621,7 +801,7 @@ __Hcinit 0 0 ABS 0 cinit dist/18F4620/production/THE3.X.production.o
 __Hconst 0 0 CONST 0 const dist/18F4620/production/THE3.X.production.o
 __Hidata 0 0 CODE 0 idata dist/18F4620/production/THE3.X.production.o
 __Hidloc 200008 0 IDLOC 5 idloc dist/18F4620/production/THE3.X.production.o
-_teamA_player 5C 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
+_teamA_player B2 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
 __Hnvbit 0 0 COMRAM 1 nvbit dist/18F4620/production/THE3.X.production.o
 __Hparam 0 0 COMRAM 1 rparam dist/18F4620/production/THE3.X.production.o
 __Hrdata 0 0 COMRAM 1 rdata dist/18F4620/production/THE3.X.production.o
@@ -645,10 +825,12 @@ __Hbank14 0 0 ABS 0 bank14 dist/18F4620/production/THE3.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/18F4620/production/THE3.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/18F4620/production/THE3.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/18F4620/production/THE3.X.production.o
-__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/xcXfkhhOe.o
+__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/xcXBKlFEa.o
+random_generator@i A 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/18F4620/production/THE3.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/18F4620/production/THE3.X.production.o
-left@pl 41 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@number_of_steps 20 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+left@pl B 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/18F4620/production/THE3.X.production.o
 __Lbank1 0 0 ABS 0 bank1 dist/18F4620/production/THE3.X.production.o
 __Lbank2 0 0 ABS 0 bank2 dist/18F4620/production/THE3.X.production.o
@@ -679,50 +861,57 @@ __Ltext8 0 0 ABS 0 text8 dist/18F4620/production/THE3.X.production.o
 __Ltext9 0 0 ABS 0 text9 dist/18F4620/production/THE3.X.production.o
 __size_of_up 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/18F4620/production/THE3.X.production.o
-i2___wmul@product 3F 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+i2___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lintcode_body 0 0 ABS 0 intcode_body dist/18F4620/production/THE3.X.production.o
+_compute_frisbee_target_and_route 1C2E 0 CODE 0 text18 dist/18F4620/production/THE3.X.production.o
 _PORTEbits F84 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _INTCONbits FF2 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Habs1 0 0 ABS 0 abs1 dist/18F4620/production/THE3.X.production.o
 __Hdata 0 0 ABS 0 data dist/18F4620/production/THE3.X.production.o
-__Hinit 2C 0 CODE 0 init dist/18F4620/production/THE3.X.production.o
+__Hinit C6 0 CODE 0 init dist/18F4620/production/THE3.X.production.o
 __Hrbit 0 0 COMRAM 1 rbit dist/18F4620/production/THE3.X.production.o
 __Hrbss 0 0 COMRAM 1 rbss dist/18F4620/production/THE3.X.production.o
-__Htemp 65 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+__Htemp 69 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
 __Htext 0 0 ABS 0 text dist/18F4620/production/THE3.X.production.o
 __Labs1 0 0 ABS 0 abs1 dist/18F4620/production/THE3.X.production.o
 __Ldata 0 0 ABS 0 data dist/18F4620/production/THE3.X.production.o
-__Linit 28 0 CODE 0 init dist/18F4620/production/THE3.X.production.o
+__Linit C2 0 CODE 0 init dist/18F4620/production/THE3.X.production.o
 __Lrbit 0 0 COMRAM 1 rbit dist/18F4620/production/THE3.X.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/18F4620/production/THE3.X.production.o
-__Ltemp 64 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+__Ltemp 68 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
 __Ltext 0 0 ABS 0 text dist/18F4620/production/THE3.X.production.o
-LCDAddSpecialCharacter@i 183 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-___wmul 21D2 0 CODE 0 text6 dist/18F4620/production/THE3.X.production.o
-_portbVals F 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+LCDAddSpecialCharacter@i F3 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+___wmul 3092 0 CODE 0 text5 dist/18F4620/production/THE3.X.production.o
+_portbVals 50 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-int$flags 64 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
+int$flags 68 0 COMRAM 1 temp dist/18F4620/production/THE3.X.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Hintret 0 0 ABS 0 intret dist/18F4620/production/THE3.X.production.o
 __Hirdata 0 0 CODE 0 irdata dist/18F4620/production/THE3.X.production.o
-__S0 2257 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__S1 197 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+__S0 3122 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+__S1 1D0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __S2 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __S4 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __S5 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-_frisbee_target 8B 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
-LCDGoto@p_1 57 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-LCDGoto@p_2 58 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-__end_of_UpdateAndPrintDisplay 1500 0 CODE 0 text1 dist/18F4620/production/THE3.X.production.o
-_acceptInterrupts 10 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-__end_of_InitInterrupts 20B0 0 CODE 0 text4 dist/18F4620/production/THE3.X.production.o
+_frisbee_target 60 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
+random_generator@res D 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+LCDGoto@p_1 EE 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+LCDGoto@p_2 EF 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+__end_of_UpdateAndPrintDisplay 16E6 0 CODE 0 text1 dist/18F4620/production/THE3.X.production.o
+_acceptInterrupts 51 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+random_generator@temp C 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+_frisbeeSteps 3E 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+__end_of_InitInterrupts 2D3C 0 CODE 0 text3 dist/18F4620/production/THE3.X.production.o
+__end_of_random_generator 2F12 0 CODE 0 text19 dist/18F4620/production/THE3.X.production.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/18F4620/production/THE3.X.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/18F4620/production/THE3.X.production.o
-int_func 1500 0 CODE 0 intcode_body dist/18F4620/production/THE3.X.production.o
+__size_of_random_generator 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+int_func 16E6 0 CODE 0 intcode_body dist/18F4620/production/THE3.X.production.o
 _UpdateAndPrintDisplay 1006 0 CODE 0 text1 dist/18F4620/production/THE3.X.production.o
-InitGameObjects@i 18E 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-InitGameObjects@j 190 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+InitGameObjects@i F2 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+InitGameObjects@j F4 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 __Lintentry 0 0 ABS 0 intentry dist/18F4620/production/THE3.X.production.o
 __Hramtop 1000 0 RAM 0 ramtop dist/18F4620/production/THE3.X.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/18F4620/production/THE3.X.production.o
@@ -733,27 +922,40 @@ __size_of___wmul 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 dist/18F4620/production/THE3.X.production.o
 __LbssBANK1 0 0 ABS 0 bssBANK1 dist/18F4620/production/THE3.X.production.o
 __Htext10 0 0 ABS 0 text10 dist/18F4620/production/THE3.X.production.o
-__Htext11 0 0 ABS 0 text11 dist/18F4620/production/THE3.X.production.o
+__Htext13 0 0 ABS 0 text13 dist/18F4620/production/THE3.X.production.o
 __Htext14 0 0 ABS 0 text14 dist/18F4620/production/THE3.X.production.o
 __Htext15 0 0 ABS 0 text15 dist/18F4620/production/THE3.X.production.o
 __Htext16 0 0 ABS 0 text16 dist/18F4620/production/THE3.X.production.o
 __Htext17 0 0 ABS 0 text17 dist/18F4620/production/THE3.X.production.o
 __Htext18 0 0 ABS 0 text18 dist/18F4620/production/THE3.X.production.o
 __Htext19 0 0 ABS 0 text19 dist/18F4620/production/THE3.X.production.o
-?i2___wmul 3B 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__Htext20 0 0 ABS 0 text20 dist/18F4620/production/THE3.X.production.o
+__Htext21 0 0 ABS 0 text21 dist/18F4620/production/THE3.X.production.o
+__Htext22 0 0 ABS 0 text22 dist/18F4620/production/THE3.X.production.o
+__Htext23 0 0 ABS 0 text23 dist/18F4620/production/THE3.X.production.o
+?i2___wmul 1 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __size_of_InitLCD 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-___awmod@counter 180 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
 _lowIsr 18 0 CODE 0 intcodelo dist/18F4620/production/THE3.X.production.o
-__ptext10 21A2 0 CODE 0 text10 dist/18F4620/production/THE3.X.production.o
-__ptext11 2170 0 CODE 0 text11 dist/18F4620/production/THE3.X.production.o
-__ptext14 21FA 0 CODE 0 text14 dist/18F4620/production/THE3.X.production.o
-__ptext15 1936 0 CODE 0 text15 dist/18F4620/production/THE3.X.production.o
-__ptext16 1BC2 0 CODE 0 text16 dist/18F4620/production/THE3.X.production.o
-__ptext17 1A82 0 CODE 0 text17 dist/18F4620/production/THE3.X.production.o
-__ptext18 1CFC 0 CODE 0 text18 dist/18F4620/production/THE3.X.production.o
-__ptext19 223C 0 CODE 0 text19 dist/18F4620/production/THE3.X.production.o
-___awmod 1E32 0 CODE 0 text2 dist/18F4620/production/THE3.X.production.o
-__pintcode_body 1500 0 CODE 0 intcode_body dist/18F4620/production/THE3.X.production.o
+_PIE1bits F9D 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+__ptext10 2FFA 0 CODE 0 text10 dist/18F4620/production/THE3.X.production.o
+__ptext13 1F86 0 CODE 0 text13 dist/18F4620/production/THE3.X.production.o
+__ptext14 243E 0 CODE 0 text14 dist/18F4620/production/THE3.X.production.o
+__ptext15 21E6 0 CODE 0 text15 dist/18F4620/production/THE3.X.production.o
+__ptext16 2688 0 CODE 0 text16 dist/18F4620/production/THE3.X.production.o
+__ptext17 2C26 0 CODE 0 text17 dist/18F4620/production/THE3.X.production.o
+__ptext18 1C2E 0 CODE 0 text18 dist/18F4620/production/THE3.X.production.o
+__ptext19 2EA8 0 CODE 0 text19 dist/18F4620/production/THE3.X.production.o
+__ptext20 2F12 0 CODE 0 text20 dist/18F4620/production/THE3.X.production.o
+__ptext21 3112 0 CODE 0 text21 dist/18F4620/production/THE3.X.production.o
+__ptext22 2ADA 0 CODE 0 text22 dist/18F4620/production/THE3.X.production.o
+__ptext23 30BA 0 CODE 0 text23 dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@i_686 16 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@i_687 18 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@i_689 1A 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@i_690 1C 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@i_691 1E 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__pintcode_body 16E6 0 CODE 0 intcode_body dist/18F4620/production/THE3.X.production.o
+___lwmod 2F12 0 CODE 0 text20 dist/18F4620/production/THE3.X.production.o
 __Lbank10 0 0 ABS 0 bank10 dist/18F4620/production/THE3.X.production.o
 __Lbank11 0 0 ABS 0 bank11 dist/18F4620/production/THE3.X.production.o
 __Lbank12 0 0 ABS 0 bank12 dist/18F4620/production/THE3.X.production.o
@@ -764,18 +966,22 @@ __Lbigbss 0 0 BIGRAM 1 bigbss dist/18F4620/production/THE3.X.production.o
 __Lbigram 0 0 ABS 0 bigram dist/18F4620/production/THE3.X.production.o
 __Lcomram 0 0 ABS 0 comram dist/18F4620/production/THE3.X.production.o
 __Lconfig 0 0 CONFIG 4 config dist/18F4620/production/THE3.X.production.o
-UpdateAndPrintDisplay@temp_d 18C 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-_LCDGoto 1F66 0 CODE 0 text9 dist/18F4620/production/THE3.X.production.o
-___wmul@multiplier 55 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-LCDAddSpecialCharacter@data 180 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+__size_of_CheckIfCaughtFrisbee 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+_LCDGoto 2DBE 0 CODE 0 text8 dist/18F4620/production/THE3.X.production.o
+___wmul@multiplier EC 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+LCDAddSpecialCharacter@data F0 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@current_fisbee_x_position E 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/18F4620/production/THE3.X.production.o
-_scoreA 5 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-_scoreB 3 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+_scoreA 46 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+_scoreB 44 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/18F4620/production/THE3.X.production.o
-stackhi F7F 0 ABS 0 - /tmp/xcXfkhhOe.o
-stacklo 197 0 ABS 0 - /tmp/xcXfkhhOe.o
+compute_frisbee_target_and_route@current_fisbee_y_position 10 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+stackhi F7F 0 ABS 0 - /tmp/xcXBKlFEa.o
+stacklo 1D0 0 ABS 0 - /tmp/xcXBKlFEa.o
+_pulseCounter 40 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/18F4620/production/THE3.X.production.o
-_selected_teamA_player_with_frisbee A3 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+_selected_teamA_player_with_frisbee 92 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+__end_of_CheckIfCaughtFrisbee 2C26 0 CODE 0 text22 dist/18F4620/production/THE3.X.production.o
 __Lintret 0 0 ABS 0 intret dist/18F4620/production/THE3.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/18F4620/production/THE3.X.production.o
 __size_of_lowIsr 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
@@ -783,86 +989,99 @@ __Lspace_0 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Lspace_2 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Lspace_4 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+__pbssCOMRAM 3C 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-i2___wmul@multiplicand 3D 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-UpdateAndPrintDisplay@i_620 191 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-UpdateAndPrintDisplay@i_621 193 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-UpdateAndPrintDisplay@i_622 195 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+i2___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+UpdateAndPrintDisplay@i_828 1CA 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+UpdateAndPrintDisplay@i_829 1CC 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+UpdateAndPrintDisplay@i_830 1CE 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
 _PIR1bits F9E 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-_LCDAddSpecialCharacter 20B0 0 CODE 0 text8 dist/18F4620/production/THE3.X.production.o
+_LCDAddSpecialCharacter 2F76 0 CODE 0 text7 dist/18F4620/production/THE3.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
-end_of_initialization 203E 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
+end_of_initialization 2E9A 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/18F4620/production/THE3.X.production.o
 __Hintentry 0 0 ABS 0 intentry dist/18F4620/production/THE3.X.production.o
-?___awmod 55 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+_RCONbits FD0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+?___lwmod 1 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/18F4620/production/THE3.X.production.o
-LCDAddSpecialCharacter@character_index 182 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+LCDAddSpecialCharacter@character_index F2 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/18F4620/production/THE3.X.production.o
 __HbssBANK1 0 0 ABS 0 bssBANK1 dist/18F4620/production/THE3.X.production.o
-___awmod@dividend 55 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lramtop 1000 0 RAM 0 ramtop dist/18F4620/production/THE3.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/18F4620/production/THE3.X.production.o
-__pcinit 1FDA 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
-_frisbeeChar 93 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
-_selectedPlayer 7 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
-__ptext0 2220 0 CODE 0 text0 dist/18F4620/production/THE3.X.production.o
+__pcinit 2E36 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
+_frisbeeChar 82 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+_selectedPlayer 48 0 COMRAM 1 bssCOMRAM dist/18F4620/production/THE3.X.production.o
+__ptext0 30E0 0 CODE 0 text0 dist/18F4620/production/THE3.X.production.o
 __ptext1 1006 0 CODE 0 text1 dist/18F4620/production/THE3.X.production.o
-__ptext2 1E32 0 CODE 0 text2 dist/18F4620/production/THE3.X.production.o
-__ptext3 213E 0 CODE 0 text3 dist/18F4620/production/THE3.X.production.o
-__ptext4 204C 0 CODE 0 text4 dist/18F4620/production/THE3.X.production.o
-__ptext5 1730 0 CODE 0 text5 dist/18F4620/production/THE3.X.production.o
-__ptext6 21D2 0 CODE 0 text6 dist/18F4620/production/THE3.X.production.o
-__ptext7 1EE4 0 CODE 0 text7 dist/18F4620/production/THE3.X.production.o
-__ptext8 20B0 0 CODE 0 text8 dist/18F4620/production/THE3.X.production.o
-__ptext9 1F66 0 CODE 0 text9 dist/18F4620/production/THE3.X.production.o
-__end_of_InitLCD 2170 0 CODE 0 text3 dist/18F4620/production/THE3.X.production.o
+__ptext2 302E 0 CODE 0 text2 dist/18F4620/production/THE3.X.production.o
+__ptext3 2CB2 0 CODE 0 text3 dist/18F4620/production/THE3.X.production.o
+__ptext4 28BA 0 CODE 0 text4 dist/18F4620/production/THE3.X.production.o
+__ptext5 3092 0 CODE 0 text5 dist/18F4620/production/THE3.X.production.o
+__ptext6 2D3C 0 CODE 0 text6 dist/18F4620/production/THE3.X.production.o
+__ptext7 2F76 0 CODE 0 text7 dist/18F4620/production/THE3.X.production.o
+__ptext8 2DBE 0 CODE 0 text8 dist/18F4620/production/THE3.X.production.o
+__ptext9 3060 0 CODE 0 text9 dist/18F4620/production/THE3.X.production.o
+__end_of_InitLCD 3060 0 CODE 0 text2 dist/18F4620/production/THE3.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/18F4620/production/THE3.X.production.o
-UpdateAndPrintDisplay@i 18D 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
-UpdateAndPrintDisplay@j 18F 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+UpdateAndPrintDisplay@i 1C6 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+UpdateAndPrintDisplay@j 1C8 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
 __Ltext10 0 0 ABS 0 text10 dist/18F4620/production/THE3.X.production.o
-__Ltext11 0 0 ABS 0 text11 dist/18F4620/production/THE3.X.production.o
+__Ltext13 0 0 ABS 0 text13 dist/18F4620/production/THE3.X.production.o
 __Ltext14 0 0 ABS 0 text14 dist/18F4620/production/THE3.X.production.o
 __Ltext15 0 0 ABS 0 text15 dist/18F4620/production/THE3.X.production.o
 __Ltext16 0 0 ABS 0 text16 dist/18F4620/production/THE3.X.production.o
 __Ltext17 0 0 ABS 0 text17 dist/18F4620/production/THE3.X.production.o
 __Ltext18 0 0 ABS 0 text18 dist/18F4620/production/THE3.X.production.o
 __Ltext19 0 0 ABS 0 text19 dist/18F4620/production/THE3.X.production.o
-_SetupDebouncingTimer 223C 0 CODE 0 text19 dist/18F4620/production/THE3.X.production.o
-__ramtop 1000 0 RAM 0 ramtop /tmp/xcXfkhhOe.o
-__Lpowerup 28 0 CODE 0 powerup dist/18F4620/production/THE3.X.production.o
+__Ltext20 0 0 ABS 0 text20 dist/18F4620/production/THE3.X.production.o
+__Ltext21 0 0 ABS 0 text21 dist/18F4620/production/THE3.X.production.o
+__Ltext22 0 0 ABS 0 text22 dist/18F4620/production/THE3.X.production.o
+__Ltext23 0 0 ABS 0 text23 dist/18F4620/production/THE3.X.production.o
+_SetupDebouncingTimer 3112 0 CODE 0 text21 dist/18F4620/production/THE3.X.production.o
+__ramtop 1000 0 RAM 0 ramtop /tmp/xcXBKlFEa.o
+__Lpowerup C2 0 CODE 0 powerup dist/18F4620/production/THE3.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/18F4620/production/THE3.X.production.o
 __psmallconst 1000 0 SMALLCONST 0 smallconst dist/18F4620/production/THE3.X.production.o
+_gameSpeed 5D 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/18F4620/production/THE3.X.production.o
-LCDCmd@cmd 56 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+LCDCmd@cmd ED 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 ___param_bank 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/18F4620/production/THE3.X.production.o
-__end_of__initialization 203E 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
-___awmod@divisor 57 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+?_random_generator 6 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__end_of__initialization 2E9A 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/18F4620/production/THE3.X.production.o
-__pidataBANK0 20FA 0 CODE 0 idataBANK0 dist/18F4620/production/THE3.X.production.o
+__pidataBANK0 2FC0 0 CODE 0 idataBANK0 dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@x_step_size 2A 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/18F4620/production/THE3.X.production.o
 __size_of_highIsr 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __pintcodelo 18 0 CODE 0 intcodelo dist/18F4620/production/THE3.X.production.o
-__pcstackCOMRAM 3B 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 _T3CONbits FB1 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__end_of_down 1E32 0 CODE 0 text18 dist/18F4620/production/THE3.X.production.o
-__end_of_left 1BC2 0 CODE 0 text17 dist/18F4620/production/THE3.X.production.o
-__end_of_main 223C 0 CODE 0 text0 dist/18F4620/production/THE3.X.production.o
+__end_of_down 28BA 0 CODE 0 text16 dist/18F4620/production/THE3.X.production.o
+__end_of_left 243E 0 CODE 0 text15 dist/18F4620/production/THE3.X.production.o
+__end_of_main 30FC 0 CODE 0 text0 dist/18F4620/production/THE3.X.production.o
 __pintcode 8 0 CODE 0 intcode dist/18F4620/production/THE3.X.production.o
-__end_of_InitGameObjects 1936 0 CODE 0 text5 dist/18F4620/production/THE3.X.production.o
+__end_of_InitGameObjects 2ADA 0 CODE 0 text4 dist/18F4620/production/THE3.X.production.o
+_PORTA F80 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _PORTB F81 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _PORTD F83 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _T0CON FD5 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+_T1CON FCD 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+_T2CON FCA 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _T3CON FB1 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _TMR0H FD7 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _TMR0L FD6 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+_TMR1H FCF 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
+_TMR1L FCE 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _TMR3H FB3 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _TMR3L FB2 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _TRISA F92 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _TRISB F93 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 _TRISD F95 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__end_of_right 1CFC 0 CODE 0 text16 dist/18F4620/production/THE3.X.production.o
+__end_of_right 2688 0 CODE 0 text14 dist/18F4620/production/THE3.X.production.o
+__end_of_compute_frisbee_target_and_route 1F86 0 CODE 0 text18 dist/18F4620/production/THE3.X.production.o
 __HRAM 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Hbss 0 0 RAM 1 bss dist/18F4620/production/THE3.X.production.o
 __Hram 0 0 ABS 0 ram dist/18F4620/production/THE3.X.production.o
@@ -871,21 +1090,25 @@ __LRAM 1 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Lbss 0 0 RAM 1 bss dist/18F4620/production/THE3.X.production.o
 __Lram 0 0 ABS 0 ram dist/18F4620/production/THE3.X.production.o
 __Lsfr 0 0 ABS 0 sfr dist/18F4620/production/THE3.X.production.o
-_lcd_x 5B 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
-_lcd_y 5A 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
-_right 1BC2 0 CODE 0 text16 dist/18F4620/production/THE3.X.production.o
+_lcd_x 81 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+_lcd_y 80 0 BANK0 1 dataBANK0 dist/18F4620/production/THE3.X.production.o
+_right 243E 0 CODE 0 text14 dist/18F4620/production/THE3.X.production.o
+__size_of_compute_frisbee_target_and_route 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 dist/18F4620/production/THE3.X.production.o
 __size_of_InitInterrupts 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
-__initialization 1FDA 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
-__pbssBANK0 C3 0 BANK0 1 bssBANK0 dist/18F4620/production/THE3.X.production.o
+__initialization 2E36 0 CODE 0 cinit dist/18F4620/production/THE3.X.production.o
+__pbssBANK0 BA 0 BANK0 1 bssBANK0 dist/18F4620/production/THE3.X.production.o
 __pbssBANK1 100 0 BANK1 1 bssBANK1 dist/18F4620/production/THE3.X.production.o
-__pdataCOMRAM 59 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
+__pdataCOMRAM 52 0 COMRAM 1 dataCOMRAM dist/18F4620/production/THE3.X.production.o
 __size_of_UpdateAndPrintDisplay 0 0 ABS 0 - dist/18F4620/production/THE3.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/18F4620/production/THE3.X.production.o
-___wmul@product 180 0 BANK1 1 cstackBANK1 dist/18F4620/production/THE3.X.production.o
+___wmul@product F0 0 BANK0 1 cstackBANK0 dist/18F4620/production/THE3.X.production.o
 __Hsmallconst 1006 0 SMALLCONST 0 smallconst dist/18F4620/production/THE3.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/18F4620/production/THE3.X.production.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@i 14 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@x 26 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
+compute_frisbee_target_and_route@y 28 0 COMRAM 1 cstackCOMRAM dist/18F4620/production/THE3.X.production.o
 __Hintcode E 0 CODE 0 intcode dist/18F4620/production/THE3.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -911,15 +1134,14 @@ __Hintcode E 0 CODE 0 intcode dist/18F4620/production/THE3.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intcodelo 0 18 18 14 1
-text1 0 1006 1006 1137 1
-text3 0 213E 213E 119 1
+intcodelo 0 18 18 AE 1
+text1 0 1006 1006 211C 1
+cstackCOMRAM 1 1 1 68 1
 reset_vec 0 0 0 4 1
-bssBANK1 1 100 100 97 1
+bssBANK1 1 100 100 D0 1
 intcode 0 8 8 6 1
 smallconst 0 1000 1000 6 1
-dataBANK0 1 80 80 7F 1
-bssCOMRAM 1 1 1 64 1
+dataBANK0 1 80 80 78 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
