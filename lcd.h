@@ -18,7 +18,7 @@ typedef unsigned char byte;     // define byte here for readability and sanity.
 #define LCD_RS PORTEbits.RE2
 #define LCD_EN PORTEbits.RE1
 #define LCD_PORT PORTD
-#define LCD_PULSE_TIME 2000
+#define LCD_PULSE_TIME 500
 
 #define LCD_FS_1LINE 0x30
 #define LCD_FS_2LINE 0x38

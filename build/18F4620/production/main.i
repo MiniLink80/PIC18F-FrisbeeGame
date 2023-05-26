@@ -4642,9 +4642,9 @@ void LCDCmd(unsigned char cmd) {
   PORTEbits.RE2 = 0;
   PORTD = cmd;
   PORTEbits.RE1 = 1;
-  _delay((unsigned long)((2000)*(10000000L/4000000.0)));
+  _delay((unsigned long)((500)*(10000000L/4000000.0)));
   PORTEbits.RE1 = 0;
-  _delay((unsigned long)((2000)*(10000000L/4000000.0)));
+  _delay((unsigned long)((500)*(10000000L/4000000.0)));
 }
 
 void LCDDat(unsigned char dat) {
@@ -4652,9 +4652,9 @@ void LCDDat(unsigned char dat) {
   PORTEbits.RE2 = 1;
   PORTD = dat;
   PORTEbits.RE1 = 1;
-  _delay((unsigned long)((2000)*(10000000L/4000000.0)));
+  _delay((unsigned long)((500)*(10000000L/4000000.0)));
   PORTEbits.RE1 = 0;
-  _delay((unsigned long)((2000)*(10000000L/4000000.0)));
+  _delay((unsigned long)((500)*(10000000L/4000000.0)));
   PORTEbits.RE2 = 0;
 }
 
@@ -4973,7 +4973,7 @@ char *tempnam(const char *, const char *);
 # 9 "main.c" 2
 # 20 "main.c"
 _Bool acceptInterrupts;
-int a = 0, b = 0, c = 0, selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0, gameSpeed = 16, pulseCounter = 0, frisbeeSteps = 0, curFrisbeeSteps = 0;
+int a = 0, b = 0, c = 0, selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0, gameSpeed = 16, pulseCounter = 0, frisbeeSteps = 0, curFrisbeeSteps = 0, nextGameSpeed = 16;
 
 GameStates game_state = GS_INACTIVE;
 GameElement objs[6];
@@ -4984,8 +4984,10 @@ byte portbVals = 0;
 void SetupDebouncingTimer();
 void PrintPORTBandIntCounts();
 void UpdateAndPrintDisplay();
+void UpdateAndPrintDisplay2D();
 void InitInterrupts();
 void InitGameObjects();
+void MoveEveryone();
 GameElement* CheckIfCaughtFrisbee();
 
 void left(GameElement*);
@@ -4997,9 +4999,11 @@ void upright(GameElement*);
 void downleft(GameElement*);
 void downright(GameElement*);
 
+int digital;
+
 void __attribute__((picinterrupt(("high_priority")))) highIsr(){
     portbVals = PORTB;
-
+# 66 "main.c"
     if (INTCONbits.TMR0IF) {
         acceptInterrupts = 1;
         T0CONbits.TMR0ON = 0;
@@ -5015,17 +5019,30 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 
         pulseCounter++;
 
+        ADCON0bits.GO = 1;
+
+        while (ADCON0bits.GO);
+        digital = (ADRESH << 8) + ADRESL;
+        if (digital < 256)
+            nextGameSpeed = 4;
+        else if (digital < 512)
+            nextGameSpeed = 8;
+        else if (digital < 768)
+            nextGameSpeed = 12;
+        else
+            nextGameSpeed = 16;
+
         if (objs[5].state == OS_FLYING && pulseCounter % 2 == 0 && game_state == GS_ACTIVE) {
             objs[4].active = ~objs[4].active;
         }
 
-        if (pulseCounter == gameSpeed && game_state == GS_ACTIVE) {
+        if (pulseCounter == gameSpeed) {
             pulseCounter = 0;
             if (objs[5].state == OS_FLYING) {
-                curFrisbeeSteps++;
 
-                objs[5].oldX = objs[5].x;
-                objs[5].oldY = objs[5].y;
+                MoveEveryone();
+
+                curFrisbeeSteps++;
 
                 objs[5].x = frisbee_steps[curFrisbeeSteps][0];
                 objs[5].y = frisbee_steps[curFrisbeeSteps][1];
@@ -5033,7 +5050,7 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
                 CheckIfCaughtFrisbee();
 
 
-                if (objs[5].x == objs[4].x && objs[5].y == objs[4].y) {
+                if ((objs[5].x == objs[4].x && objs[5].y == objs[4].y) || curFrisbeeSteps == frisbeeSteps-1) {
                     objs[5].state = OS_FELL;
                     objs[4].active = 0;
                     display[objs[4].y-1][objs[4].x-1] = &objs[5];
@@ -5052,17 +5069,18 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
             SetupDebouncingTimer();
 
             if (objs[selectedPlayer].state == OS_SEL_W_FRISBEE) {
+
                 frisbeeSteps = compute_frisbee_target_and_route(objs[selectedPlayer].x, objs[selectedPlayer].y);
 
                 objs[4].active = 1;
 
                 objs[4].x = frisbee_steps[frisbeeSteps-1][0];
                 objs[4].y = frisbee_steps[frisbeeSteps-1][1];
-                objs[4].oldX = objs[4].oldY = 0;
+
 
                 objs[5].x = frisbee_steps[0][0];
                 objs[5].y = frisbee_steps[0][1];
-                objs[5].oldX = objs[5].oldY = 0;
+
                 objs[5].active = 1;
                 objs[5].state = OS_FLYING;
 
@@ -5072,6 +5090,9 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
 
 
                 game_state = GS_ACTIVE;
+
+                pulseCounter = 0;
+                gameSpeed = nextGameSpeed;
 
                 PIR1bits.TMR1IF = 0;
                 T1CONbits.TMR1ON = 0;
@@ -5127,6 +5148,7 @@ void __attribute__((picinterrupt(("high_priority")))) highIsr(){
     INTCON3bits.INT1IF = 0;
     INTCONbits.INT0IF = 0;
     INTCONbits.RBIF = 0;
+    PIR1bits.ADIF = 0;
 
 }
 
@@ -5170,7 +5192,43 @@ void main(void)
 
 
     while(1) {
-        UpdateAndPrintDisplay();
+        UpdateAndPrintDisplay2D();
+    }
+}
+
+void MoveEveryone() {
+    for (int i = 0; i < 4; i++) {
+        if (i == selectedPlayer) continue;
+
+        int val = random_generator(9);
+        switch(val) {
+            case 0:
+                left(&objs[i]);
+                break;
+            case 1:
+                right(&objs[i]);
+                break;
+            case 2:
+                up(&objs[i]);
+                break;
+            case 3:
+                down(&objs[i]);
+                break;
+            case 4:
+                upleft(&objs[i]);
+                break;
+            case 5:
+                upright(&objs[i]);
+                break;
+            case 6:
+                downleft(&objs[i]);
+                break;
+            case 7:
+                downright(&objs[i]);
+                break;
+            case 8:
+                break;
+        }
     }
 }
 
@@ -5258,6 +5316,76 @@ void UpdateAndPrintDisplay() {
             default:
 
                 break;
+        }
+    }
+}
+
+void UpdateAndPrintDisplay2D() {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+            display[i][j] = ((void*)0);
+        }
+    }
+    for (int i = 6 -1; i >= 0; i--) {
+        if (objs[i].active && !(objs[i].x == 0 || objs[i].y == 0)) {
+            display[objs[i].y-1][objs[i].x-1] = &objs[i];
+        }
+    }
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 16; j++) {
+            lcd_x = j+1;
+            lcd_y = i+1;
+            LCDGoto(lcd_x, lcd_y);
+
+            if (display[i][j] == ((void*)0)) {
+                LCDDat(' ');
+                continue;
+            }
+
+            switch(display[i][j]->type) {
+                case OT_FRISBEE:
+                    LCDDat(6);
+                    break;
+                case OT_TARGET:
+                    LCDDat(7);
+                    break;
+                case OT_PLAYERA:
+                    switch (display[i][j]->state) {
+                        case OS_DEFAULT:
+                            LCDDat(0);
+                            break;
+                        case OS_SELECTED:
+                            LCDDat(2);
+                            break;
+                        case OS_SEL_W_FRISBEE:
+                            LCDDat(4);
+                            break;
+                        default:
+
+                            break;
+                    }
+                    break;
+                case OT_PLAYERB:
+                    switch (display[i][j]->state) {
+                        case OS_DEFAULT:
+                            LCDDat(1);
+                            break;
+                        case OS_SELECTED:
+                            LCDDat(3);
+                            break;
+                        case OS_SEL_W_FRISBEE:
+                            LCDDat(5);
+                            break;
+                        default:
+
+                            break;
+                    }
+                    break;
+                default:
+
+                    break;
+            }
         }
     }
 }
@@ -5395,6 +5523,7 @@ void InitInterrupts() {
     INTCON2bits.TMR0IP = 1;
     INTCON3bits.INT1IP = 1;
     IPR1bits.TMR1IP = 1;
+    IPR1bits.ADIP = 1;
 
     PIE1bits.TMR1IE = 1;
     PIR1bits.TMR1IF = 0;
@@ -5408,6 +5537,14 @@ void InitInterrupts() {
     IPR1bits.TMR2IP = 0;
     RCONbits.IPEN = 1;
     T2CON = 0b01111111;
+
+    ADCON0 = ADCON0 | 1;
+    ADCON2 = 0b10010010;
+    ADRESH = 0;
+    ADRESL = 0;
+    PIR1bits.ADIF = 0;
+    PIE1bits.ADIE = 1;
+    ADCON0bits.ADON = 1;
 }
 
 
@@ -5452,9 +5589,28 @@ GameElement* CheckIfCaughtFrisbee() {
 void CatchFrisbee(GameElement* pl) {
     if (game_state == GS_INACTIVE) {
         pl->state = OS_SEL_W_FRISBEE;
+        display[objs[5].y-1][objs[5].x-1] = pl;
         objs[5].active = 0;
-        display[objs[5].y-1][objs[5].x-1] = ((void*)0);
+        objs[5].state = OS_FELL;
         objs[5].x = objs[5].y = objs[5].oldX = objs[5].oldY = 0;
+    } else {
+        objs[selectedPlayer].state = OS_DEFAULT;
+        pl->state = OS_SEL_W_FRISBEE;
+        for (int i = 0; i < 4; i++) {
+            if (&objs[i] == pl) {
+                selectedPlayer = i;
+                break;
+            }
+        }
+        display[objs[5].y-1][objs[5].x-1] = pl;
+        objs[5].active = 0;
+        objs[5].x = objs[5].y = 0;
+        objs[5].state = OS_FELL;
+        objs[4].active = 0;
+        if (pl->type == OT_PLAYERA) scoreA++;
+        else scoreB++;
+        game_state = GS_INACTIVE;
+
     }
 
 }
@@ -5468,9 +5624,11 @@ void left(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->x--;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
 void right(GameElement* pl) {
@@ -5482,9 +5640,11 @@ void right(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->x++;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
 void up(GameElement* pl) {
@@ -5496,9 +5656,11 @@ void up(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->y--;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
 void down(GameElement* pl) {
@@ -5510,9 +5672,11 @@ void down(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->y++;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
 
@@ -5526,10 +5690,12 @@ void upleft(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->x--;
     pl->y--;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
 void upright(GameElement* pl) {
@@ -5541,15 +5707,17 @@ void upright(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->x++;
     pl->y--;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
 
 void downleft(GameElement* pl) {
-    if (pl->x == 1 || pl->y == 16) return;
+    if (pl->x == 1 || pl->y == 4) return;
     if (display[pl->y][pl->x-2] != ((void*)0)) {
         if (display[pl->y][pl->x-2]->type == OT_PLAYERA) return;
         if (display[pl->y][pl->x-2]->type == OT_PLAYERB) return;
@@ -5557,14 +5725,16 @@ void downleft(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->x--;
     pl->y++;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
 void downright(GameElement* pl) {
-    if (pl->x == 16 || pl->y == 16) return;
+    if (pl->x == 16 || pl->y == 4) return;
     if (display[pl->y][pl->x] != ((void*)0)) {
         if (display[pl->y][pl->x]->type == OT_PLAYERA) return;
         if (display[pl->y][pl->x]->type == OT_PLAYERB) return;
@@ -5572,9 +5742,11 @@ void downright(GameElement* pl) {
             CatchFrisbee(pl);
         }
     }
+    display[pl->y-1][pl->x-1] = ((void*)0);
     pl->oldX = pl->x;
     pl->oldY = pl->y;
     pl->x++;
     pl->y++;
+    display[pl->y-1][pl->x-1] = pl;
     return;
 }
