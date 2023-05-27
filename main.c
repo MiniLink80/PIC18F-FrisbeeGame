@@ -86,7 +86,7 @@ void __interrupt(high_priority) highIsr(){
                     FRISBEE.state = OS_FELL;
                     TARGET.active = false;
                     display[TARGET.y-1][TARGET.x-1] = &FRISBEE;
-                    TARGET.x = TARGET.y = TARGET.oldX = TARGET.oldY = 0;
+                    TARGET.x = TARGET.y = 0;
                     game_state = GS_INACTIVE;
                     curFrisbeeSteps = 0;
                 }
@@ -343,48 +343,36 @@ void InitGameObjects() {
     
     TEAM_A_P1.x = 3;
     TEAM_A_P1.y = 2;
-    TEAM_A_P1.oldX = 0;
-    TEAM_A_P1.oldY = 0;
     TEAM_A_P1.type = OT_PLAYERA;
     TEAM_A_P1.state = OS_SELECTED;
     TEAM_A_P1.active = true;
     
     TEAM_A_P2.x = 3;
     TEAM_A_P2.y = 3;
-    TEAM_A_P2.oldX = 0;
-    TEAM_A_P2.oldY = 0;
     TEAM_A_P2.type = OT_PLAYERA;
     TEAM_A_P2.state = OS_DEFAULT;
     TEAM_A_P2.active = true;
     
     TEAM_B_P1.x = 14;
     TEAM_B_P1.y = 2;
-    TEAM_B_P1.oldX = 0;
-    TEAM_B_P1.oldY = 0;
     TEAM_B_P1.type = OT_PLAYERB;
     TEAM_B_P1.state = OS_DEFAULT;
     TEAM_B_P1.active = true;
     
     TEAM_B_P2.x = 14;
     TEAM_B_P2.y = 3;
-    TEAM_B_P2.oldX = 0;
-    TEAM_B_P2.oldY = 0;
     TEAM_B_P2.type = OT_PLAYERB;
     TEAM_B_P2.state = OS_DEFAULT;
     TEAM_B_P2.active = true;
     
     FRISBEE.x = 9;
     FRISBEE.y = 2;
-    FRISBEE.oldX = 0;
-    FRISBEE.oldY = 0;
     FRISBEE.type = OT_FRISBEE;
     FRISBEE.state = OS_FELL;
     FRISBEE.active = true;
     
     TARGET.x = 1;
     TARGET.y = 1;
-    TARGET.oldX = 0;
-    TARGET.oldY = 0;
     TARGET.type = OT_TARGET;
     TARGET.active = false;
     
@@ -494,7 +482,7 @@ void CatchFrisbee(GameElement* pl) {
         display[FRISBEE.y-1][FRISBEE.x-1] = pl;
         FRISBEE.active = false;
         FRISBEE.state = OS_FELL;
-        FRISBEE.x = FRISBEE.y = FRISBEE.oldX = FRISBEE.oldY = 0;
+        FRISBEE.x = FRISBEE.y = 0;
     } else {
         objs[selectedPlayer].state = OS_DEFAULT;
         pl->state = OS_SEL_W_FRISBEE;

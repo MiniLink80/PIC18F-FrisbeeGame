@@ -43,7 +43,6 @@ typedef enum ObjectTypes {
 
 typedef struct GameElement { // Players, the frisbee, and the target will use this struct
     byte x, y;
-    byte oldX, oldY;
     bool active;
     ObjectTypes type;
     ObjectStates state;
