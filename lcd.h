@@ -18,7 +18,7 @@ typedef unsigned char byte;     // define byte here for readability and sanity.
 #define LCD_RS PORTEbits.RE2
 #define LCD_EN PORTEbits.RE1
 #define LCD_PORT PORTD
-#define LCD_PULSE_TIME 500
+#define LCD_PULSE_TIME 300
 
 #define LCD_FS_1LINE 0x30
 #define LCD_FS_2LINE 0x38
@@ -143,7 +143,7 @@ void InitLCD(void) {
 // designed (for 16x4 display) data: is a array of 8 bytes where each entry
 // specifies one of the character (5x8 dot)
 void LCDAddSpecialCharacter(byte character_index, byte * data) {
-  //Each custom character occupies 8 byte location
+  // Each custom character occupies 8 byte location
   // First custom character address 0x40-0x47
   // Second custom character address 0x48-0x4f
   // And so on...

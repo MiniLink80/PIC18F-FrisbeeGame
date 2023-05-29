@@ -18,7 +18,7 @@
 
 
 bool acceptInterrupts;
-int a = 0, b = 0, c = 0, selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0, gameSpeed = 16, digital = 0;
+int selectedPlayer = 0, scoreA = 0, scoreB = 0, currentSegment = 0, gameSpeed = 16, digital = 0;
 int pulseCounter = 0, frisbeeSteps = 0, curFrisbeeSteps = 0, nextGameSpeed = 16;
 
 GameStates game_state = GS_INACTIVE;
@@ -27,12 +27,14 @@ GameElement* display[4][16];
 byte segValues[11] = {0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01101111, 0b01000000};
 byte portbVals = 0;
 
+
 void SetupDebouncingTimer();
 void UpdateAndPrintDisplay();
 void InitInterrupts();
 void InitGameObjects();
 void MoveEveryone();
 GameElement* CheckIfCaughtFrisbee();
+void CatchFrisbee(GameElement*);
 
 void left(GameElement*);
 void right(GameElement*);
@@ -45,12 +47,34 @@ void downright(GameElement*);
 
 
 void __interrupt(high_priority) highIsr(){
-    portbVals = PORTB;     // Read portb asap because bouncing can fuck the input up 
+    portbVals = PORTB;          // Read portb asap because bouncing can mess the input up 
     
     if (INTCONbits.TMR0IF) {    // Start accepting interrupts again once TMR0 triggers
         acceptInterrupts = true;
         T0CONbits.TMR0ON = 0;
         INTCONbits.TMR0IF = 0;
+    }
+    
+    if (PIR1bits.ADIF) {
+        //ADCON0bits.ADON = 0;
+        PIR1bits.ADIF = 0;
+        switch(ADRESH) {
+            case 0b00:
+                nextGameSpeed = 4;
+                break;
+            case 0b01:
+                nextGameSpeed = 8;
+                break;
+            case 0b10:
+                nextGameSpeed = 12;
+                break;
+            case 0b11:
+                nextGameSpeed = 16;
+                break;
+            default:
+                break;
+        }
+          
     }
         
     if (PIR1bits.TMR1IF) { // Entered every 100ms exactly (inshallah)
@@ -60,9 +84,9 @@ void __interrupt(high_priority) highIsr(){
         TMR1H = 0x85;
         T1CONbits.TMR1ON = 1;
         
+
+        
         pulseCounter++;
-        
-        
         
         if (FRISBEE.state == OS_FLYING && pulseCounter % 2 == 0 && game_state == GS_ACTIVE) {
             TARGET.active = ~TARGET.active;
@@ -70,7 +94,7 @@ void __interrupt(high_priority) highIsr(){
         
         if (pulseCounter == gameSpeed) {
             pulseCounter = 0;
-            if (FRISBEE.state == OS_FLYING) {
+            if (FRISBEE.state == OS_FLYING && game_state == GS_ACTIVE) {
                 
                 MoveEveryone();
                 
@@ -92,12 +116,11 @@ void __interrupt(high_priority) highIsr(){
                 }
             }
         }
+        
     }
     
     if (INTCONbits.INT0IF){         // INT0
         if (acceptInterrupts) {
-            a++;
-            SetupDebouncingTimer();
             
             if (objs[selectedPlayer].state == OS_SEL_W_FRISBEE) {
                 
@@ -110,12 +133,12 @@ void __interrupt(high_priority) highIsr(){
                 FRISBEE.x = frisbee_steps[0][0];
                 FRISBEE.y = frisbee_steps[0][1];
                 
+                
                 FRISBEE.active = true;
                 FRISBEE.state = OS_FLYING;
                 
                 objs[selectedPlayer].state = OS_SELECTED;
                 
-                CheckIfCaughtFrisbee();
                 
                 
                 game_state = GS_ACTIVE;
@@ -128,15 +151,15 @@ void __interrupt(high_priority) highIsr(){
                 TMR1L = 0xED;
                 TMR1H = 0x85;
                 T1CONbits.TMR1ON = 1;
+                
+                CheckIfCaughtFrisbee();
             }
-            
-
+            SetupDebouncingTimer();
         }
     }
     
     else if (INTCON3bits.INT1IF) {  // INT1
         if (acceptInterrupts) {
-            b++;
             if (objs[selectedPlayer].state != OS_SEL_W_FRISBEE) {
                 objs[selectedPlayer].state = OS_DEFAULT;
                 selectedPlayer++;
@@ -170,7 +193,6 @@ void __interrupt(high_priority) highIsr(){
                     break;
             }
             
-            c++;
             SetupDebouncingTimer();    
         }
     } 
@@ -190,20 +212,23 @@ void __interrupt(low_priority) lowIsr(){
     
     LATA = 0b1000;
     LATD = segValues[scoreA];
-    __delay_us(4000);
+    __delay_us(3500);
     
     LATA = 0b10000;
     LATD = segValues[10];
-    __delay_us(4000);
+    __delay_us(3500);
     
     LATA = 0b100000;
     LATD = segValues[scoreB];
-    __delay_us(4000);
+    __delay_us(3500);
+    
     
     LATA = temp_a;
     LATD = temp_d;
     
     PIE1bits.TMR2IE = 1;
+    
+    ADCON0bits.GO = 1;  // Start acquisition for AD
 }
 
 //   A    B    C    D
@@ -221,7 +246,7 @@ void main(void)
     
     
     while(1) {        
-        UpdateAndPrintDisplay2D();
+        UpdateAndPrintDisplay();
     }
 }
 
@@ -330,6 +355,7 @@ void UpdateAndPrintDisplay() {
             }
         }
     }
+
 }
 
 void InitGameObjects() {
@@ -382,10 +408,8 @@ void InitGameObjects() {
 }
 
 
-void InitInterrupts() {
-    a = b = c = 0;          // a, b, and c are the number of times INT0, INT1, and RB are triggered (for debugging)
-    
-    ADCON1 = 0b0111;        // Set RB<4:0> as digital pins (See page 16 and 225 of datasheet for more info)
+void InitInterrupts() {    
+    ADCON1 = 0b00001110;    // Set everything but AN0 as digital
     INTCON2bits.RBPU = 0;   // Enable portb pull-ups (whatever the fuck that means since it doesn't do shit)
     PORTB = 0;              // Futile attempt at giving PORTB a default value of 0
     
@@ -394,6 +418,8 @@ void InitInterrupts() {
     TRISA = 0x0;
     TRISD = 0x0;
     
+    
+
     T0CON = 0b00010011;     // TMR0 setup for button debouncing (will start as inactive)
     acceptInterrupts = false;
     TMR0L = 0;
@@ -421,23 +447,33 @@ void InitInterrupts() {
     INTCONbits.RBIE = 1;
     
     
-    INTCON2bits.RBIP = 1;   // Set priorities for interrupts
+    RCONbits.IPEN = 1;      // Set priorities for interrupts
+    INTCON2bits.RBIP = 1;   
     INTCON2bits.TMR0IP = 1;
     INTCON3bits.INT1IP = 1;
     IPR1bits.TMR1IP = 1;
+    IPR1bits.ADIP = 1;
+    IPR1bits.TMR2IP = 0;
     
     PIE1bits.TMR1IE = 1;    // Setup TMR1 for a pulse every 100ms
     PIR1bits.TMR1IF = 0;
     IPR1bits.TMR1IP = 1;
     TMR1L = 0xED;
     TMR1H = 0x85;
-    T1CON = 0b10110000;
+    T1CON = 0b10110001;
     
     PIE1bits.TMR2IE = 1;    // Setup TMR2 for the 7 segment display
     PIR1bits.TMR2IF = 0;
-    IPR1bits.TMR2IP = 0;
-    RCONbits.IPEN = 1;
     T2CON = 0b01111111;
+    
+    ADCON0 = 0b00000001;    // Enable AD on AN0
+    ADCON2bits.ADCS = 0b010;
+    ADCON2bits.ACQT = 0b010;
+    ADCON2bits.ADFM = 1;
+    
+    TRISAbits.RA0 = 1;
+    
+    PIE1bits.ADIE = 1;
     
 }
 
@@ -479,30 +515,36 @@ GameElement* CheckIfCaughtFrisbee() {
 void CatchFrisbee(GameElement* pl) {
     if (game_state == GS_INACTIVE) {
         pl->state = OS_SEL_W_FRISBEE;
+        
         display[FRISBEE.y-1][FRISBEE.x-1] = pl;
         FRISBEE.active = false;
         FRISBEE.state = OS_FELL;
         FRISBEE.x = FRISBEE.y = 0;
+        
     } else {
         objs[selectedPlayer].state = OS_DEFAULT;
         pl->state = OS_SEL_W_FRISBEE;
+        
         for (int i = 0; i < 4; i++) {
             if (&objs[i] == pl) {
                 selectedPlayer = i;
                 break;
             }
         }
+        
         display[FRISBEE.y-1][FRISBEE.x-1] = pl;
         FRISBEE.active = false;
         FRISBEE.x = FRISBEE.y = 0;
         FRISBEE.state = OS_FELL;
+        
         TARGET.active = false;
+        
         if (pl->type == OT_PLAYERA) scoreA++;
-        else scoreB++;
+        else                        scoreB++;
+        
         game_state = GS_INACTIVE;
         
     }
-    
 }
 
 void left(GameElement* pl) {

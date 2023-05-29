@@ -3,12 +3,12 @@
 [d edition pro ]
 [d chip 18F4620 ]
 [d frameptr 4065 ]
-"23 /home/eren/MPLABXProjects/THE3.X/main.c
+"24 /home/eren/MPLABXProjects/THE3.X/main.c
 [e E2433 GameStates `uc
 GS_ACTIVE 0
 GS_INACTIVE 1
 ]
-"24
+"25
 [e E2444 ObjectTypes `uc
 OT_PLAYERA 0
 OT_PLAYERB 1
@@ -28,17 +28,15 @@ OS_FELL 4
 [v _LCDDat LCDDat `(v  1 e 1 0 ]
 "88
 [v _LCDGoto LCDGoto `(v  1 e 1 0 ]
-"107
-[v _LCDStr LCDStr `(v  1 e 1 0 ]
 "124
 [v _InitLCD InitLCD `(v  1 e 1 0 ]
 "145
 [v _LCDAddSpecialCharacter LCDAddSpecialCharacter `(v  1 e 1 0 ]
 "161
 [v _AddCustomCharacters AddCustomCharacters `(v  1 e 1 0 ]
-"151 /home/eren/MPLABXProjects/THE3.X/the3.h
+"150 /home/eren/MPLABXProjects/THE3.X/the3.h
 [v _compute_frisbee_target_and_route compute_frisbee_target_and_route `(us  1 e 2 0 ]
-"237
+"236
 [v _random_generator random_generator `(us  1 e 2 0 ]
 "4 /opt/microchip/xc8/v2.30/pic/sources/c99/common/fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -54,8 +52,6 @@ OS_FELL 4
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
 "7 /opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"9 /opt/microchip/xc8/v2.30/pic/sources/c99/common/nf_sprintf.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
 "10 /opt/microchip/xc8/v2.30/pic/sources/c99/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -73,62 +69,62 @@ OS_FELL 4
 [v ___omul __omul `(uo  1 e 8 0 ]
 "49 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _highIsr highIsr `IIH(v  1 e 1 0 ]
-"214
+"206
 [v _lowIsr lowIsr `IIL(v  1 e 1 0 ]
-"243
+"238
 [v _main main `(v  1 e 1 0 ]
-"258
+"253
 [v _MoveEveryone MoveEveryone `(v  1 e 1 0 ]
-"382
-[v _UpdateAndPrintDisplay2D UpdateAndPrintDisplay2D `(v  1 e 1 0 ]
-"452
+"290
+[v _UpdateAndPrintDisplay UpdateAndPrintDisplay `(v  1 e 1 0 ]
+"361
 [v _InitGameObjects InitGameObjects `(v  1 e 1 0 ]
-"542
+"411
 [v _InitInterrupts InitInterrupts `(v  1 e 1 0 ]
-"612
+"483
 [v _SetupDebouncingTimer SetupDebouncingTimer `(v  1 e 1 0 ]
 "44 /home/eren/MPLABXProjects/THE3.X/the3.h
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
-"619 /home/eren/MPLABXProjects/THE3.X/main.c
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
+"490 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _CheckIfCaughtFrisbee CheckIfCaughtFrisbee `(*.39S236  1 e 2 0 ]
-"648
+"515
 [v _CatchFrisbee CatchFrisbee `(v  1 e 1 0 ]
-"677
+"550
 [v _left left `(v  1 e 1 0 ]
-"693
+"564
 [v _right right `(v  1 e 1 0 ]
-"709
+"578
 [v _up up `(v  1 e 1 0 ]
-"725
+"592
 [v _down down `(v  1 e 1 0 ]
-"743
+"608
 [v _upleft upleft `(v  1 e 1 0 ]
-"760
+"623
 [v _upright upright `(v  1 e 1 0 ]
-"778
+"639
 [v _downleft downleft `(v  1 e 1 0 ]
-"795
+"654
 [v _downright downright `(v  1 e 1 0 ]
 "55 /home/eren/MPLABXProjects/THE3.X/lcd.h
 [v _lcd_x lcd_x `uc  1 e 1 0 ]
 [v _lcd_y lcd_y `uc  1 e 1 0 ]
-"53 /home/eren/MPLABXProjects/THE3.X/the3.h
+"52 /home/eren/MPLABXProjects/THE3.X/the3.h
 [v _teamA_player teamA_player `[8]uc  1 e 8 0 ]
-"64
+"63
 [v _teamB_player teamB_player `[8]uc  1 e 8 0 ]
-"75
+"74
 [v _selected_teamA_player selected_teamA_player `[8]uc  1 e 8 0 ]
-"86
+"85
 [v _selected_teamB_player selected_teamB_player `[8]uc  1 e 8 0 ]
-"98
+"97
 [v _selected_teamA_player_with_frisbee selected_teamA_player_with_frisbee `[8]uc  1 e 8 0 ]
-"109
+"108
 [v _selected_teamB_player_with_frisbee selected_teamB_player_with_frisbee `[8]uc  1 e 8 0 ]
-"120
+"119
 [v _frisbeeChar frisbeeChar `[8]uc  1 e 8 0 ]
-"131
+"130
 [v _frisbee_target frisbee_target `[8]uc  1 e 8 0 ]
-"145
+"144
 [v _frisbee_steps frisbee_steps `[15][2]us  1 e 60 0 ]
 "52 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8/pic/include/proc/pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -186,6 +182,27 @@ OS_FELL 4
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "1380
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+[s S780 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1412
+[s S789 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+[u S798 . 1 `S780 1 . 1 0 `S789 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES798  1 e 1 @3986 ]
 "1602
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "2046
@@ -202,7 +219,7 @@ OS_FELL 4
 "2296
 [u S203 . 1 `S189 1 . 1 0 `S88 1 . 1 0 ]
 [v _TRISEbits TRISEbits `VES203  1 e 1 @3990 ]
-[s S548 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S477 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -212,13 +229,13 @@ OS_FELL 4
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "2519
-[s S557 . 1 `uc 1 . 1 0 :4:0 
+[s S486 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[u S561 . 1 `S548 1 . 1 0 `S557 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES561  1 e 1 @3997 ]
-[s S324 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S490 . 1 `S477 1 . 1 0 `S486 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES490  1 e 1 @3997 ]
+[s S322 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -228,13 +245,13 @@ OS_FELL 4
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2596
-[s S333 . 1 `uc 1 . 1 0 :4:0 
+[s S331 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S337 . 1 `S324 1 . 1 0 `S333 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES337  1 e 1 @3998 ]
-[s S661 . 1 `uc 1 TMR1IP 1 0 :1:0 
+[u S335 . 1 `S322 1 . 1 0 `S331 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES335  1 e 1 @3998 ]
+[s S719 . 1 `uc 1 TMR1IP 1 0 :1:0 
 `uc 1 TMR2IP 1 0 :1:1 
 `uc 1 CCP1IP 1 0 :1:2 
 `uc 1 SSPIP 1 0 :1:3 
@@ -244,12 +261,12 @@ OS_FELL 4
 `uc 1 PSPIP 1 0 :1:7 
 ]
 "2673
-[s S670 . 1 `uc 1 . 1 0 :4:0 
+[s S728 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IP 1 0 :1:4 
 `uc 1 RC1IP 1 0 :1:5 
 ]
-[u S674 . 1 `S661 1 . 1 0 `S670 1 . 1 0 ]
-[v _IPR1bits IPR1bits `VES674  1 e 1 @3999 ]
+[u S732 . 1 `S719 1 . 1 0 `S728 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES732  1 e 1 @3999 ]
 "3529
 [v _T3CON T3CON `VEuc  1 e 1 @4017 ]
 [s S29 . 1 `uc 1 . 1 0 :2:0 
@@ -284,57 +301,68 @@ OS_FELL 4
 [v _TMR3L TMR3L `VEuc  1 e 1 @4018 ]
 "3655
 [v _TMR3H TMR3H `VEuc  1 e 1 @4019 ]
-"4373
-[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+[s S752 . 1 `uc 1 ADCS 1 0 :3:0 
+`uc 1 ACQT 1 0 :3:3 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"4394
+[s S757 . 1 `uc 1 ADCS0 1 0 :1:0 
+`uc 1 ADCS1 1 0 :1:1 
+`uc 1 ADCS2 1 0 :1:2 
+`uc 1 ACQT0 1 0 :1:3 
+`uc 1 ACQT1 1 0 :1:4 
+`uc 1 ACQT2 1 0 :1:5 
+]
+[u S764 . 1 `S752 1 . 1 0 `S757 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES764  1 e 1 @4032 ]
 "4444
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "4529
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S406 . 1 `uc 1 . 1 0 :1:0 
+[s S510 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "4573
-[s S409 . 1 `uc 1 ADON 1 0 :1:0 
+[s S513 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S413 . 1 `uc 1 . 1 0 :1:0 
+[s S517 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S420 . 1 `uc 1 . 1 0 :1:0 
+[s S524 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S423 . 1 `uc 1 . 1 0 :1:0 
+[s S527 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S426 . 1 `uc 1 . 1 0 :1:0 
+[s S530 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S429 . 1 `uc 1 . 1 0 :1:0 
+[s S533 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S432 . 1 `uc 1 . 1 0 :1:0 
+[s S536 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S435 . 1 `S406 1 . 1 0 `S409 1 . 1 0 `S413 1 . 1 0 `S420 1 . 1 0 `S423 1 . 1 0 `S426 1 . 1 0 `S429 1 . 1 0 `S432 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES435  1 e 1 @4034 ]
-"4655
-[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+[u S539 . 1 `S510 1 . 1 0 `S513 1 . 1 0 `S517 1 . 1 0 `S524 1 . 1 0 `S527 1 . 1 0 `S530 1 . 1 0 `S533 1 . 1 0 `S536 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES539  1 e 1 @4034 ]
 "4662
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "5036
 [v _T2CON T2CON `VEuc  1 e 1 @4042 ]
 "5224
 [v _T1CON T1CON `VEuc  1 e 1 @4045 ]
-[s S354 . 1 `uc 1 . 1 0 :2:0 
+[s S353 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
 "5257
-[s S357 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S356 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -342,39 +370,39 @@ OS_FELL 4
 `uc 1 T1RUN 1 0 :1:6 
 `uc 1 RD16 1 0 :1:7 
 ]
-[s S365 . 1 `uc 1 . 1 0 :2:0 
+[s S364 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S371 . 1 `uc 1 . 1 0 :3:0 
+[s S370 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SOSCEN 1 0 :1:3 
 `uc 1 . 1 0 :3:4 
 `uc 1 T1RD16 1 0 :1:7 
 ]
-[u S376 . 1 `S354 1 . 1 0 `S357 1 . 1 0 `S365 1 . 1 0 `S371 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES376  1 e 1 @4045 ]
+[u S375 . 1 `S353 1 . 1 0 `S356 1 . 1 0 `S364 1 . 1 0 `S370 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES375  1 e 1 @4045 ]
 "5334
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "5341
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-[s S692 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S652 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "5391
-[s S694 . 1 `uc 1 . 1 0 :1:0 
+[s S654 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S697 . 1 `uc 1 . 1 0 :2:0 
+[s S657 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S700 . 1 `uc 1 . 1 0 :3:0 
+[s S660 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S703 . 1 `uc 1 . 1 0 :4:0 
+[s S663 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S706 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S666 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -383,17 +411,17 @@ OS_FELL 4
 `uc 1 SBOREN 1 0 :1:6 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S715 . 1 `uc 1 BOR 1 0 :1:0 
+[s S675 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S721 . 1 `S692 1 . 1 0 `S694 1 . 1 0 `S697 1 . 1 0 `S700 1 . 1 0 `S703 1 . 1 0 `S706 1 . 1 0 `S715 1 . 1 0 ]
-[v _RCONbits RCONbits `VES721  1 e 1 @4048 ]
+[u S681 . 1 `S652 1 . 1 0 `S654 1 . 1 0 `S657 1 . 1 0 `S660 1 . 1 0 `S663 1 . 1 0 `S666 1 . 1 0 `S675 1 . 1 0 ]
+[v _RCONbits RCONbits `VES681  1 e 1 @4048 ]
 "5856
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S294 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S292 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -401,19 +429,19 @@ OS_FELL 4
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "5878
-[s S301 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S299 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 T016BIT 1 0 :1:6 
 ]
-[u S307 . 1 `S294 1 . 1 0 `S301 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES307  1 e 1 @4053 ]
+[u S305 . 1 `S292 1 . 1 0 `S299 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES305  1 e 1 @4053 ]
 "5940
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "5947
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S488 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S417 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 INT2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1IE 1 0 :1:3 
@@ -423,7 +451,7 @@ OS_FELL 4
 `uc 1 INT2IP 1 0 :1:7 
 ]
 "6239
-[s S497 . 1 `uc 1 INT1F 1 0 :1:0 
+[s S426 . 1 `uc 1 INT1F 1 0 :1:0 
 `uc 1 INT2F 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1E 1 0 :1:3 
@@ -432,13 +460,13 @@ OS_FELL 4
 `uc 1 INT1P 1 0 :1:6 
 `uc 1 INT2P 1 0 :1:7 
 ]
-[u S506 . 1 `S488 1 . 1 0 `S497 1 . 1 0 ]
-[v _INTCON3bits INTCON3bits `VES506  1 e 1 @4080 ]
-[s S620 . 1 `uc 1 . 1 0 :7:0 
+[u S435 . 1 `S417 1 . 1 0 `S426 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES435  1 e 1 @4080 ]
+[s S611 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "6329
-[s S623 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S614 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -447,12 +475,12 @@ OS_FELL 4
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S632 . 1 `uc 1 . 1 0 :7:0 
+[s S623 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S635 . 1 `S620 1 . 1 0 `S623 1 . 1 0 `S632 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES635  1 e 1 @4081 ]
-[s S245 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S626 . 1 `S611 1 . 1 0 `S614 1 . 1 0 `S623 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES626  1 e 1 @4081 ]
+[s S243 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -462,7 +490,7 @@ OS_FELL 4
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6406
-[s S254 . 1 `uc 1 . 1 0 :1:0 
+[s S252 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -471,79 +499,75 @@ OS_FELL 4
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S263 . 1 `uc 1 . 1 0 :6:0 
+[s S261 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S267 . 1 `S245 1 . 1 0 `S254 1 . 1 0 `S263 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES267  1 e 1 @4082 ]
+[u S265 . 1 `S243 1 . 1 0 `S252 1 . 1 0 `S261 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES265  1 e 1 @4082 ]
 "20 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _acceptInterrupts acceptInterrupts `a  1 e 1 0 ]
 "21
-[v _a a `i  1 e 2 0 ]
-[v _b b `i  1 e 2 0 ]
-[v _c c `i  1 e 2 0 ]
 [v _selectedPlayer selectedPlayer `i  1 e 2 0 ]
 [v _scoreA scoreA `i  1 e 2 0 ]
 [v _scoreB scoreB `i  1 e 2 0 ]
 [v _gameSpeed gameSpeed `i  1 e 2 0 ]
+"22
 [v _pulseCounter pulseCounter `i  1 e 2 0 ]
 [v _frisbeeSteps frisbeeSteps `i  1 e 2 0 ]
 [v _curFrisbeeSteps curFrisbeeSteps `i  1 e 2 0 ]
 [v _nextGameSpeed nextGameSpeed `i  1 e 2 0 ]
-"23
-[v _game_state game_state `E2433  1 e 1 0 ]
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
 "24
-[v _objs objs `[6]S236  1 e 42 0 ]
+[v _game_state game_state `E2433  1 e 1 0 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 "25
-[v _display display `[4][16]*.39S236  1 e 128 0 ]
+[v _objs objs `[6]S236  1 e 30 0 ]
 "26
-[v _segValues segValues `[11]uc  1 e 11 0 ]
+[v _display display `[4][16]*.39S236  1 e 128 0 ]
 "27
+[v _segValues segValues `[11]uc  1 e 11 0 ]
+"28
 [v _portbVals portbVals `uc  1 e 1 0 ]
-"47
-[v _digital digital `i  1 e 2 0 ]
-"243
+"238
 [v _main main `(v  1 e 1 0 ]
 {
-"256
+"251
 } 0
-"382
-[v _UpdateAndPrintDisplay2D UpdateAndPrintDisplay2D `(v  1 e 1 0 ]
+"290
+[v _UpdateAndPrintDisplay UpdateAndPrintDisplay `(v  1 e 1 0 ]
 {
-"395
-[v UpdateAndPrintDisplay2D@j_950 j `i  1 a 2 6 ]
-"384
-[v UpdateAndPrintDisplay2D@j j `i  1 a 2 2 ]
-"394
-[v UpdateAndPrintDisplay2D@i_949 i `i  1 a 2 4 ]
-"388
-[v UpdateAndPrintDisplay2D@i_948 i `i  1 a 2 8 ]
-"383
-[v UpdateAndPrintDisplay2D@i i `i  1 a 2 0 ]
-"450
+"303
+[v UpdateAndPrintDisplay@j_990 j `i  1 a 2 30 ]
+"292
+[v UpdateAndPrintDisplay@j j `i  1 a 2 26 ]
+"302
+[v UpdateAndPrintDisplay@i_989 i `i  1 a 2 28 ]
+"296
+[v UpdateAndPrintDisplay@i_988 i `i  1 a 2 32 ]
+"291
+[v UpdateAndPrintDisplay@i i `i  1 a 2 24 ]
+"359
 } 0
 "124 /home/eren/MPLABXProjects/THE3.X/lcd.h
 [v _InitLCD InitLCD `(v  1 e 1 0 ]
 {
 "137
 } 0
-"542 /home/eren/MPLABXProjects/THE3.X/main.c
+"411 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _InitInterrupts InitInterrupts `(v  1 e 1 0 ]
 {
-"607
+"478
 } 0
-"452
+"361
 [v _InitGameObjects InitGameObjects `(v  1 e 1 0 ]
 {
-"454
+"363
 [v InitGameObjects@j j `i  1 a 2 28 ]
-"508
-[v InitGameObjects@i_954 i `i  1 a 2 30 ]
-"453
+"405
+[v InitGameObjects@i_999 i `i  1 a 2 30 ]
+"362
 [v InitGameObjects@i i `i  1 a 2 26 ]
-"511
+"408
 } 0
 "15 /opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -598,106 +622,106 @@ OS_FELL 4
 [v LCDDat@dat dat `uc  1 a 1 8 ]
 "83
 } 0
-"214 /home/eren/MPLABXProjects/THE3.X/main.c
+"206 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _lowIsr lowIsr `IIL(v  1 e 1 0 ]
 {
-"219
+"211
 [v lowIsr@temp_a temp_a `uc  1 a 1 7 ]
-"218
+"210
 [v lowIsr@temp_d temp_d `uc  1 a 1 6 ]
-"237
+"232
 } 0
 "49
 [v _highIsr highIsr `IIH(v  1 e 1 0 ]
 {
-"212
+"204
 } 0
-"151 /home/eren/MPLABXProjects/THE3.X/the3.h
+"150 /home/eren/MPLABXProjects/THE3.X/the3.h
 [v _compute_frisbee_target_and_route compute_frisbee_target_and_route `(us  1 e 2 0 ]
 {
-"226
-[v compute_frisbee_target_and_route@i_786 i `us  1 a 2 27 ]
-"220
-[v compute_frisbee_target_and_route@i_785 i `us  1 a 2 25 ]
-"209
-[v compute_frisbee_target_and_route@i_782 i `us  1 a 2 21 ]
-"203
+"225
+[v compute_frisbee_target_and_route@i_844 i `us  1 a 2 27 ]
+"219
+[v compute_frisbee_target_and_route@i_843 i `us  1 a 2 25 ]
+"208
+[v compute_frisbee_target_and_route@i_840 i `us  1 a 2 21 ]
+"202
 [v compute_frisbee_target_and_route@i i `us  1 a 2 19 ]
-"231
-[v compute_frisbee_target_and_route@i_787 i `us  1 a 2 29 ]
-"214
-[v compute_frisbee_target_and_route@i_783 i `us  1 a 2 23 ]
-"155
+"230
+[v compute_frisbee_target_and_route@i_845 i `us  1 a 2 29 ]
+"213
+[v compute_frisbee_target_and_route@i_841 i `us  1 a 2 23 ]
+"154
 [v compute_frisbee_target_and_route@y_step_size y_step_size `us  1 a 2 43 ]
 [v compute_frisbee_target_and_route@x_step_size x_step_size `us  1 a 2 41 ]
-"218
+"217
 [v compute_frisbee_target_and_route@y y `us  1 a 2 39 ]
-"201
+"200
 [v compute_frisbee_target_and_route@x x `us  1 a 2 37 ]
-"157
+"156
 [v compute_frisbee_target_and_route@target_y target_y `us  1 a 2 35 ]
 [v compute_frisbee_target_and_route@target_x target_x `us  1 a 2 33 ]
-"156
+"155
 [v compute_frisbee_target_and_route@number_of_steps number_of_steps `us  1 a 2 31 ]
-"151
+"150
 [v compute_frisbee_target_and_route@current_fisbee_x_position current_fisbee_x_position `us  1 p 2 13 ]
 [v compute_frisbee_target_and_route@current_fisbee_y_position current_fisbee_y_position `us  1 p 2 15 ]
-"235
+"234
 } 0
-"612 /home/eren/MPLABXProjects/THE3.X/main.c
+"483 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _SetupDebouncingTimer SetupDebouncingTimer `(v  1 e 1 0 ]
 {
-"617
+"488
 } 0
-"258
+"253
 [v _MoveEveryone MoveEveryone `(v  1 e 1 0 ]
 {
-"262
+"257
 [v MoveEveryone@val val `i  1 a 2 32 ]
-"259
+"254
 [v MoveEveryone@i i `i  1 a 2 50 ]
-"292
+"287
 } 0
-"760
+"623
 [v _upright upright `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v upright@pl pl `*.39S236  1 p 2 18 ]
-"776
+"637
 } 0
-"743
+"608
 [v _upleft upleft `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v upleft@pl pl `*.39S236  1 p 2 18 ]
-"759
+"622
 } 0
-"709
+"578
 [v _up up `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v up@pl pl `*.39S236  1 p 2 18 ]
-"724
+"591
 } 0
-"693
+"564
 [v _right right `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v right@pl pl `*.39S236  1 p 2 18 ]
-"708
+"577
 } 0
-"237 /home/eren/MPLABXProjects/THE3.X/the3.h
+"236 /home/eren/MPLABXProjects/THE3.X/the3.h
 [v _random_generator random_generator `(us  1 e 2 0 ]
 {
-"249
+"248
 [v random_generator@i i `us  1 a 2 9 ]
-"242
-[v random_generator@res res `uc  1 a 1 12 ]
 "241
+[v random_generator@res res `uc  1 a 1 12 ]
+"240
 [v random_generator@temp temp `uc  1 a 1 11 ]
-"237
+"236
 [v random_generator@modulo modulo `us  1 p 2 5 ]
-"258
+"257
 } 0
 "7 /opt/microchip/xc8/v2.30/pic/sources/c99/common/lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -709,52 +733,52 @@ OS_FELL 4
 [v ___lwmod@divisor divisor `ui  1 p 2 2 ]
 "25
 } 0
-"677 /home/eren/MPLABXProjects/THE3.X/main.c
+"550 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _left left `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v left@pl pl `*.39S236  1 p 2 18 ]
-"692
+"563
 } 0
-"795
+"654
 [v _downright downright `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v downright@pl pl `*.39S236  1 p 2 18 ]
-"811
+"668
 } 0
-"778
+"639
 [v _downleft downleft `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v downleft@pl pl `*.39S236  1 p 2 18 ]
-"794
+"653
 } 0
-"725
+"592
 [v _down down `(v  1 e 1 0 ]
 {
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
 [v down@pl pl `*.39S236  1 p 2 18 ]
-"740
+"605
 } 0
-"648
+"515
 [v _CatchFrisbee CatchFrisbee `(v  1 e 1 0 ]
 {
-"658
+"528
 [v CatchFrisbee@i i `i  1 a 2 16 ]
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
-"648
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
+"515
 [v CatchFrisbee@pl pl `*.39S236  1 p 2 6 ]
-"675
+"548
 } 0
 "44 /home/eren/MPLABXProjects/THE3.X/the3.h
-[s S236 GameElement 7 `uc 1 x 1 0 `uc 1 y 1 1 `uc 1 oldX 1 2 `uc 1 oldY 1 3 `a 1 active 1 4 `E2444 1 type 1 5 `E2437 1 state 1 6 ]
-"619 /home/eren/MPLABXProjects/THE3.X/main.c
+[s S236 GameElement 5 `uc 1 x 1 0 `uc 1 y 1 1 `a 1 active 1 2 `E2444 1 type 1 3 `E2437 1 state 1 4 ]
+"490 /home/eren/MPLABXProjects/THE3.X/main.c
 [v _CheckIfCaughtFrisbee CheckIfCaughtFrisbee `(*.39S236  1 e 2 0 ]
 {
-"622
+"491
 [v CheckIfCaughtFrisbee@i i `i  1 a 2 7 ]
-"646
+"513
 } 0
 "15 /opt/microchip/xc8/v2.30/pic/sources/c99/common/Umul16.c
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
